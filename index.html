@@ -1,10 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Steve Test Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Philly Talon Gazette</title>
+<style>
+  :root {
+    --eagle-green: #004c54;
+    --eagle-green-dark: #00272b;
+    --eagle-silver: #a5acaf;
+    --eagle-black: #000000;
+    --eagle-white: #ffffff;
+    --accent: #a5f0d0;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, var(--eagle-green-dark), var(--eagle-green) 40%, #043a3f 100%);
+    background-attachment: fixed;
+    color: #eafffa;
+    min-height: 100vh;
+  }
+
+  /* ---------- Ticker ---------- */
+  .ticker-wrap {
+    background: var(--eagle-black);
+    color: var(--accent);
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 3px solid var(--eagle-silver);
+    padding: 8px 0;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+  .ticker {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 22s linear infinite;
+  }
+  @keyframes scroll-left {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    text-align: center;
+    padding: 30px 20px 10px;
+    position: relative;
+  }
+  header h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    margin: 0;
+    color: var(--eagle-white);
+    text-shadow: 3px 3px 0 var(--eagle-black), 0 0 25px rgba(165,240,208,0.5);
+    letter-spacing: 2px;
+  }
+  header .subtitle {
+    color: var(--accent);
+    font-style: italic;
+    margin-top: 6px;
+    font-size: 1.1rem;
+  }
+
+  .mascot {
+    font-size: 4rem;
+    display: inline-block;
+    animation: flap 2.2s ease-in-out infinite;
+    cursor: pointer;
+    user-select: none;
+  }
+  @keyframes flap {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(-8deg); }
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  nav button {
+    background: var(--eagle-silver);
+    color: var(--eagle-black);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s;
+  }
+  nav button:hover {
+    background: var(--accent);
+    transform: translateY(-2px) scale(1.05);
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  section {
+    display: none;
+    animation: fadeIn 0.4s ease;
+  }
+  section.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  h2.section-title {
+    color: var(--eagle-white);
+    border-bottom: 3px dashed var(--eagle-silver);
+    padding-bottom: 8px;
+    font-size: 1.8rem;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(165,240,208,0.3);
+    border-radius: 14px;
+    padding: 18px;
+    backdrop-filter: blur(4px);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  }
+  .card h3 {
+    margin-top: 0;
+    color: var(--accent);
+  }
+  .card .tag {
+    display: inline-block;
+    background: var(--eagle-black);
+    color: var(--accent);
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ---------- Meme gallery (pure CSS/SVG doodles) ---------- */
+  .meme-card {
+    text-align: center;
+  }
+  .meme-canvas {
+    width: 100%;
+    height: 160px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #0a5a61, #012f33);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .meme-caption {
+    font-weight: bold;
+    color: #fff;
+  }
+  .meme-sub {
+    font-size: 0.85rem;
+    color: var(--eagle-silver);
+  }
+
+  .sunglasses {
+    position: absolute;
+    font-size: 1.4rem;
+    top: 30%;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--eagle-silver);
+    font-size: 0.85rem;
+  }
+
+  /* Quirky generator button */
+  .quirk-box {
+    text-align: center;
+    margin-top: 20px;
+  }
+  #quirkOutput {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    min-height: 60px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px dashed var(--accent);
+  }
+  .big-btn {
+    background: var(--accent);
+    color: var(--eagle-black);
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.15s;
+  }
+  .big-btn:hover { transform: scale(1.06); }
+
+  /* confetti */
+  .confetti-piece {
+    position: fixed;
+    top: -10px;
+    width: 10px;
+    height: 14px;
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: 999;
+    animation: fall linear forwards;
+  }
+  @keyframes fall {
+    to { transform: translateY(110vh) rotate(720deg); opacity: 0.3; }
+  }
+
+  .disclaimer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #7fa;
+    opacity: 0.7;
+    margin-top: 10px;
+  }
+</style>
 </head>
 <body>
-    <h1>Steve Test Page</h1>
+
+<div class="ticker-wrap">
+  <div class="ticker" id="tickerText"></div>
+</div>
+
+<header>
+  <div class="mascot" id="mascot" title="click me">🦅</div>
+  <h1>THE PHILLY TALON GAZETTE</h1>
+  <div class="subtitle">"All the news that's fit to squawk" — est. whenever this page loaded</div>
+</header>
+
+<nav>
+  <button data-target="news">🏈 Eagles News</button>
+  <button data-target="memes">😂 Funny Pics</button>
+  <button data-target="quirky">🌀 Quirky Corner</button>
+  <button data-target="fun">🎉 Fan Zone</button>
+</nav>
+
+<main>
+
+  <section id="news" class="active">
+    <h2 class="section-title">Eagles Beat Report</h2>
+    <div class="card-grid" id="newsGrid"></div>
+    <p class="disclaimer">Purely for fun / test content — not real reporting. Refresh for new "headlines."</p>
+    <div style="text-align:center; margin-top:10px;">
+      <button class="big-btn" onclick="renderNews()">🔄 Get New Headlines</button>
+    </div>
+  </section>
+
+  <section id="memes">
+    <h2 class="section-title">Funny Pictures (Hand-Drawn-ish)</h2>
+    <div class="card-grid" id="memeGrid"></div>
+  </section>
+
+  <section id="quirky">
+    <h2 class="section-title">Quirky News Corner</h2>
+    <p>Local. Bizarre. Probably made up. Click for a fresh dose of nonsense.</p>
+    <div class="quirk-box">
+      <button class="big-btn" onclick="newQuirk()">🎲 Give Me Something Weird</button>
+      <div id="quirkOutput">Press the button, champ.</div>
+    </div>
+  </section>
+
+  <section id="fun">
+    <h2 class="section-title">Fan Zone</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>🎉 Hype Button</h3>
+        <p>Feeling it tonight? Smash it.</p>
+        <button class="big-btn" onclick="fireConfetti()">FLY EAGLES FLY</button>
+      </div>
+      <div class="card">
+        <h3>📣 Chant Generator</h3>
+        <p>Get a fresh sideline chant.</p>
+        <button class="big-btn" onclick="newChant()">Generate Chant</button>
+        <div id="chantOutput" style="margin-top:12px; font-weight:bold; color:var(--accent);"></div>
+      </div>
+      <div class="card">
+        <h3>🧠 Fake Trivia</h3>
+        <p id="triviaQ">Click for a totally-made-up trivia question.</p>
+        <button class="big-btn" onclick="newTrivia()">New Question</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Built for local testing purposes only. Green out. 🦅
+</footer>
+
+<script>
+  // ---------------- Nav ----------------
+  const buttons = document.querySelectorAll('nav button');
+  const sections = document.querySelectorAll('main section');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      sections.forEach(s => s.classList.remove('active'));
+      document.getElementById(btn.dataset.target).classList.add('active');
+    });
+  });
+
+  // ---------------- Ticker ----------------
+  const tickerItems = [
+    "🚨 BREAKING: Local man refers to Tuesday game as 'basically a playoff game' again",
+    "🦅 Team captain spotted practicing extra hard because 'Dallas week'",
+    "🍗 Wing sauce shortage feared ahead of Sunday's game, city on high alert",
+    "📈 Local sports bar reports 400% increase in nervous pacing",
+    "🏆 Historians confirm: green and midnight green are, in fact, different colors",
+    "🎺 Marching band spotted rehearsing fight song in grocery store parking lot",
+    "🧊 Weatherman advises fans to dress 'like it's already January'",
+    "🛋️ Recliner sales spike as fans prep for full slate of couch coaching"
+  ];
+  document.getElementById('tickerText').textContent = tickerItems.join('   ★   ');
+
+  // ---------------- News cards ----------------
+  const newsPool = [
+    { tag: "Locker Room", title: "Rookie Reportedly 'Feeling Good' About Everything", body: "Sources close to the situation confirm the rookie is, in fact, feeling good. Coaches called it 'a great sign.' More on this developing non-story as it develops." },
+    { tag: "Analysis", title: "Fans Cautiously Optimistic, Then Immediately Not", body: "A local fan's optimism was measured at an all-time high this morning before falling sharply after remembering literally anything from last season." },
+    { tag: "Weather Watch", title: "Wind Advisory Issued For Kicking Game", body: "Meteorologists warn of gusts strong enough to affect field goals, morale, and hot dog wrappers alike." },
+    { tag: "Fashion", title: "Jersey Sales Reportedly 'Off The Charts' Again", body: "Local shop owner says he's 'never seen numbers like this,' which is what he says every single week." },
+    { tag: "Injury Report", title: "Player Listed As 'Probable' Sparks City-Wide Debate", body: "Is he playing? Is he not? Sports radio has entered its fourth consecutive hour of speculation." },
+    { tag: "Tailgate Report", title: "Grill Deployment Begins Six Hours Before Kickoff", body: "Parking lot air quality index now officially classified as 'delicious.'" },
+    { tag: "Front Office", title: "Team Denies Rumors It Is 'Just Vibes' At This Point", body: "Management insists there is, in fact, a real plan, and it is not just vibes. Fans remain unconvinced but hopeful." },
+    { tag: "Special Teams", title: "Punter Named Honorary Mayor For A Day", body: "Following a booming 61-yard punt, the city council voted unanimously in a ceremony involving surprisingly little paperwork." }
+  ];
+
+  function renderNews() {
+    const grid = document.getElementById('newsGrid');
+    grid.innerHTML = '';
+    const shuffled = [...newsPool].sort(() => Math.random() - 0.5).slice(0, 4);
+    shuffled.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `<span class="tag">${item.tag}</span><h3>${item.title}</h3><p>${item.body}</p>`;
+      grid.appendChild(card);
+    });
+  }
+  renderNews();
+
+  // ---------------- Meme gallery (CSS/emoji doodles) ----------------
+  const memes = [
+    { emoji: "🦅😎", caption: "Eagle put the shades on before the coin toss.", sub: "confidence levels: unmeasurable" },
+    { emoji: "🏈💨", caption: "The ball, last seen entering orbit.", sub: "NASA has questions" },
+    { emoji: "🛋️📺", caption: "Fan achieves peak recliner ergonomics.", sub: "will not be moving until Monday" },
+    { emoji: "🧊🥶", caption: "Fans 'dressed for the weather.'", sub: "brave. foolish. iconic." },
+    { emoji: "🌭🙌", caption: "Concession stand hero, mid hot-dog-toss.", sub: "the crowd. goes. wild." },
+    { emoji: "🐕‍🦺🏈", caption: "Stadium good boy attempts first down.", sub: "ruled: adorable, not a fumble" }
+  ];
+  const memeGrid = document.getElementById('memeGrid');
+  memes.forEach(m => {
+    const card = document.createElement('div');
+    card.className = 'card meme-card';
+    card.innerHTML = `
+      <div class="meme-canvas">${m.emoji}</div>
+      <div class="meme-caption">${m.caption}</div>
+      <div class="meme-sub">${m.sub}</div>
+    `;
+    memeGrid.appendChild(card);
+  });
+
+  // ---------------- Quirky news generator ----------------
+  const quirkyStories = [
+    "Local squirrel accused of 'excessive celebration' after nut recovery near the 40-yard line.",
+    "Man tries to name his newborn after entire offensive line; hospital staff 'still negotiating.'",
+    "City declares Thursday 'Wear Green Even Though There's No Game Day' for morale purposes.",
+    "Study finds fans' blood pressure directly correlates with punt distance. Cardiologists 'concerned but respect the commitment.'",
+    "Area man's fantasy team named after a pun so bad the league commissioner sent a formal warning.",
+    "Local bakery introduces 'Victory Cannoli,' available only after a win, allegedly, according to a sign that keeps changing.",
+    "Weather balloon mistaken for a very high, very slow punt by three separate fans on live radio.",
+    "Neighborhood dog reportedly 'very good' at recognizing the fight song, howls exactly on cue every time.",
+    "Grocery store runs out of chicken wings by Thursday morning; declares state of emergency, informally.",
+    "Local man's lucky jersey now held together primarily by superstition and duct tape."
+  ];
+  function newQuirk() {
+    const out = document.getElementById('quirkOutput');
+    const pick = quirkyStories[Math.floor(Math.random() * quirkyStories.length)];
+    out.textContent = pick;
+  }
+
+  // ---------------- Chant generator ----------------
+  const chantParts1 = ["Let's go", "Bring the", "Fly high with the", "Rise up,", "Green out for the"];
+  const chantParts2 = ["Birds!", "Talons!", "Green Machine!", "Nest!", "E-A-G-L-E-S!"];
+  function newChant() {
+    const p1 = chantParts1[Math.floor(Math.random() * chantParts1.length)];
+    const p2 = chantParts2[Math.floor(Math.random() * chantParts2.length)];
+    document.getElementById('chantOutput').textContent = `${p1} ${p2}`;
+  }
+
+  // ---------------- Fake trivia ----------------
+  const trivia = [
+    "True or false: the eagle mascot on this page has never actually landed. (Probably true, he's very committed.)",
+    "Quick — how many hot dogs are 'too many' at a tailgate? Trick question, there is no such number.",
+    "Riddle: I'm loud, I'm green, and I judge every referee decision. What am I? (Answer: literally every fan.)",
+    "Pop quiz: what's the correct volume for the fight song? Correct answer: yes.",
+    "Fun fact check: is 'basically a must-win' used for every single game? Yes. Every one."
+  ];
+  function newTrivia() {
+    const el = document.getElementById('triviaQ');
+    el.textContent = trivia[Math.floor(Math.random() * trivia.length)];
+  }
+
+  // ---------------- Confetti ----------------
+  function fireConfetti() {
+    const colors = ['#004c54', '#a5acaf', '#ffffff', '#a5f0d0', '#012f33'];
+    for (let i = 0; i < 80; i++) {
+      const piece = document.createElement('div');
+      piece.className = 'confetti-piece';
+      piece.style.left = Math.random() * 100 + 'vw';
+      piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+      piece.style.animationDuration = (2 + Math.random() * 2) + 's';
+      piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+      document.body.appendChild(piece);
+      setTimeout(() => piece.remove(), 4200);
+    }
+  }
+
+  // ---------------- Mascot click easter egg ----------------
+  document.getElementById('mascot').addEventListener('click', fireConfetti);
+</script>
+
 </body>
 </html>
