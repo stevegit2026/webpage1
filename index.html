@@ -3,459 +3,475 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Daily Meow</title>
+<title>Eagles at Bears: Week 3 Game Central</title>
+<meta name="description" content="Eagles at Bears, Monday Night Football, Sept 28 2026. Top 5 storylines heading into Week 3.">
 <style>
   :root {
-    --cat-orange: #ff9f43;
-    --cat-orange-dark: #7a3e00;
-    --cat-pink: #ffc2d1;
-    --cat-cream: #fff6e9;
-    --cat-black: #1a1a1a;
-    --accent: #ffe08a;
+    --green: #004c54;
+    --green-deep: #00272b;
+    --green-mid: #0a6a73;
+    --silver: #a5acaf;
+    --mint: #a5f0d0;
+    --navy: #0b1f3a;
+    --orange: #f2681c;
+    --white: #ffffff;
+    --gold: #ffd166;
+    --red: #ff5d5d;
   }
-
   * { box-sizing: border-box; }
-
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    font-family: 'Comic Sans MS', 'Trebuchet MS', 'Segoe UI', sans-serif;
-    background: linear-gradient(180deg, #ffd6a5, #ffb877 40%, #ff9f43 100%);
+    font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
+    color: #eafffa;
+    background: var(--green-deep);
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(165,240,208,0.12), transparent 40%),
+      radial-gradient(circle at 85% 30%, rgba(242,104,28,0.10), transparent 40%),
+      linear-gradient(180deg, var(--green-deep), var(--green) 45%, #03363c 100%);
     background-attachment: fixed;
-    color: #3a2a1a;
     min-height: 100vh;
+    line-height: 1.55;
   }
 
-  /* ---------- Ticker ---------- */
-  .ticker-wrap {
-    background: var(--cat-black);
-    color: var(--accent);
-    overflow: hidden;
-    white-space: nowrap;
-    border-bottom: 3px solid var(--cat-pink);
-    padding: 8px 0;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-  }
-  .ticker {
-    display: inline-block;
-    padding-left: 100%;
-    animation: scroll-left 24s linear infinite;
-  }
-  @keyframes scroll-left {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-  }
-
-  /* ---------- Header ---------- */
-  header {
+  /* ---------- top bar ---------- */
+  .topbar {
+    background: #000;
+    border-bottom: 3px solid var(--silver);
+    color: var(--mint);
     text-align: center;
-    padding: 30px 20px 10px;
-    position: relative;
-  }
-  header h1 {
-    font-size: clamp(2rem, 6vw, 4rem);
-    margin: 0;
-    color: #fff;
-    text-shadow: 3px 3px 0 var(--cat-orange-dark), 0 0 25px rgba(255,224,138,0.6);
-    letter-spacing: 2px;
-  }
-  header .subtitle {
-    color: var(--cat-black);
-    font-style: italic;
-    margin-top: 6px;
-    font-size: 1.1rem;
-  }
-
-  .mascot {
-    font-size: 4rem;
-    display: inline-block;
-    animation: wiggle 2.4s ease-in-out infinite;
-    cursor: pointer;
-    user-select: none;
-  }
-  @keyframes wiggle {
-    0%, 100% { transform: rotate(0deg) translateY(0); }
-    25% { transform: rotate(-8deg) translateY(-4px); }
-    75% { transform: rotate(8deg) translateY(-4px); }
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-  }
-  nav button {
-    background: var(--cat-pink);
-    color: var(--cat-black);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 999px;
+    padding: 8px 12px;
     font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.15s, background 0.15s;
-  }
-  nav button:hover {
-    background: var(--accent);
-    transform: translateY(-2px) scale(1.05);
-  }
-
-  main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px 60px;
-  }
-
-  section {
-    display: none;
-    animation: fadeIn 0.4s ease;
-  }
-  section.active { display: block; }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  h2.section-title {
-    color: #fff;
-    text-shadow: 2px 2px 0 var(--cat-orange-dark);
-    border-bottom: 3px dashed var(--cat-pink);
-    padding-bottom: 8px;
-    font-size: 1.8rem;
-  }
-
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .card {
-    background: rgba(255,255,255,0.55);
-    border: 1px solid rgba(122,62,0,0.25);
-    border-radius: 14px;
-    padding: 18px;
-    backdrop-filter: blur(4px);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  }
-  .card h3 {
-    margin-top: 0;
-    color: var(--cat-orange-dark);
-  }
-  .card .tag {
-    display: inline-block;
-    background: var(--cat-black);
-    color: var(--accent);
-    font-size: 0.7rem;
-    padding: 3px 10px;
-    border-radius: 999px;
-    margin-bottom: 8px;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
   }
 
-  /* ---------- Cat gallery (emoji doodles) ---------- */
-  .meme-card {
+  /* ---------- hero ---------- */
+  .hero {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 28px 18px 10px;
     text-align: center;
   }
-  .meme-canvas {
-    width: 100%;
-    height: 160px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #ffe4b8, #ffcf94);
+  .eyebrow {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-weight: bold;
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(242,104,28,0.6); }
+    50% { box-shadow: 0 0 0 12px rgba(242,104,28,0); }
+  }
+
+  .matchup {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
+    margin: 22px 0 8px;
+  }
+  .team { text-align: center; }
+  .badge {
+    width: clamp(96px, 20vw, 150px);
+    height: clamp(96px, 20vw, 150px);
+    margin: 0 auto 8px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3.2rem;
-    margin-bottom: 10px;
-    position: relative;
-    overflow: hidden;
+    font-size: clamp(2.6rem, 8vw, 4.4rem);
+    border: 5px solid var(--silver);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5), inset 0 0 25px rgba(0,0,0,0.35);
   }
-  .meme-caption {
-    font-weight: bold;
-    color: var(--cat-orange-dark);
-  }
-  .meme-sub {
-    font-size: 0.85rem;
-    color: #7a5a3a;
-  }
-
-  footer {
-    text-align: center;
-    padding: 20px;
-    color: var(--cat-black);
-    font-size: 0.85rem;
-    opacity: 0.75;
+  .badge.phi { background: radial-gradient(circle at 35% 30%, #12868f, var(--green) 65%); animation: bob 3s ease-in-out infinite; }
+  .badge.chi { background: radial-gradient(circle at 35% 30%, #27446f, var(--navy) 65%); border-color: var(--orange); animation: bob 3s ease-in-out infinite 1.5s; }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  .team h2 { margin: 0; font-size: clamp(1.1rem, 3.4vw, 1.8rem); letter-spacing: 1px; }
+  .team .rec { color: var(--mint); font-weight: bold; }
+  .chi-team .rec { color: #ffb37c; }
+  .at {
+    font-size: clamp(1.6rem, 5vw, 3rem);
+    font-weight: 900;
+    color: var(--silver);
+    text-shadow: 3px 3px 0 #000;
   }
 
-  /* Quirky generator button */
-  .quirk-box {
-    text-align: center;
-    margin-top: 20px;
+  .when {
+    margin: 10px auto 0;
+    max-width: 640px;
+    background: rgba(0,0,0,0.35);
+    border: 2px solid var(--mint);
+    border-radius: 18px;
+    padding: 16px 18px;
   }
-  #quirkOutput {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    min-height: 60px;
-    background: rgba(255,255,255,0.5);
+  .when .day { font-size: clamp(1.5rem, 5vw, 2.4rem); font-weight: 900; color: #fff; text-shadow: 2px 2px 0 #000; }
+  .when .time { font-size: clamp(1.1rem, 3.4vw, 1.5rem); color: var(--gold); font-weight: bold; }
+  .when .where { color: var(--silver); margin-top: 4px; }
+  .when .local { font-size: 0.85rem; color: var(--mint); margin-top: 4px; min-height: 1.2em; }
+
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 18px 0 6px;
+    flex-wrap: wrap;
+  }
+  .cd-box {
+    background: #000;
+    border: 2px solid var(--silver);
     border-radius: 12px;
-    padding: 20px;
-    border: 2px dashed var(--cat-orange-dark);
+    min-width: 74px;
+    padding: 8px 6px;
   }
-  .big-btn {
-    background: var(--accent);
-    color: var(--cat-black);
-    border: none;
-    padding: 14px 28px;
-    font-size: 1rem;
-    font-weight: bold;
+  .cd-box b { display: block; font-size: 1.9rem; color: var(--mint); font-variant-numeric: tabular-nums; }
+  .cd-box span { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--silver); }
+
+  /* ---------- field graphic ---------- */
+  .field-wrap { max-width: 1050px; margin: 22px auto 0; padding: 0 18px; }
+  .field {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 3px solid var(--silver);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: block;
+  }
+  .ball { animation: fly 5s ease-in-out infinite; transform-origin: center; }
+  @keyframes fly {
+    0%   { transform: translate(70px, 150px) rotate(-25deg); }
+    50%  { transform: translate(430px, 40px) rotate(0deg); }
+    100% { transform: translate(790px, 150px) rotate(25deg); }
+  }
+
+  /* ---------- quick facts ---------- */
+  .facts {
+    max-width: 1050px;
+    margin: 22px auto 0;
+    padding: 0 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
+  }
+  .fact {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(165,240,208,0.3);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+  }
+  .fact .k { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--silver); }
+  .fact .v { font-size: 1.25rem; font-weight: 900; color: #fff; }
+  .fact .s { font-size: 0.78rem; color: var(--mint); }
+
+  /* ---------- injury watch ---------- */
+  .watch {
+    max-width: 1050px;
+    margin: 26px auto 0;
+    padding: 0 18px;
+  }
+  .watch h3, .stories h3 {
+    margin: 0 0 12px;
+    font-size: 1.5rem;
+    border-bottom: 3px dashed var(--silver);
+    padding-bottom: 8px;
+  }
+  .lights { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .light {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 12px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .dot { width: 18px; height: 18px; border-radius: 50%; flex: none; animation: blink 1.8s ease-in-out infinite; }
+  .dot.y { background: var(--gold); box-shadow: 0 0 10px var(--gold); }
+  .dot.g { background: #4ade80; box-shadow: 0 0 10px #4ade80; }
+  .dot.r { background: var(--red); box-shadow: 0 0 10px var(--red); }
+  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+  .light b { display: block; }
+  .light small { color: var(--silver); }
+
+  /* ---------- stories ---------- */
+  .stories { max-width: 1050px; margin: 30px auto 0; padding: 0 18px 20px; }
+  .story-grid { display: grid; gap: 18px; }
+  .story {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+    border: 1px solid rgba(165,240,208,0.35);
+    border-left: 8px solid var(--mint);
+    border-radius: 16px;
+    padding: 20px 20px 18px 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .story:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.45); }
+  .story.inj { border-left-color: var(--gold); }
+  .story.bears { border-left-color: var(--orange); }
+  .num {
+    position: absolute;
+    top: -14px; right: 16px;
+    background: var(--silver);
+    color: #000;
+    font-weight: 900;
+    font-size: 1.4rem;
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    border: 3px solid #000;
+    transform: rotate(8deg);
+  }
+  .tag {
+    display: inline-block;
+    background: #000;
+    color: var(--mint);
+    font-size: 0.7rem;
+    padding: 3px 12px;
     border-radius: 999px;
-    cursor: pointer;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .story h4 { margin: 4px 0 8px; font-size: 1.35rem; color: #fff; padding-right: 40px; }
+  .story p { margin: 0 0 14px; color: #dff7f0; }
+  .story a.src {
+    display: inline-block;
+    background: var(--mint);
+    color: #00272b;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 999px;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .story a.src:hover { background: #fff; transform: translateX(4px); }
+  .srcname { display: block; font-size: 0.75rem; color: var(--silver); margin-top: 6px; }
+
+  /* ---------- footer ---------- */
+  footer {
+    max-width: 1050px;
+    margin: 20px auto 0;
+    padding: 20px 18px 50px;
+    color: var(--silver);
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  footer .checked { margin-top: 10px; font-size: 0.78rem; opacity: 0.85; }
+  .confetti-btn {
+    background: var(--orange); color: #fff; border: none; padding: 12px 24px;
+    border-radius: 999px; font-weight: 900; font-size: 1rem; cursor: pointer; margin-bottom: 14px;
     transition: transform 0.15s;
   }
-  .big-btn:hover { transform: scale(1.06); }
+  .confetti-btn:hover { transform: scale(1.07); }
+  .bit { position: fixed; top: -20px; font-size: 1.5rem; pointer-events: none; z-index: 99; animation: drop linear forwards; }
+  @keyframes drop { to { transform: translateY(110vh) rotate(540deg); opacity: 0.3; } }
 
-  /* confetti / paw prints */
-  .confetti-piece {
-    position: fixed;
-    top: -10px;
-    font-size: 1.4rem;
-    opacity: 0.9;
-    pointer-events: none;
-    z-index: 999;
-    animation: fall linear forwards;
+  @media (max-width: 560px) {
+    .matchup { grid-template-columns: 1fr; }
+    .at { font-size: 1.4rem; }
   }
-  @keyframes fall {
-    to { transform: translateY(110vh) rotate(360deg); opacity: 0.3; }
-  }
-
-  .disclaimer {
-    text-align: center;
-    font-size: 0.75rem;
-    color: #6b4a1f;
-    opacity: 0.75;
-    margin-top: 10px;
-  }
-
-  #catStatusBox {
-    text-align: center;
-  }
-  #catStatusImg {
-    font-size: 5rem;
-    display: block;
-    margin: 10px auto;
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; }
   }
 </style>
 </head>
 <body>
 
-<div class="ticker-wrap">
-  <div class="ticker" id="tickerText"></div>
-</div>
+<div class="topbar">🦅 Week 3 Game Central &middot; Updated Sunday, Sept 20, 2026 after the Titans game &middot; 🦅</div>
 
-<header>
-  <div class="mascot" id="mascot" title="click me">🐱</div>
-  <h1>THE DAILY MEOW</h1>
-  <div class="subtitle">"All the news that's fit to knock off the table" — est. whenever this page loaded</div>
+<header class="hero">
+  <span class="eyebrow">Monday Night Football</span>
+
+  <div class="matchup">
+    <div class="team">
+      <div class="badge phi">🦅</div>
+      <h2>PHILADELPHIA EAGLES</h2>
+      <div class="rec">2-0 &middot; 24-20 win at TEN</div>
+    </div>
+    <div class="at">@</div>
+    <div class="team chi-team">
+      <div class="badge chi">🐻</div>
+      <h2>CHICAGO BEARS</h2>
+      <div class="rec">1-1 &middot; 9-3 loss to MIN</div>
+    </div>
+  </div>
+
+  <div class="when">
+    <div class="day">MONDAY, SEPTEMBER 28, 2026</div>
+    <div class="time">Kickoff 8:15 PM ET &middot; ESPN / ABC</div>
+    <div class="where">Soldier Field &middot; Chicago, IL</div>
+    <div class="local" id="localTime"></div>
+  </div>
+
+  <div class="countdown" id="countdown" aria-label="Countdown to kickoff">
+    <div class="cd-box"><b id="cdD">--</b><span>Days</span></div>
+    <div class="cd-box"><b id="cdH">--</b><span>Hours</span></div>
+    <div class="cd-box"><b id="cdM">--</b><span>Mins</span></div>
+    <div class="cd-box"><b id="cdS">--</b><span>Secs</span></div>
+  </div>
 </header>
 
-<nav>
-  <button data-target="news">📰 Cat News</button>
-  <button data-target="memes">😹 Funny Cats</button>
-  <button data-target="quirky">🌀 Quirky Corner</button>
-  <button data-target="fun">🎉 Cat Zone</button>
-</nav>
+<div class="field-wrap">
+  <svg class="field" viewBox="0 0 860 200" role="img" aria-label="Animated football field with a football flying across">
+    <defs>
+      <linearGradient id="turf" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#0d7a3a"/>
+        <stop offset="1" stop-color="#0a5f2d"/>
+      </linearGradient>
+    </defs>
+    <rect width="860" height="200" fill="url(#turf)"/>
+    <rect x="0" y="0" width="70" height="200" fill="#004c54"/>
+    <rect x="790" y="0" width="70" height="200" fill="#0b1f3a"/>
+    <text x="35" y="112" fill="#a5acaf" font-size="20" font-weight="900" text-anchor="middle" transform="rotate(-90 35 100)" letter-spacing="5">EAGLES</text>
+    <text x="825" y="112" fill="#f2681c" font-size="20" font-weight="900" text-anchor="middle" transform="rotate(90 825 100)" letter-spacing="5">BEARS</text>
+    <g stroke="#ffffff" stroke-opacity="0.55" stroke-width="2">
+      <line x1="70" y1="0" x2="70" y2="200"/>
+      <line x1="150" y1="0" x2="150" y2="200"/>
+      <line x1="230" y1="0" x2="230" y2="200"/>
+      <line x1="310" y1="0" x2="310" y2="200"/>
+      <line x1="390" y1="0" x2="390" y2="200"/>
+      <line x1="470" y1="0" x2="470" y2="200"/>
+      <line x1="550" y1="0" x2="550" y2="200"/>
+      <line x1="630" y1="0" x2="630" y2="200"/>
+      <line x1="710" y1="0" x2="710" y2="200"/>
+      <line x1="790" y1="0" x2="790" y2="200"/>
+    </g>
+    <g fill="#ffffff" fill-opacity="0.75" font-size="14" font-weight="bold" text-anchor="middle">
+      <text x="150" y="185">10</text><text x="230" y="185">20</text><text x="310" y="185">30</text>
+      <text x="390" y="185">40</text><text x="430" y="185">50</text><text x="470" y="185">40</text>
+      <text x="550" y="185">30</text><text x="630" y="185">20</text><text x="710" y="185">10</text>
+    </g>
+    <g class="ball">
+      <ellipse cx="0" cy="0" rx="22" ry="12" fill="#7a3e12" stroke="#3b1c05" stroke-width="2"/>
+      <line x1="-8" y1="0" x2="8" y2="0" stroke="#fff" stroke-width="2"/>
+      <line x1="-4" y1="-4" x2="-4" y2="4" stroke="#fff" stroke-width="1.5"/>
+      <line x1="0" y1="-4" x2="0" y2="4" stroke="#fff" stroke-width="1.5"/>
+      <line x1="4" y1="-4" x2="4" y2="4" stroke="#fff" stroke-width="1.5"/>
+    </g>
+  </svg>
+</div>
 
-<main>
+<div class="facts">
+  <div class="fact"><div class="k">Line</div><div class="v">CHI +3.5</div><div class="s">Bears home underdog</div></div>
+  <div class="fact"><div class="k">Over / Under</div><div class="v">43.5</div><div class="s">Opening total</div></div>
+  <div class="fact"><div class="k">Moneyline</div><div class="v">CHI +168</div><div class="s">$100 wins $168</div></div>
+  <div class="fact"><div class="k">Last Meeting</div><div class="v">CHI 24-15</div><div class="s">Black Friday 2025</div></div>
+</div>
 
-  <section id="news" class="active">
-    <h2 class="section-title">Feline Wire Service</h2>
-    <div class="card-grid" id="newsGrid"></div>
-    <p class="disclaimer">Purely for fun / test content — not real reporting. Refresh for new "headlines."</p>
-    <div style="text-align:center; margin-top:10px;">
-      <button class="big-btn" onclick="renderNews()">🔄 Get New Headlines</button>
-    </div>
-  </section>
+<section class="watch">
+  <h3>🚦 Injury Watch</h3>
+  <div class="lights">
+    <div class="light"><span class="dot y"></span><div><b>Saquon Barkley (PHI)</b><small>Stinger, MRI pending</small></div></div>
+    <div class="light"><span class="dot y"></span><div><b>Dallas Goedert (PHI)</b><small>Knee, left game early</small></div></div>
+    <div class="light"><span class="dot g"></span><div><b>Jalen Carter (PHI)</b><small>Played with a cast on wrist</small></div></div>
+    <div class="light"><span class="dot y"></span><div><b>Caleb Williams (CHI)</b><small>Right hamstring, status TBD</small></div></div>
+  </div>
+</section>
 
-  <section id="memes">
-    <h2 class="section-title">Funny Cat Gallery (Hand-Drawn-ish)</h2>
-    <div class="card-grid" id="memeGrid"></div>
-  </section>
+<section class="stories">
+  <h3>📰 Top 5 Storylines</h3>
+  <div class="story-grid">
 
-  <section id="quirky">
-    <h2 class="section-title">Quirky News Corner</h2>
-    <p>Local. Bizarre. Probably made up by a cat. Click for a fresh dose of nonsense.</p>
-    <div class="quirk-box">
-      <button class="big-btn" onclick="newQuirk()">🎲 Give Me Something Weird</button>
-      <div id="quirkOutput">Press the button, champ.</div>
-    </div>
-  </section>
+    <article class="story">
+      <div class="num">1</div>
+      <span class="tag">Game Recap &middot; Week 2</span>
+      <h4>Hurts to Cooper with 9 Seconds Left: Eagles Escape Nashville 24-20</h4>
+      <p>The Eagles arrive in Chicago 2-0 thanks to one of the wildest finishes of the young season. Jalen Hurts threw two interceptions, including an early end-zone pick that Amani Hooker returned 92 yards and set up a Titans touchdown, and another on an underthrown deep ball to DeVonta Smith that led to a field goal and a 20-17 Tennessee lead with 1:56 left. With no timeouts, Hurts then drove Philadelphia 65 yards in nine plays. Smith kept the drive alive with a third-and-6 catch along the sideline, and Hurts hit undrafted receiver Darius Cooper for a 3-yard touchdown, the first of his NFL career, with nine seconds remaining. Hurts finished 26-of-37 for 264 yards and two touchdowns, while Smith had 10 catches for 117 yards. The turf reportedly hit 157 degrees, and coach Nick Sirianni needed an IV afterward.</p>
+      <a class="src" href="https://www.inquirer.com/eagles/titans-win-nfl-week-2-jalen-hurts-darius-cooper-20260920.html" target="_blank" rel="noopener">Read the full story &rarr;</a>
+      <span class="srcname">Source: The Philadelphia Inquirer</span>
+    </article>
 
-  <section id="fun">
-    <h2 class="section-title">Cat Zone</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>🎉 Zoomies Button</h3>
-        <p>It's 3am somewhere. Smash it.</p>
-        <button class="big-btn" onclick="fireConfetti()">TRIGGER THE ZOOMIES</button>
-      </div>
-      <div class="card">
-        <h3>📣 Cat Name Generator</h3>
-        <p>Get a fresh, deeply important cat name.</p>
-        <button class="big-btn" onclick="newChant()">Generate Name</button>
-        <div id="chantOutput" style="margin-top:12px; font-weight:bold; color:var(--cat-orange-dark);"></div>
-      </div>
-      <div class="card" id="catStatusBox">
-        <h3>😼 Current Cat Status</h3>
-        <div class="meme-canvas" id="catStatusImg">😴</div>
-        <p id="triviaQ">Click to check in on the cat.</p>
-        <button class="big-btn" onclick="newTrivia()">Check On Cat</button>
-      </div>
-    </div>
-  </section>
+    <article class="story inj">
+      <div class="num">2</div>
+      <span class="tag">Injury &middot; Eagles</span>
+      <h4>Saquon Barkley's Stinger: "We'll Know More Later in the Week"</h4>
+      <p>Running back Saquon Barkley's status is the biggest question on the Eagles' side. He suffered a stinger, a nerve injury in his left arm, on the opening play against Tennessee after being tackled by defensive tackle Jeffery Simmons. He headed to the medical tent, then the locker room, briefly returned in the second half, and was pulled again. Barkley finished with just four carries for nine yards and one catch for 11 yards. He told reporters he would be fine but would learn more later in the week, and he is set to get an MRI. In his absence, Tank Bigsby handled the lead role with 13 carries for 33 yards and a touchdown, and Will Shipley added seven carries for 24 yards. Whether Barkley suits up Monday night will likely hinge on the MRI results and how he practices.</p>
+      <a class="src" href="https://sports.yahoo.com/articles/eagles-star-provides-encouraging-injury-221525899.html" target="_blank" rel="noopener">Read the full story &rarr;</a>
+      <span class="srcname">Source: Yahoo Sports</span>
+    </article>
 
-</main>
+    <article class="story inj">
+      <div class="num">3</div>
+      <span class="tag">Injury &middot; Eagles</span>
+      <h4>Dallas Goedert Exits with a Knee Injury, and Tight End Depth Gets Thin</h4>
+      <p>Tight end Dallas Goedert left the win over the Titans in the second quarter with a knee injury and never returned. He went to the medical tent, was listed as questionable to return, and the team has not shared more details on the severity. That is a notable loss after his big opener, when he caught four passes for 77 yards and two touchdowns against Washington. With Goedert out, the Eagles leaned on backups Johnny Mundt and E.J. Jenkins, and depth at the position is a real concern because second-round pick Eli Stowers is on injured reserve. The injury also compounds the Barkley situation, meaning two of the Eagles' most important offensive weapons are uncertain heading into a short week on the road. Watch the official injury report for practice participation to see where Goedert stands.</p>
+      <a class="src" href="https://www.nbcsportsphiladelphia.com/nfl/philadelphia-eagles/dallas-goedert-knee-injury-week-2-titans/752384/?amp=1" target="_blank" rel="noopener">Read the full story &rarr;</a>
+      <span class="srcname">Source: NBC Sports Philadelphia</span>
+    </article>
+
+    <article class="story bears">
+      <div class="num">4</div>
+      <span class="tag">Opponent Watch &middot; Bears</span>
+      <h4>Bears QB Caleb Williams Hurts His Hamstring: Is Tyson Bagent Next?</h4>
+      <p>Chicago's Week 2 loss to Minnesota got worse late in the fourth quarter when quarterback Caleb Williams went down on a first-and-goal scramble with a right hamstring injury and was carted off. Head coach Ben Johnson said he was relieved it was not a knee, but warned a hamstring "could be pretty damaging as well," adding the team would know more after Monday's evaluation. Williams walked through the locker room on his own and was in good spirits. He was 15-of-26 for 138 yards and an interception before leaving. Backup Tyson Bagent, who started four games in 2023, stepped in and drove Chicago inside the red zone twice without scoring. If Williams cannot go, Bagent is the likely starter against a Philadelphia defense that got sacks from Jalen Carter, playing with a cast on his wrist, and Nolan Smith Jr. in Nashville. His practice participation this week will be the key signal.</p>
+      <a class="src" href="https://www.espn.com/nfl/story/_/id/49991729/bears-caleb-williams-leaves-cart-falling-scramble" target="_blank" rel="noopener">Read the full story &rarr;</a>
+      <span class="srcname">Source: ESPN</span>
+    </article>
+
+    <article class="story bears">
+      <div class="num">5</div>
+      <span class="tag">Odds &amp; Storyline &middot; Matchup</span>
+      <h4>Bears Are Home Underdogs at +3.5, and the Market Smells a QB Change</h4>
+      <p>Oddsmakers opened Chicago as a 3.5-point home underdog with a total of 43.5 and a +168 moneyline, which is striking for a home team against an opponent that needed a last-second touchdown to beat a Titans team that fell to 0-2. One analyst suggested that number only makes sense if Caleb Williams is expected to miss the game. The Bears have flipped wildly: a franchise-record 59 points in Week 1, then just three in a 9-3 loss to the Vikings, their lowest output under Johnson. Chicago ran for 134 yards after 291 the week before, committed eight penalties, fumbled at the 1-yard line, and had a 23-yard field goal blocked. Philadelphia will also remember last year's Black Friday loss in Chicago, when the Bears ran wild on the ground. Lines can move as injury news lands, so check again closer to kickoff.</p>
+      <a class="src" href="https://sports.yahoo.com/articles/bears-vs-eagles-odds-opening-235611532.html" target="_blank" rel="noopener">Read the full story &rarr;</a>
+      <span class="srcname">Source: Yahoo Sports (Windy City Gridiron)</span>
+    </article>
+
+  </div>
+</section>
 
 <footer>
-  Built for local testing purposes only. Knead responsibly. 🐾
+  <button class="confetti-btn" id="confettiBtn">🦅 FLY EAGLES FLY 🦅</button>
+  <div>Fan-made game page. Injury and betting information reflects reports as of Sunday, Sept 20, 2026 and may change during the week.</div>
+  <div class="checked">
+    Research drew on: PhiladelphiaEagles.com, Philadelphia Inquirer, NBC Sports Philadelphia, ESPN, Yahoo Sports, FOX Sports, NFL.com, ChicagoBears.com, BearsTalk, ClutchPoints, USA Game Time, and Bleeding Green Nation / Windy City Gridiron (search listings).
+  </div>
 </footer>
 
 <script>
-  // ---------------- Nav ----------------
-  const buttons = document.querySelectorAll('nav button');
-  const sections = document.querySelectorAll('main section');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      sections.forEach(s => s.classList.remove('active'));
-      document.getElementById(btn.dataset.target).classList.add('active');
-    });
-  });
+  // Kickoff: Monday Sept 28, 2026, 8:15 PM Eastern Daylight Time = 00:15 UTC on Sept 29
+  var KICKOFF = new Date('2026-09-29T00:15:00Z');
 
-  // ---------------- Ticker ----------------
-  const tickerItems = [
-    "🚨 BREAKING: Local cat declares laundry basket 'mine now, forever'",
-    "🐟 Fish-shaped treat inventory hits record low, city on high alert",
-    "📦 Empty box sighted, cat abandons $40 cat tree immediately",
-    "🧶 Yarn incident under investigation, several leads unraveling",
-    "🕐 Cat reportedly wakes owner at 4:12am 'on principle'",
-    "🪟 Bird outside window achieves minor celebrity status indoors",
-    "🛋️ Furniture scratching post ignored in favor of actual furniture",
-    "🍽️ Food bowl declared 'basically empty' despite being 80% full"
-  ];
-  document.getElementById('tickerText').textContent = tickerItems.join('   ★   ');
+  function pad(n) { return String(n).padStart(2, '0'); }
 
-  // ---------------- News cards ----------------
-  const newsPool = [
-    { tag: "Local", title: "Cat Stares At Wall For Six Hours, Refuses To Explain", body: "Witnesses confirm nothing was there. The cat has not issued a statement and appears to have no plans to." },
-    { tag: "Investigation", title: "Missing Sock Traced To Under The Couch, As Predicted", body: "Detectives say the case was 'never really that hard' and blame themselves for not checking sooner." },
-    { tag: "Science", title: "Study Confirms Cats Can, In Fact, Fit If They Fit", body: "Researchers remain baffled by a 14-pound cat's ability to occupy a shoebox with room to spare." },
-    { tag: "Breaking", title: "Sunbeam Relocates Two Inches, Cat Follows Immediately", body: "Experts call it 'an impressive display of dedication to a single square of warmth.'" },
-    { tag: "Home & Garden", title: "Houseplant Declared 'Not To Be Trusted' By Household Cat", body: "The plant has since been placed under 24/7 surveillance from the top of the bookshelf." },
-    { tag: "Midnight Report", title: "Zoomies Begin Promptly At 2:58am, Neighbors Notified", body: "The cat cited 'personal reasons' and returned to a deep, dignified sleep at 3:01am." },
-    { tag: "Op-Ed", title: "Why Is The Door Open? Local Cat Demands Answers", body: "The cat would like it closed. Also open. It has not decided which, and would like you to guess correctly." },
-    { tag: "Finance", title: "Cardboard Box Outperforms $200 Cat Bed In Market Study", body: "Analysts note the box requires zero marketing and still wins every single time." }
-  ];
-
-  function renderNews() {
-    const grid = document.getElementById('newsGrid');
-    grid.innerHTML = '';
-    const shuffled = [...newsPool].sort(() => Math.random() - 0.5).slice(0, 4);
-    shuffled.forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `<span class="tag">${item.tag}</span><h3>${item.title}</h3><p>${item.body}</p>`;
-      grid.appendChild(card);
-    });
-  }
-  renderNews();
-
-  // ---------------- Meme gallery (CSS/emoji doodles) ----------------
-  const memes = [
-    { emoji: "🐱📦", caption: "Cat achieves peak minimalism inside a shoebox.", sub: "the $60 bed remains untouched" },
-    { emoji: "🐈💨", caption: "Zoomies detected at 3am, no survivors.", sub: "the vase did not make it" },
-    { emoji: "😾🪞", caption: "Cat meets its reflection, declares war.", sub: "negotiations ongoing" },
-    { emoji: "🐱🧶", caption: "Yarn ball, before the incident.", sub: "rest in pieces" },
-    { emoji: "😺🐟", caption: "Treat bag rustles. Cat teleports.", sub: "physics does not apply here" },
-    { emoji: "🐈‍⬛🛏️", caption: "Cat claims entire bed, human allowed 6 inches.", sub: "terms are non-negotiable" }
-  ];
-  const memeGrid = document.getElementById('memeGrid');
-  memes.forEach(m => {
-    const card = document.createElement('div');
-    card.className = 'card meme-card';
-    card.innerHTML = `
-      <div class="meme-canvas">${m.emoji}</div>
-      <div class="meme-caption">${m.caption}</div>
-      <div class="meme-sub">${m.sub}</div>
-    `;
-    memeGrid.appendChild(card);
-  });
-
-  // ---------------- Quirky news generator ----------------
-  const quirkyStories = [
-    "Local cat accused of 'excessive judgment' after witnessing owner trip over nothing.",
-    "Man tries to explain to cat that 3am is not, in fact, breakfast time. Cat unconvinced.",
-    "City declares Tuesday 'National Ignore The New Cat Bed Day' after unanimous feline vote.",
-    "Study finds cats' nap quality directly correlates with proximity to an open laptop keyboard.",
-    "Area cat's disdain for the vacuum cleaner reaches 'formal declaration of war' status.",
-    "Local pet store reports cats 'aggressively uninterested' in $80 toy, obsessed with its box.",
-    "Cardboard scratching post mistaken for fine dining table by household cat, twice.",
-    "Neighborhood cat reportedly 'very good' at knocking pens off desks precisely one at a time.",
-    "Grocery store cat food aisle causes minor gridlock as three owners debate 'the good stuff.'",
-    "Local cat's favorite toy now officially a bottle cap, mouse toy retired without ceremony."
-  ];
-  function newQuirk() {
-    const out = document.getElementById('quirkOutput');
-    const pick = quirkyStories[Math.floor(Math.random() * quirkyStories.length)];
-    out.textContent = pick;
-  }
-
-  // ---------------- Cat name generator ----------------
-  const namePrefix = ["Sir", "Lady", "Baron", "Duchess", "Captain", "Professor", "Princess", "Mister"];
-  const nameCore = ["Whiskerton", "Fluffington", "Pawsalot", "Biscuit", "Meowzers", "Chairman Fuzz", "Toebeans", "Grumpington"];
-  function newChant() {
-    const p1 = namePrefix[Math.floor(Math.random() * namePrefix.length)];
-    const p2 = nameCore[Math.floor(Math.random() * nameCore.length)];
-    document.getElementById('chantOutput').textContent = `${p1} ${p2}`;
-  }
-
-  // ---------------- Cat status checker ----------------
-  const trivia = [
-    "Status: asleep in a sunbeam. Do not disturb. This is very important work.",
-    "Status: staring intensely at a wall. The wall has not done anything wrong, probably.",
-    "Status: sitting on the keyboard. This is now your cat's laptop.",
-    "Status: demanding food it will sniff and reject out of principle.",
-    "Status: mid-zoomies. Please clear the hallway.",
-    "Status: knocked something off a shelf and is now watching to see what you'll do about it."
-  ];
-  const statusEmojis = ["😴", "🙀", "😾", "😻", "😹", "🐈"];
-  function newTrivia() {
-    const idx = Math.floor(Math.random() * trivia.length);
-    document.getElementById('triviaQ').textContent = trivia[idx];
-    document.getElementById('catStatusImg').textContent = statusEmojis[idx];
-  }
-
-  // ---------------- Confetti (paw prints) ----------------
-  function fireConfetti() {
-    const symbols = ['🐾', '🐟', '🧶', '😺', '⭐'];
-    for (let i = 0; i < 60; i++) {
-      const piece = document.createElement('div');
-      piece.className = 'confetti-piece';
-      piece.style.left = Math.random() * 100 + 'vw';
-      piece.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-      piece.style.animationDuration = (2 + Math.random() * 2) + 's';
-      document.body.appendChild(piece);
-      setTimeout(() => piece.remove(), 4200);
+  function tick() {
+    var diff = KICKOFF - new Date();
+    if (diff <= 0) {
+      document.getElementById('countdown').innerHTML = '<div class="cd-box"><b>🏈</b><span>Game time!</span></div>';
+      return;
     }
+    var s = Math.floor(diff / 1000);
+    document.getElementById('cdD').textContent = Math.floor(s / 86400);
+    document.getElementById('cdH').textContent = pad(Math.floor((s % 86400) / 3600));
+    document.getElementById('cdM').textContent = pad(Math.floor((s % 3600) / 60));
+    document.getElementById('cdS').textContent = pad(s % 60);
   }
+  tick();
+  setInterval(tick, 1000);
 
-  // ---------------- Mascot click easter egg ----------------
-  document.getElementById('mascot').addEventListener('click', fireConfetti);
+  try {
+    var local = KICKOFF.toLocaleString(undefined, { weekday: 'long', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+    document.getElementById('localTime').textContent = 'In your time zone: ' + local;
+  } catch (e) {}
+
+  document.getElementById('confettiBtn').addEventListener('click', function () {
+    var items = ['🦅', '🏈', '💚', '⭐', '🏆'];
+    for (var i = 0; i < 55; i++) {
+      var el = document.createElement('div');
+      el.className = 'bit';
+      el.textContent = items[Math.floor(Math.random() * items.length)];
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.animationDuration = (2 + Math.random() * 2.5) + 's';
+      document.body.appendChild(el);
+      (function (node) { setTimeout(function () { node.remove(); }, 4800); })(el);
+    }
+  });
 </script>
 
 </body>
