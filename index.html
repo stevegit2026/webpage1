@@ -3,475 +3,553 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eagles at Bears: Week 3 Game Central</title>
-<meta name="description" content="Eagles at Bears, Monday Night Football, Sept 28 2026. Top 5 storylines heading into Week 3.">
+<title>Eagles at Bears: Week 3 Game Sheet</title>
+<meta name="description" content="Eagles at Bears, Monday Night Football, Sept 28, 2026. Five storylines, the line, injuries, and league standings.">
+<meta name="theme-color" content="#05353b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --green: #004c54;
-    --green-deep: #00272b;
-    --green-mid: #0a6a73;
-    --silver: #a5acaf;
-    --mint: #a5f0d0;
-    --navy: #0b1f3a;
-    --orange: #f2681c;
-    --white: #ffffff;
-    --gold: #ffd166;
-    --red: #ff5d5d;
+    --turf: #05353b;
+    --turf-deep: #02252b;
+    --chalk: #edf3f0;
+    --silver: #b7bfc2;
+    --orange: #ff6b1f;
+    --amber: #f4b83a;
+    --red: #ff5a4d;
+    --go: #5fd39a;
+    --line: rgba(237, 243, 240, 0.16);
+
+    --display: 'Big Shoulders Display', 'Bahnschrift', 'Arial Narrow', Impact, sans-serif;
+    --body: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --mono: 'DM Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
   }
+
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+
   body {
     margin: 0;
-    font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
-    color: #eafffa;
-    background: var(--green-deep);
+    color: var(--chalk);
+    font-family: var(--body);
+    font-size: 1.06rem;
+    line-height: 1.6;
+    background-color: var(--turf);
     background-image:
-      radial-gradient(circle at 15% 10%, rgba(165,240,208,0.12), transparent 40%),
-      radial-gradient(circle at 85% 30%, rgba(242,104,28,0.10), transparent 40%),
-      linear-gradient(180deg, var(--green-deep), var(--green) 45%, #03363c 100%);
-    background-attachment: fixed;
-    min-height: 100vh;
-    line-height: 1.55;
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.028) 0 96px, transparent 96px 192px),
+      linear-gradient(180deg, var(--turf-deep) 0%, var(--turf) 380px, var(--turf) 100%);
   }
 
-  /* ---------- top bar ---------- */
-  .topbar {
-    background: #000;
-    border-bottom: 3px solid var(--silver);
-    color: var(--mint);
-    text-align: center;
-    padding: 8px 12px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    font-size: 0.85rem;
-    text-transform: uppercase;
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 22px; }
+  .mono { font-family: var(--mono); letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.74rem; }
+  .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  .skip {
+    position: absolute; left: 12px; top: -60px; z-index: 10;
+    background: var(--amber); color: #111; padding: 8px 14px; border-radius: 6px;
+    font-family: var(--mono); font-size: 0.8rem; text-decoration: none;
   }
+  .skip:focus { top: 12px; }
+
+  /* ---------- as-of bar ---------- */
+  .asof {
+    background: #011a1f;
+    border-bottom: 1px solid var(--line);
+    color: var(--silver);
+    padding: 9px 0;
+  }
+  .asof .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .asof b { color: var(--amber); font-weight: 500; }
 
   /* ---------- hero ---------- */
-  .hero {
-    max-width: 1050px;
-    margin: 0 auto;
-    padding: 28px 18px 10px;
-    text-align: center;
-  }
-  .eyebrow {
-    display: inline-block;
-    background: var(--orange);
-    color: #fff;
-    font-weight: bold;
-    padding: 4px 14px;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    animation: pulse 2.2s ease-in-out infinite;
-  }
-  @keyframes pulse {
-    0%,100% { box-shadow: 0 0 0 0 rgba(242,104,28,0.6); }
-    50% { box-shadow: 0 0 0 12px rgba(242,104,28,0); }
-  }
-
-  .matchup {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 10px;
-    margin: 22px 0 8px;
-  }
-  .team { text-align: center; }
-  .badge {
-    width: clamp(96px, 20vw, 150px);
-    height: clamp(96px, 20vw, 150px);
-    margin: 0 auto 8px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: clamp(2.6rem, 8vw, 4.4rem);
-    border: 5px solid var(--silver);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.5), inset 0 0 25px rgba(0,0,0,0.35);
-  }
-  .badge.phi { background: radial-gradient(circle at 35% 30%, #12868f, var(--green) 65%); animation: bob 3s ease-in-out infinite; }
-  .badge.chi { background: radial-gradient(circle at 35% 30%, #27446f, var(--navy) 65%); border-color: var(--orange); animation: bob 3s ease-in-out infinite 1.5s; }
-  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-  .team h2 { margin: 0; font-size: clamp(1.1rem, 3.4vw, 1.8rem); letter-spacing: 1px; }
-  .team .rec { color: var(--mint); font-weight: bold; }
-  .chi-team .rec { color: #ffb37c; }
-  .at {
-    font-size: clamp(1.6rem, 5vw, 3rem);
+  .hero { padding: 46px 0 8px; }
+  .eyebrow { color: var(--silver); margin: 0 0 6px; }
+  .eyebrow b { color: var(--chalk); font-weight: 500; }
+  .hero h1 {
+    margin: 0;
+    font-family: var(--display);
     font-weight: 900;
-    color: var(--silver);
-    text-shadow: 3px 3px 0 #000;
+    font-size: clamp(3.6rem, 14.5vw, 10.6rem);
+    line-height: 0.82;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
   }
-
-  .when {
-    margin: 10px auto 0;
-    max-width: 640px;
-    background: rgba(0,0,0,0.35);
-    border: 2px solid var(--mint);
-    border-radius: 18px;
-    padding: 16px 18px;
-  }
-  .when .day { font-size: clamp(1.5rem, 5vw, 2.4rem); font-weight: 900; color: #fff; text-shadow: 2px 2px 0 #000; }
-  .when .time { font-size: clamp(1.1rem, 3.4vw, 1.5rem); color: var(--gold); font-weight: bold; }
-  .when .where { color: var(--silver); margin-top: 4px; }
-  .when .local { font-size: 0.85rem; color: var(--mint); margin-top: 4px; min-height: 1.2em; }
-
-  .countdown {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 18px 0 6px;
-    flex-wrap: wrap;
-  }
-  .cd-box {
-    background: #000;
-    border: 2px solid var(--silver);
-    border-radius: 12px;
-    min-width: 74px;
-    padding: 8px 6px;
-  }
-  .cd-box b { display: block; font-size: 1.9rem; color: var(--mint); font-variant-numeric: tabular-nums; }
-  .cd-box span { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--silver); }
-
-  /* ---------- field graphic ---------- */
-  .field-wrap { max-width: 1050px; margin: 22px auto 0; padding: 0 18px; }
-  .field {
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-    border: 3px solid var(--silver);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  .hero h1 .at {
     display: block;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: clamp(0.85rem, 2.2vw, 1.15rem);
+    letter-spacing: 0.2em;
+    color: var(--silver);
+    margin-bottom: 14px;
   }
-  .ball { animation: fly 5s ease-in-out infinite; transform-origin: center; }
-  @keyframes fly {
-    0%   { transform: translate(70px, 150px) rotate(-25deg); }
-    50%  { transform: translate(430px, 40px) rotate(0deg); }
-    100% { transform: translate(790px, 150px) rotate(25deg); }
-  }
+  .hero h1 .bears { color: var(--orange); }
 
-  /* ---------- quick facts ---------- */
-  .facts {
-    max-width: 1050px;
-    margin: 22px auto 0;
-    padding: 0 18px;
+  .kick {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(3, auto);
+    justify-content: start;
+    margin: 30px 0 0;
+    border-top: 2px solid var(--chalk);
+    border-bottom: 1px solid var(--line);
   }
-  .fact {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(165,240,208,0.3);
-    border-radius: 12px;
-    padding: 12px;
-    text-align: center;
-  }
-  .fact .k { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--silver); }
-  .fact .v { font-size: 1.25rem; font-weight: 900; color: #fff; }
-  .fact .s { font-size: 0.78rem; color: var(--mint); }
+  .kick > div { padding: 14px 34px 14px 0; margin-right: 34px; border-right: 1px solid var(--line); }
+  .kick > div:last-child { border-right: 0; margin-right: 0; padding-right: 0; }
+  .kick dt { color: var(--silver); margin: 0 0 2px; }
+  .kick dd { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(1.7rem, 4.6vw, 2.9rem); line-height: 1; text-transform: uppercase; }
+  .kick dd small { display: block; font-family: var(--mono); font-weight: 400; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--silver); margin-top: 6px; }
+  .kick .time { color: var(--amber); }
 
-  /* ---------- injury watch ---------- */
-  .watch {
-    max-width: 1050px;
-    margin: 26px auto 0;
-    padding: 0 18px;
+  .clock { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 14px 0 0; color: var(--silver); }
+  .clock b { color: var(--chalk); font-weight: 500; font-variant-numeric: tabular-nums; }
+
+  /* ---------- playbook diagram ---------- */
+  .playbook { margin: 34px 0 0; }
+  .playbook svg { display: block; width: 100%; height: auto; }
+  .svg-mono { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; fill: var(--silver); }
+  .svg-disp { font-family: var(--display); font-weight: 900; }
+  .route { --o: 0.62; fill: none; stroke: var(--chalk); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: var(--o); animation: draw 9s ease-in-out infinite; }
+  .route.hero-route { --o: 1; stroke: var(--amber); stroke-width: 3.2; }
+  .r2 { animation-delay: 0.25s; } .r3 { animation-delay: 0.5s; } .r4 { animation-delay: 0.75s; } .r5 { animation-delay: 1s; }
+  .arc { fill: none; stroke: var(--amber); stroke-width: 2; stroke-dasharray: 3 7; opacity: 0; animation: arcfade 9s ease-in-out infinite; }
+  @keyframes draw {
+    0%   { stroke-dashoffset: 1; opacity: var(--o); }
+    26%  { stroke-dashoffset: 0; opacity: var(--o); }
+    86%  { stroke-dashoffset: 0; opacity: var(--o); }
+    95%, 100% { stroke-dashoffset: 0; opacity: 0; }
   }
-  .watch h3, .stories h3 {
-    margin: 0 0 12px;
-    font-size: 1.5rem;
-    border-bottom: 3px dashed var(--silver);
-    padding-bottom: 8px;
+  @keyframes arcfade {
+    0%, 28% { opacity: 0; }
+    34%, 84% { opacity: 0.6; }
+    94%, 100% { opacity: 0; }
   }
-  .lights { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
-  .light {
-    display: flex; align-items: center; gap: 12px;
-    background: rgba(0,0,0,0.3);
-    border-radius: 12px;
-    padding: 10px 14px;
-    border: 1px solid rgba(255,255,255,0.12);
-  }
-  .dot { width: 18px; height: 18px; border-radius: 50%; flex: none; animation: blink 1.8s ease-in-out infinite; }
-  .dot.y { background: var(--gold); box-shadow: 0 0 10px var(--gold); }
-  .dot.g { background: #4ade80; box-shadow: 0 0 10px #4ade80; }
-  .dot.r { background: var(--red); box-shadow: 0 0 10px var(--red); }
-  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
-  .light b { display: block; }
-  .light small { color: var(--silver); }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 20px; color: var(--silver); margin: 10px 0 0; }
+  .legend i { font-style: normal; color: var(--chalk); }
+  .legend .x { color: var(--orange); }
+
+  /* ---------- section heads ---------- */
+  .sec { padding: 58px 0 0; }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-bottom: 2px solid var(--chalk); padding-bottom: 8px; margin-bottom: 22px; }
+  .sec-head h2 { margin: 0; font-family: var(--display); font-weight: 900; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1; text-transform: uppercase; }
+  .sec-head p { margin: 0; color: var(--silver); }
+
+  /* ---------- game sheet: line + status ---------- */
+  .sheet { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 28px; }
+  .line-list { margin: 0; border-top: 1px solid var(--line); }
+  .line-list > div { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .line-list dt { color: var(--silver); }
+  .line-list dd { margin: 0; text-align: right; font-family: var(--display); font-weight: 800; font-size: 1.55rem; line-height: 1.05; text-transform: uppercase; }
+  .line-list dd small { display: block; font-family: var(--mono); font-weight: 400; font-size: 0.7rem; letter-spacing: 0.06em; color: var(--silver); }
+
+  .board { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+  .board li { display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; gap: 4px 14px; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--line); }
+  .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--silver); align-self: center; }
+  .dot.amber { background: var(--amber); }
+  .dot.red { background: var(--red); }
+  .dot.go { background: var(--go); }
+  .board .who { font-weight: 600; }
+  .board .who small { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--silver); margin-left: 8px; }
+  .board .what { color: var(--silver); text-align: right; font-size: 0.95rem; }
 
   /* ---------- stories ---------- */
-  .stories { max-width: 1050px; margin: 30px auto 0; padding: 0 18px 20px; }
-  .story-grid { display: grid; gap: 18px; }
+  .stories { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 22px; counter-reset: story; }
   .story {
+    --tone: var(--silver);
+    grid-column: span 6;
+    counter-increment: story;
     position: relative;
-    background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
-    border: 1px solid rgba(165,240,208,0.35);
-    border-left: 8px solid var(--mint);
-    border-radius: 16px;
-    padding: 20px 20px 18px 20px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 22px 24px 24px;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--tone);
+    display: flex;
+    flex-direction: column;
   }
-  .story:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.45); }
-  .story.inj { border-left-color: var(--gold); }
-  .story.bears { border-left-color: var(--orange); }
-  .num {
-    position: absolute;
-    top: -14px; right: 16px;
-    background: var(--silver);
-    color: #000;
-    font-weight: 900;
-    font-size: 1.4rem;
-    width: 46px; height: 46px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    border: 3px solid #000;
-    transform: rotate(8deg);
+  .story.feature { grid-column: span 12; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 8px 36px; }
+  .story.bears { --tone: var(--orange); }
+  .story.hurt { --tone: var(--amber); }
+  .story::before {
+    content: counter(story);
+    position: absolute; top: 6px; right: 18px;
+    font-family: var(--display); font-weight: 900; font-size: 5.6rem; line-height: 1;
+    color: transparent; -webkit-text-stroke: 1.5px var(--tone); opacity: 0.55;
+    pointer-events: none;
   }
-  .tag {
-    display: inline-block;
-    background: #000;
-    color: var(--mint);
-    font-size: 0.7rem;
-    padding: 3px 12px;
-    border-radius: 999px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
+  .tag { align-self: flex-start; color: var(--tone); border: 1px solid var(--tone); padding: 2px 10px; border-radius: 2px; margin: 0 0 12px; }
+  .story h3 { margin: 0 0 12px; padding-right: 58px; font-family: var(--display); font-weight: 800; font-size: clamp(1.7rem, 3.4vw, 2.35rem); line-height: 1.02; text-transform: uppercase; }
+  .story p { margin: 0 0 16px; color: rgba(237, 243, 240, 0.9); }
+  .story .body { min-width: 0; display: flex; flex-direction: column; }
+  .story .viz { min-width: 0; align-self: center; margin: 0 0 16px; }
+  .story .viz svg { display: block; width: 100%; height: auto; }
+  .story .viz figcaption { color: var(--silver); margin-top: 6px; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.45; }
+  .story:not(.feature) .viz { width: 100%; max-width: 460px; }
+  .story.feature .viz { grid-column: 2; grid-row: 1 / span 2; }
+  .src {
+    margin-top: auto; align-self: flex-start;
+    font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none; color: var(--turf-deep); background: var(--chalk);
+    padding: 9px 14px; border-radius: 2px;
+    transition: background 0.15s, transform 0.15s;
   }
-  .story h4 { margin: 4px 0 8px; font-size: 1.35rem; color: #fff; padding-right: 40px; }
-  .story p { margin: 0 0 14px; color: #dff7f0; }
-  .story a.src {
-    display: inline-block;
-    background: var(--mint);
-    color: #00272b;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 999px;
-    transition: transform 0.15s, background 0.15s;
-  }
-  .story a.src:hover { background: #fff; transform: translateX(4px); }
-  .srcname { display: block; font-size: 0.75rem; color: var(--silver); margin-top: 6px; }
+  .src:hover { background: var(--amber); transform: translateX(3px); }
+
+  .room { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .room li { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 0.98rem; }
+  .room li span:last-child { margin-left: auto; color: var(--silver); font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; text-align: right; }
+
+  /* ---------- standings ---------- */
+  .standings { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px; }
+  .conf h3 { margin: 0 0 12px; font-family: var(--display); font-weight: 900; font-size: 1.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--silver); }
+  .divs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 22px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  caption { text-align: left; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--silver); padding: 0 0 6px; }
+  th, td { padding: 5px 0; border-top: 1px solid var(--line); text-align: left; font-weight: 400; }
+  td { text-align: right; font-family: var(--mono); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+  tr.me th, tr.me td { color: var(--chalk); font-weight: 600; box-shadow: inset 3px 0 0 var(--silver); padding-left: 8px; }
+  tr.me td { padding-left: 0; box-shadow: none; }
+  tr.opp th, tr.opp td { color: var(--orange); font-weight: 600; }
+  tr.opp th { box-shadow: inset 3px 0 0 var(--orange); padding-left: 8px; }
+  .fine { color: var(--silver); font-size: 0.92rem; margin: 18px 0 0; max-width: 78ch; }
 
   /* ---------- footer ---------- */
-  footer {
-    max-width: 1050px;
-    margin: 20px auto 0;
-    padding: 20px 18px 50px;
-    color: var(--silver);
-    font-size: 0.85rem;
-    text-align: center;
-  }
-  footer .checked { margin-top: 10px; font-size: 0.78rem; opacity: 0.85; }
-  .confetti-btn {
-    background: var(--orange); color: #fff; border: none; padding: 12px 24px;
-    border-radius: 999px; font-weight: 900; font-size: 1rem; cursor: pointer; margin-bottom: 14px;
-    transition: transform 0.15s;
-  }
-  .confetti-btn:hover { transform: scale(1.07); }
-  .bit { position: fixed; top: -20px; font-size: 1.5rem; pointer-events: none; z-index: 99; animation: drop linear forwards; }
-  @keyframes drop { to { transform: translateY(110vh) rotate(540deg); opacity: 0.3; } }
+  footer { margin-top: 64px; padding: 26px 0 60px; border-top: 2px solid var(--chalk); color: var(--silver); font-size: 0.92rem; }
+  footer p { margin: 0 0 10px; max-width: 86ch; }
 
+  @media (max-width: 900px) {
+    .sheet { grid-template-columns: 1fr; }
+    .story, .story.feature { grid-column: span 12; }
+    .story.feature { display: flex; }
+    .story.feature .viz { order: 2; }
+    .standings { grid-template-columns: 1fr; }
+  }
   @media (max-width: 560px) {
-    .matchup { grid-template-columns: 1fr; }
-    .at { font-size: 1.4rem; }
+    .kick { grid-template-columns: 1fr; }
+    .kick > div { border-right: 0; margin-right: 0; padding-right: 0; border-bottom: 1px solid var(--line); }
+    .kick > div:last-child { border-bottom: 0; }
+    .divs { grid-template-columns: 1fr; }
+    .board li { grid-template-columns: 14px 1fr; }
+    .board .what { grid-column: 2; text-align: left; }
   }
   @media (prefers-reduced-motion: reduce) {
-    * { animation: none !important; }
+    .route { animation: none; stroke-dashoffset: 0; }
+    .arc { animation: none; opacity: 0.5; }
+    .src { transition: none; }
   }
 </style>
 </head>
 <body>
 
-<div class="topbar">🦅 Week 3 Game Central &middot; Updated Sunday, Sept 20, 2026 after the Titans game &middot; 🦅</div>
+<a class="skip" href="#stories">Skip to the five storylines</a>
 
-<header class="hero">
-  <span class="eyebrow">Monday Night Football</span>
-
-  <div class="matchup">
-    <div class="team">
-      <div class="badge phi">🦅</div>
-      <h2>PHILADELPHIA EAGLES</h2>
-      <div class="rec">2-0 &middot; 24-20 win at TEN</div>
-    </div>
-    <div class="at">@</div>
-    <div class="team chi-team">
-      <div class="badge chi">🐻</div>
-      <h2>CHICAGO BEARS</h2>
-      <div class="rec">1-1 &middot; 9-3 loss to MIN</div>
-    </div>
+<div class="asof mono">
+  <div class="wrap">
+    <span>Week 3 game sheet</span>
+    <span>Information as of <b>Sun, Sept 20, 2026, 10 PM ET</b>. Injuries and odds change during the week.</span>
   </div>
-
-  <div class="when">
-    <div class="day">MONDAY, SEPTEMBER 28, 2026</div>
-    <div class="time">Kickoff 8:15 PM ET &middot; ESPN / ABC</div>
-    <div class="where">Soldier Field &middot; Chicago, IL</div>
-    <div class="local" id="localTime"></div>
-  </div>
-
-  <div class="countdown" id="countdown" aria-label="Countdown to kickoff">
-    <div class="cd-box"><b id="cdD">--</b><span>Days</span></div>
-    <div class="cd-box"><b id="cdH">--</b><span>Hours</span></div>
-    <div class="cd-box"><b id="cdM">--</b><span>Mins</span></div>
-    <div class="cd-box"><b id="cdS">--</b><span>Secs</span></div>
-  </div>
-</header>
-
-<div class="field-wrap">
-  <svg class="field" viewBox="0 0 860 200" role="img" aria-label="Animated football field with a football flying across">
-    <defs>
-      <linearGradient id="turf" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#0d7a3a"/>
-        <stop offset="1" stop-color="#0a5f2d"/>
-      </linearGradient>
-    </defs>
-    <rect width="860" height="200" fill="url(#turf)"/>
-    <rect x="0" y="0" width="70" height="200" fill="#004c54"/>
-    <rect x="790" y="0" width="70" height="200" fill="#0b1f3a"/>
-    <text x="35" y="112" fill="#a5acaf" font-size="20" font-weight="900" text-anchor="middle" transform="rotate(-90 35 100)" letter-spacing="5">EAGLES</text>
-    <text x="825" y="112" fill="#f2681c" font-size="20" font-weight="900" text-anchor="middle" transform="rotate(90 825 100)" letter-spacing="5">BEARS</text>
-    <g stroke="#ffffff" stroke-opacity="0.55" stroke-width="2">
-      <line x1="70" y1="0" x2="70" y2="200"/>
-      <line x1="150" y1="0" x2="150" y2="200"/>
-      <line x1="230" y1="0" x2="230" y2="200"/>
-      <line x1="310" y1="0" x2="310" y2="200"/>
-      <line x1="390" y1="0" x2="390" y2="200"/>
-      <line x1="470" y1="0" x2="470" y2="200"/>
-      <line x1="550" y1="0" x2="550" y2="200"/>
-      <line x1="630" y1="0" x2="630" y2="200"/>
-      <line x1="710" y1="0" x2="710" y2="200"/>
-      <line x1="790" y1="0" x2="790" y2="200"/>
-    </g>
-    <g fill="#ffffff" fill-opacity="0.75" font-size="14" font-weight="bold" text-anchor="middle">
-      <text x="150" y="185">10</text><text x="230" y="185">20</text><text x="310" y="185">30</text>
-      <text x="390" y="185">40</text><text x="430" y="185">50</text><text x="470" y="185">40</text>
-      <text x="550" y="185">30</text><text x="630" y="185">20</text><text x="710" y="185">10</text>
-    </g>
-    <g class="ball">
-      <ellipse cx="0" cy="0" rx="22" ry="12" fill="#7a3e12" stroke="#3b1c05" stroke-width="2"/>
-      <line x1="-8" y1="0" x2="8" y2="0" stroke="#fff" stroke-width="2"/>
-      <line x1="-4" y1="-4" x2="-4" y2="4" stroke="#fff" stroke-width="1.5"/>
-      <line x1="0" y1="-4" x2="0" y2="4" stroke="#fff" stroke-width="1.5"/>
-      <line x1="4" y1="-4" x2="4" y2="4" stroke="#fff" stroke-width="1.5"/>
-    </g>
-  </svg>
 </div>
 
-<div class="facts">
-  <div class="fact"><div class="k">Line</div><div class="v">CHI +3.5</div><div class="s">Bears home underdog</div></div>
-  <div class="fact"><div class="k">Over / Under</div><div class="v">43.5</div><div class="s">Opening total</div></div>
-  <div class="fact"><div class="k">Moneyline</div><div class="v">CHI +168</div><div class="s">$100 wins $168</div></div>
-  <div class="fact"><div class="k">Last Meeting</div><div class="v">CHI 24-15</div><div class="s">Black Friday 2025</div></div>
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow mono">Monday Night Football &middot; Philadelphia Eagles <b>(2-0)</b> on the road</p>
+    <h1><span class="at">Eagles play at the</span>Chicago<br><span class="bears">Bears</span></h1>
+
+    <dl class="kick">
+      <div><dt class="mono">Day</dt><dd>Monday</dd></div>
+      <div><dt class="mono">Date</dt><dd>Sept 28, 2026</dd></div>
+      <div><dt class="mono">Kickoff</dt><dd class="time">8:15 PM ET<small>ESPN / ABC &middot; Soldier Field, Chicago</small></dd></div>
+    </dl>
+    <p class="clock mono">
+      <span>Kickoff in <b id="cd">--</b></span>
+      <span id="localTime"></span>
+    </p>
+  </header>
+
+  <figure class="playbook" aria-labelledby="pb-title">
+    <svg viewBox="0 0 1000 360" role="img" aria-describedby="pb-desc">
+      <title id="pb-title">Chalkboard play diagram</title>
+      <desc id="pb-desc">Animated chalkboard drawing of an offense lined up against a defense. Route lines draw themselves and a football travels along a passing arc toward the Bears end zone. Illustration only.</desc>
+      <defs>
+        <filter id="chalk" x="-2%" y="-2%" width="104%" height="104%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="4" result="n"/>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/>
+        </filter>
+        <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M1 1 L9 5 L1 9" fill="none" stroke="#edf3f0" stroke-width="1.7"/>
+        </marker>
+        <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M1 1 L9 5 L1 9" fill="none" stroke="#f4b83a" stroke-width="1.9"/>
+        </marker>
+        <g id="xm"><path d="M-7 -7 L7 7 M7 -7 L-7 7" stroke="#ff6b1f" stroke-width="3" stroke-linecap="round" fill="none"/></g>
+        <path id="pass" d="M366 186 Q640 20 862 182"/>
+      </defs>
+
+      <g filter="url(#chalk)">
+        <g stroke="#edf3f0" fill="none">
+          <line x1="0" y1="24" x2="1000" y2="24" stroke-opacity="0.5" stroke-width="2"/>
+          <line x1="0" y1="336" x2="1000" y2="336" stroke-opacity="0.5" stroke-width="2"/>
+          <g stroke-opacity="0.16" stroke-width="2">
+            <line x1="100" y1="24" x2="100" y2="336"/><line x1="200" y1="24" x2="200" y2="336"/>
+            <line x1="300" y1="24" x2="300" y2="336"/><line x1="500" y1="24" x2="500" y2="336"/>
+            <line x1="600" y1="24" x2="600" y2="336"/><line x1="700" y1="24" x2="700" y2="336"/>
+            <line x1="800" y1="24" x2="800" y2="336"/>
+          </g>
+          <line x1="400" y1="24" x2="400" y2="336" stroke-opacity="0.5" stroke-width="2" stroke-dasharray="7 7"/>
+        </g>
+
+        <rect x="880" y="24" width="120" height="312" fill="#ff6b1f" fill-opacity="0.13"/>
+        <line x1="880" y1="24" x2="880" y2="336" stroke="#ff6b1f" stroke-opacity="0.75" stroke-width="2.5"/>
+
+        <g fill="none" stroke="#edf3f0" stroke-width="2.4">
+          <circle cx="400" cy="140" r="9"/><circle cx="400" cy="163" r="9"/><circle cx="400" cy="186" r="9"/>
+          <circle cx="400" cy="209" r="9"/><circle cx="400" cy="232" r="9"/>
+          <circle cx="400" cy="258" r="9"/>
+          <circle cx="400" cy="62" r="9"/><circle cx="425" cy="108" r="9"/><circle cx="400" cy="308" r="9"/>
+          <circle cx="335" cy="216" r="9"/>
+        </g>
+        <circle cx="366" cy="186" r="9.5" fill="#edf3f0" stroke="#edf3f0" stroke-width="2"/>
+
+        <use href="#xm" x="436" y="152"/><use href="#xm" x="436" y="176"/><use href="#xm" x="436" y="200"/><use href="#xm" x="436" y="224"/>
+        <use href="#xm" x="488" y="130"/><use href="#xm" x="488" y="190"/><use href="#xm" x="488" y="246"/>
+        <use href="#xm" x="452" y="62"/><use href="#xm" x="452" y="308"/>
+        <use href="#xm" x="600" y="116"/><use href="#xm" x="600" y="246"/>
+
+        <path class="route r1" pathLength="1" d="M400 62 L700 62" marker-end="url(#ah)"/>
+        <path class="route hero-route r2" pathLength="1" d="M425 108 L650 108 L862 182" marker-end="url(#ah2)"/>
+        <path class="route r3" pathLength="1" d="M400 308 L560 308 L640 250" marker-end="url(#ah)"/>
+        <path class="route r4" pathLength="1" d="M400 258 L520 258 Q552 258 552 226" marker-end="url(#ah)"/>
+        <path class="route r5" pathLength="1" d="M335 216 Q362 300 470 296" marker-end="url(#ah)"/>
+        <use href="#pass" class="arc"/>
+      </g>
+
+      <g id="ball">
+        <ellipse rx="9" ry="5.5" fill="#f4b83a" stroke="#02252b" stroke-width="1.5">
+          <animateMotion dur="9s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3;0.46;1"><mpath href="#pass"/></animateMotion>
+          <animate attributeName="opacity" dur="9s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.29;0.3;0.47;0.5;1"/>
+        </ellipse>
+      </g>
+
+      <text class="svg-mono" x="408" y="16">LINE OF SCRIMMAGE</text>
+      <text class="svg-mono" x="20" y="352">EAGLES (O) DRIVE THIS WAY &#8594;</text>
+      <text class="svg-disp" x="940" y="182" fill="#ff6b1f" fill-opacity="0.6" font-size="44" letter-spacing="10" text-anchor="middle" transform="rotate(90 940 180)" style="text-transform:uppercase">BEARS</text>
+    </svg>
+    <figcaption class="legend mono">
+      <span><i>O</i> Eagles</span>
+      <span><i class="x">X</i> Bears</span>
+      <span>Illustration only, not an actual play call</span>
+    </figcaption>
+  </figure>
+
+  <section class="sec" aria-labelledby="sheet-h">
+    <div class="sec-head"><h2 id="sheet-h">The Game Sheet</h2><p class="mono">The line and who is hurt</p></div>
+    <div class="sheet">
+      <div>
+        <dl class="line-list">
+          <div><dt class="mono">Spread</dt><dd>PHI &minus;3.5<small>Eagles road favorites (FanDuel)</small></dd></div>
+          <div><dt class="mono">Total</dt><dd>43.5<small>Opening over/under</small></dd></div>
+          <div><dt class="mono">Bears moneyline</dt><dd>+168<small>$100 wins $168</small></dd></div>
+          <div><dt class="mono">Last meeting</dt><dd>CHI 24, PHI 15<small>Black Friday, Nov 28, 2025</small></dd></div>
+        </dl>
+      </div>
+      <ul class="board" aria-label="Injury status board">
+        <li><span class="dot amber"></span><span class="who">Saquon Barkley<small>PHI RB</small></span><span class="what">Stinger, MRI planned</span></li>
+        <li><span class="dot amber"></span><span class="who">Dallas Goedert<small>PHI TE</small></span><span class="what">Knee, left in first half</span></li>
+        <li><span class="dot red"></span><span class="who">Landon Dickerson<small>PHI OL</small></span><span class="what">Injured reserve, 3+ more games</span></li>
+        <li><span class="dot go"></span><span class="who">Jalen Carter<small>PHI DT</small></span><span class="what">Played with a cast on his wrist</span></li>
+        <li><span class="dot amber"></span><span class="who">Caleb Williams<small>CHI QB</small></span><span class="what">Right hamstring strain, tests Monday</span></li>
+        <li><span class="dot"></span><span class="who">Tyson Bagent<small>CHI QB</small></span><span class="what">Preparing to lead offense if needed</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="stories" aria-labelledby="stories-h">
+    <div class="sec-head"><h2 id="stories-h">Five Storylines</h2><p class="mono">Ranked by impact on Monday night</p></div>
+
+    <ol class="stories">
+
+      <li class="story feature">
+        <div class="body">
+          <span class="tag mono">Last game &middot; Week 2</span>
+          <h3>Nine seconds, 65 yards, one undrafted hero</h3>
+          <p>The Eagles are 2-0 after a finish that had no business working. Jalen Hurts threw two interceptions in Nashville, and the second, an underthrown deep ball to DeVonta Smith with the game tied 17-17, set up a Titans field goal and a 20-17 lead with 1:56 left. With no timeouts, Hurts went 6-of-8 for 61 yards on a nine-play, 65-yard drive. Smith made a 19-yard catch on third-and-6 to keep it alive, and Hurts hit Darius Cooper, an undrafted receiver with no catches in Week 1, in the back of the end zone for his first career touchdown with nine seconds left. Hurts finished 26-of-37 for 264 yards and two touchdowns, and Smith caught 10 passes for 117 yards. Outlets differ on who made the first interception (the Inquirer says Amani Hooker; others credit Marcus Harris), but agree on the outcome. The turf reportedly reached 157 degrees, and coach Nick Sirianni needed IV fluids afterward.</p>
+          <a class="src" href="https://www.inquirer.com/eagles/titans-win-nfl-week-2-jalen-hurts-darius-cooper-20260920.html" target="_blank" rel="noopener">Read at The Philadelphia Inquirer &rarr;</a>
+        </div>
+        <figure class="viz">
+          <svg viewBox="0 0 420 170" role="img" aria-label="Bar chart of temperatures in Nashville: air 98 degrees, heat index 106, turf 157.">
+            <text class="svg-mono" x="0" y="12">HEAT CHECK &middot; NASHVILLE &middot; &deg;F</text>
+            <g class="svg-mono">
+              <text x="0" y="56">AIR</text><text x="0" y="98">HEAT INDEX</text><text x="0" y="140">TURF</text>
+            </g>
+            <rect x="104" y="42" width="159" height="18" fill="#b7bfc2" fill-opacity="0.55"/>
+            <rect x="104" y="84" width="172" height="18" fill="#f4b83a"/>
+            <rect x="104" y="126" width="255" height="18" fill="#ff6b1f"/>
+            <g font-family="'DM Mono', monospace" font-size="13" fill="#edf3f0">
+              <text x="270" y="56">98</text><text x="283" y="98">106</text><text x="366" y="140">157</text>
+            </g>
+          </svg>
+          <figcaption>Air was reported at 95 to 98&deg;F depending on the outlet. Turf reading was a reported peak.</figcaption>
+        </figure>
+      </li>
+
+      <li class="story bears">
+        <span class="tag mono">Opponent &middot; Bears</span>
+        <h3>Bears QB Caleb Williams is hurt; Tyson Bagent is next</h3>
+        <figure class="viz">
+          <svg viewBox="0 0 300 150" role="img" aria-label="Bar chart of Bears points: 59 in Week 1, 3 in Week 2.">
+            <text class="svg-mono" x="0" y="12">BEARS POINTS SCORED</text>
+            <line x1="0" y1="128" x2="300" y2="128" stroke="#edf3f0" stroke-opacity="0.35"/>
+            <rect x="52" y="28" width="82" height="100" fill="#ff6b1f"/>
+            <rect x="178" y="123" width="82" height="5" fill="#ff6b1f"/>
+            <g font-family="'DM Mono', monospace" font-size="16" fill="#edf3f0" text-anchor="middle">
+              <text x="93" y="22">59</text><text x="219" y="117">3</text>
+            </g>
+            <g class="svg-mono" text-anchor="middle"><text x="93" y="145">WEEK 1</text><text x="219" y="145">WEEK 2</text></g>
+          </svg>
+        </figure>
+        <p>Chicago&rsquo;s Week 2 loss got worse late in the fourth quarter when quarterback Caleb Williams hurt his right hamstring on a scramble and was carted off. NBC Sports reports it is a strain that could be as slight as Grade 1, with testing set for Monday. Coach Ben Johnson was relieved it was not a knee but warned a hamstring can be damaging too. Backup Tyson Bagent, who started four games in 2023, went 5-of-9 for 54 yards in relief, led two late drives into the red zone without scoring, and is preparing to lead the offense, according to 247Sports. The market has noticed: FanDuel opened the Eagles as 3.5-point road favorites, with a 43.5 total, per Yahoo Sports. The Bears scored a franchise-record 59 points in Week 1, then managed three in a 9-3 loss to Minnesota.</p>
+        <a class="src" href="https://www.espn.com/nfl/story/_/id/49991729/bears-caleb-williams-leaves-cart-falling-scramble" target="_blank" rel="noopener">Read at ESPN &rarr;</a>
+      </li>
+
+      <li class="story hurt">
+        <span class="tag mono">Eagles injury</span>
+        <h3>Saquon Barkley&rsquo;s stinger: MRI first, answers later</h3>
+        <figure class="viz">
+          <svg viewBox="0 0 420 118" role="img" aria-label="Bar chart of Eagles running back carries against Tennessee: Bigsby 13 for 33 yards, Shipley 7 for 24, Barkley 4 for 9.">
+            <text class="svg-mono" x="0" y="12">CARRIES VS. TITANS</text>
+            <g class="svg-mono"><text x="0" y="45">BIGSBY</text><text x="0" y="79">SHIPLEY</text><text x="0" y="113">BARKLEY</text></g>
+            <rect x="82" y="31" width="182" height="20" fill="#edf3f0" fill-opacity="0.75"/>
+            <rect x="82" y="65" width="98" height="20" fill="#edf3f0" fill-opacity="0.75"/>
+            <rect x="82" y="99" width="56" height="20" fill="#f4b83a"/>
+            <g font-family="'DM Mono', monospace" font-size="12" fill="#edf3f0">
+              <text x="272" y="46">13 for 33 yds</text><text x="188" y="80">7 for 24 yds</text><text x="146" y="114">4 for 9 yds</text>
+            </g>
+          </svg>
+        </figure>
+        <p>Saquon Barkley&rsquo;s status is the biggest open question on the Eagles&rsquo; side. He suffered a stinger, a nerve injury in his left arm, on the game&rsquo;s first play after being tackled by Jeffery Simmons, and headed to the medical tent and then the locker room. CBS Sports saw him return after halftime with a neck roll under his shoulder pads, though Yahoo reports he was pulled again, and he finished with four carries for nine yards. Barkley told reporters he expects to be fine but will know more later in the week, and an MRI is planned. Tank Bigsby filled in with 13 carries for 33 yards and a touchdown, and Will Shipley added seven for 24. Whether Barkley practices this week will shape how the Eagles approach Monday night.</p>
+        <a class="src" href="https://sports.yahoo.com/articles/eagles-star-provides-encouraging-injury-221525899.html" target="_blank" rel="noopener">Read at Yahoo Sports &rarr;</a>
+      </li>
+
+      <li class="story">
+        <span class="tag mono">Eagles offensive line</span>
+        <h3>A patched-up line took a beating from Jeffery Simmons</h3>
+        <figure class="viz">
+          <svg viewBox="0 0 420 150" role="img" aria-label="Diagram: Landon Dickerson is on injured reserve, Cam Jurgens moved from center to left guard, and Drew Kendall became the starting center.">
+            <text class="svg-mono" x="0" y="12">THE SHUFFLE</text>
+            <g fill="none" stroke-width="2">
+              <rect x="1" y="28" width="118" height="64" stroke="#b7bfc2" stroke-opacity="0.6" stroke-dasharray="5 5"/>
+              <rect x="151" y="28" width="118" height="64" stroke="#edf3f0"/>
+              <rect x="301" y="28" width="118" height="64" stroke="#f4b83a"/>
+              <path d="M124 60 H146" stroke="#edf3f0" marker-end="url(#ah)"/>
+              <path d="M274 60 H296" stroke="#edf3f0" marker-end="url(#ah)"/>
+            </g>
+            <g font-family="'Big Shoulders Display', 'Arial Narrow', sans-serif" font-weight="800" font-size="21" fill="#edf3f0" text-anchor="middle" style="text-transform:uppercase">
+              <text x="60" y="56" fill-opacity="0.55">Dickerson</text><text x="210" y="56">Jurgens</text><text x="360" y="56">Kendall</text>
+            </g>
+            <g class="svg-mono" text-anchor="middle">
+              <text x="60" y="76">LG &#183; OUT (IR)</text><text x="210" y="76">C &#8594; LG</text><text x="360" y="76">RESERVE &#8594; C</text>
+            </g>
+            <g font-family="'DM Mono', monospace" font-size="12" fill="#edf3f0">
+              <text x="0" y="116">SIMMONS: 7 PRESSURES, 3 HITS ON HURTS</text>
+              <text x="0" y="136" fill-opacity="0.75">HURTS SACKED 3X, HIT 6X &#183; 3 FLAGS</text>
+            </g>
+          </svg>
+        </figure>
+        <p>Philadelphia&rsquo;s offensive line is the quiet storyline of the week. Starting left guard Landon Dickerson went on injured reserve with a knee injury and will miss at least three more games, so Cam Jurgens moved from center to left guard and 2025 fifth-round pick Drew Kendall made his first meaningful start at center. Against Titans tackle Jeffery Simmons, the new group struggled: Simmons had seven pressures and three hits on Hurts, who was sacked three times and hit six times. The line also drew three penalties, and Eagles ballcarriers combined for just 78 yards on 27 carries. Jurgens compared the switch to relearning how to use your hands and feet, while Jordan Mailata pointed to continuity and film as reasons for optimism. The same starting five is expected to stay together while Dickerson recovers.</p>
+        <a class="src" href="https://www.inquirer.com/eagles/eagles-titans-week-2-offensive-line-cam-jurgens-drew-kendall-20260920.html" target="_blank" rel="noopener">Read at The Philadelphia Inquirer &rarr;</a>
+      </li>
+
+      <li class="story hurt">
+        <span class="tag mono">Eagles injury</span>
+        <h3>Dallas Goedert&rsquo;s knee thins the tight end room</h3>
+        <figure class="viz">
+          <ul class="room" aria-label="Eagles tight end room">
+            <li><span class="dot amber"></span><span>Dallas Goedert</span><span>Knee, left early</span></li>
+            <li><span class="dot go"></span><span>Johnny Mundt</span><span>Stepped in</span></li>
+            <li><span class="dot go"></span><span>E.J. Jenkins</span><span>Stepped in</span></li>
+            <li><span class="dot red"></span><span>Eli Stowers</span><span>Injured reserve</span></li>
+          </ul>
+        </figure>
+        <p>Tight end Dallas Goedert left the Titans game in the first half after taking a hard hit to his right leg on a block. He was evaluated in the medical tent, was listed as questionable to return, and did not come back. The Eagles have not shared details on how serious the knee injury is, so this week&rsquo;s practice reports matter. The timing stings: Goedert opened the season with four catches for 77 yards and two touchdowns against Washington, including the 43-yard game-winner. Against Tennessee, the Eagles turned to Johnny Mundt and E.J. Jenkins, and depth is a concern because second-round pick Eli Stowers is on injured reserve. Between Goedert and Barkley, two of Philadelphia&rsquo;s most productive offensive weapons head into a road game with question marks.</p>
+        <a class="src" href="https://www.nbcsportsphiladelphia.com/nfl/philadelphia-eagles/dallas-goedert-knee-injury-week-2-titans/752384/?amp=1" target="_blank" rel="noopener">Read at NBC Sports Philadelphia &rarr;</a>
+      </li>
+
+    </ol>
+  </section>
+
+  <section class="sec" aria-labelledby="stand-h">
+    <div class="sec-head"><h2 id="stand-h">League Standings</h2><p class="mono">Through games completed Sunday night, Sept 20</p></div>
+
+    <div class="standings">
+      <div class="conf">
+        <h3>AFC</h3>
+        <div class="divs">
+          <table><caption>East</caption><tbody>
+            <tr><th scope="row">Buffalo Bills</th><td>2-0</td></tr><tr><th scope="row">New England Patriots</th><td>1-1</td></tr>
+            <tr><th scope="row">New York Jets</th><td>1-1</td></tr><tr><th scope="row">Miami Dolphins</th><td>0-2</td></tr></tbody></table>
+          <table><caption>North</caption><tbody>
+            <tr><th scope="row">Cincinnati Bengals</th><td>2-0</td></tr><tr><th scope="row">Baltimore Ravens</th><td>1-1</td></tr>
+            <tr><th scope="row">Pittsburgh Steelers</th><td>1-1</td></tr><tr><th scope="row">Cleveland Browns</th><td>1-1</td></tr></tbody></table>
+          <table><caption>South</caption><tbody>
+            <tr><th scope="row">Jacksonville Jaguars</th><td>1-1</td></tr><tr><th scope="row">Indianapolis Colts</th><td>0-1</td></tr>
+            <tr><th scope="row">Tennessee Titans</th><td>0-2</td></tr><tr><th scope="row">Houston Texans</th><td>0-2</td></tr></tbody></table>
+          <table><caption>West</caption><tbody>
+            <tr><th scope="row">Las Vegas Raiders</th><td>2-0</td></tr><tr><th scope="row">Kansas City Chiefs</th><td>1-0</td></tr>
+            <tr><th scope="row">Denver Broncos</th><td>1-1</td></tr><tr><th scope="row">Los Angeles Chargers</th><td>0-2</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="conf">
+        <h3>NFC</h3>
+        <div class="divs">
+          <table><caption>East</caption><tbody>
+            <tr class="me"><th scope="row">Philadelphia Eagles</th><td>2-0</td></tr><tr><th scope="row">New York Giants</th><td>1-0</td></tr>
+            <tr><th scope="row">Dallas Cowboys</th><td>1-1</td></tr><tr><th scope="row">Washington Commanders</th><td>0-2</td></tr></tbody></table>
+          <table><caption>North</caption><tbody>
+            <tr><th scope="row">Minnesota Vikings</th><td>2-0</td></tr><tr><th scope="row">Detroit Lions</th><td>1-1</td></tr>
+            <tr class="opp"><th scope="row">Chicago Bears</th><td>1-1</td></tr><tr><th scope="row">Green Bay Packers</th><td>1-1</td></tr></tbody></table>
+          <table><caption>South</caption><tbody>
+            <tr><th scope="row">Carolina Panthers</th><td>1-1</td></tr><tr><th scope="row">New Orleans Saints</th><td>1-1</td></tr>
+            <tr><th scope="row">Tampa Bay Buccaneers</th><td>0-2</td></tr><tr><th scope="row">Atlanta Falcons</th><td>0-2</td></tr></tbody></table>
+          <table><caption>West</caption><tbody>
+            <tr><th scope="row">Seattle Seahawks</th><td>2-0</td></tr><tr><th scope="row">San Francisco 49ers</th><td>2-0</td></tr>
+            <tr><th scope="row">Arizona Cardinals</th><td>1-1</td></tr><tr><th scope="row">Los Angeles Rams</th><td>0-1</td></tr></tbody></table>
+        </div>
+      </div>
+    </div>
+    <p class="fine">Records reflect games completed as of Sunday night. The Chiefs&rsquo; Sunday-night game against the Colts and Monday&rsquo;s games are not yet counted, so some teams show one fewer game played. Sources: FOX Sports, NFL.com, and Yahoo Sports agree on these records; ESPN&rsquo;s AFC West table differed and was not used.</p>
+  </section>
+
+  <footer>
+    <p>Fan-made page, not affiliated with the NFL or any team. Team names are used to identify the teams playing.</p>
+    <p>Reporting drew on The Philadelphia Inquirer, ESPN, Yahoo Sports, NBC Sports, NBC Sports Philadelphia, CBS Sports, FOX Sports, NFL.com, PhiladelphiaEagles.com, ChicagoBears.com, the Associated Press, the Chicago Sun-Times, 247Sports, BearsTalk, ClutchPoints, and Inside The Iggles.</p>
+  </footer>
 </div>
-
-<section class="watch">
-  <h3>🚦 Injury Watch</h3>
-  <div class="lights">
-    <div class="light"><span class="dot y"></span><div><b>Saquon Barkley (PHI)</b><small>Stinger, MRI pending</small></div></div>
-    <div class="light"><span class="dot y"></span><div><b>Dallas Goedert (PHI)</b><small>Knee, left game early</small></div></div>
-    <div class="light"><span class="dot g"></span><div><b>Jalen Carter (PHI)</b><small>Played with a cast on wrist</small></div></div>
-    <div class="light"><span class="dot y"></span><div><b>Caleb Williams (CHI)</b><small>Right hamstring, status TBD</small></div></div>
-  </div>
-</section>
-
-<section class="stories">
-  <h3>📰 Top 5 Storylines</h3>
-  <div class="story-grid">
-
-    <article class="story">
-      <div class="num">1</div>
-      <span class="tag">Game Recap &middot; Week 2</span>
-      <h4>Hurts to Cooper with 9 Seconds Left: Eagles Escape Nashville 24-20</h4>
-      <p>The Eagles arrive in Chicago 2-0 thanks to one of the wildest finishes of the young season. Jalen Hurts threw two interceptions, including an early end-zone pick that Amani Hooker returned 92 yards and set up a Titans touchdown, and another on an underthrown deep ball to DeVonta Smith that led to a field goal and a 20-17 Tennessee lead with 1:56 left. With no timeouts, Hurts then drove Philadelphia 65 yards in nine plays. Smith kept the drive alive with a third-and-6 catch along the sideline, and Hurts hit undrafted receiver Darius Cooper for a 3-yard touchdown, the first of his NFL career, with nine seconds remaining. Hurts finished 26-of-37 for 264 yards and two touchdowns, while Smith had 10 catches for 117 yards. The turf reportedly hit 157 degrees, and coach Nick Sirianni needed an IV afterward.</p>
-      <a class="src" href="https://www.inquirer.com/eagles/titans-win-nfl-week-2-jalen-hurts-darius-cooper-20260920.html" target="_blank" rel="noopener">Read the full story &rarr;</a>
-      <span class="srcname">Source: The Philadelphia Inquirer</span>
-    </article>
-
-    <article class="story inj">
-      <div class="num">2</div>
-      <span class="tag">Injury &middot; Eagles</span>
-      <h4>Saquon Barkley's Stinger: "We'll Know More Later in the Week"</h4>
-      <p>Running back Saquon Barkley's status is the biggest question on the Eagles' side. He suffered a stinger, a nerve injury in his left arm, on the opening play against Tennessee after being tackled by defensive tackle Jeffery Simmons. He headed to the medical tent, then the locker room, briefly returned in the second half, and was pulled again. Barkley finished with just four carries for nine yards and one catch for 11 yards. He told reporters he would be fine but would learn more later in the week, and he is set to get an MRI. In his absence, Tank Bigsby handled the lead role with 13 carries for 33 yards and a touchdown, and Will Shipley added seven carries for 24 yards. Whether Barkley suits up Monday night will likely hinge on the MRI results and how he practices.</p>
-      <a class="src" href="https://sports.yahoo.com/articles/eagles-star-provides-encouraging-injury-221525899.html" target="_blank" rel="noopener">Read the full story &rarr;</a>
-      <span class="srcname">Source: Yahoo Sports</span>
-    </article>
-
-    <article class="story inj">
-      <div class="num">3</div>
-      <span class="tag">Injury &middot; Eagles</span>
-      <h4>Dallas Goedert Exits with a Knee Injury, and Tight End Depth Gets Thin</h4>
-      <p>Tight end Dallas Goedert left the win over the Titans in the second quarter with a knee injury and never returned. He went to the medical tent, was listed as questionable to return, and the team has not shared more details on the severity. That is a notable loss after his big opener, when he caught four passes for 77 yards and two touchdowns against Washington. With Goedert out, the Eagles leaned on backups Johnny Mundt and E.J. Jenkins, and depth at the position is a real concern because second-round pick Eli Stowers is on injured reserve. The injury also compounds the Barkley situation, meaning two of the Eagles' most important offensive weapons are uncertain heading into a short week on the road. Watch the official injury report for practice participation to see where Goedert stands.</p>
-      <a class="src" href="https://www.nbcsportsphiladelphia.com/nfl/philadelphia-eagles/dallas-goedert-knee-injury-week-2-titans/752384/?amp=1" target="_blank" rel="noopener">Read the full story &rarr;</a>
-      <span class="srcname">Source: NBC Sports Philadelphia</span>
-    </article>
-
-    <article class="story bears">
-      <div class="num">4</div>
-      <span class="tag">Opponent Watch &middot; Bears</span>
-      <h4>Bears QB Caleb Williams Hurts His Hamstring: Is Tyson Bagent Next?</h4>
-      <p>Chicago's Week 2 loss to Minnesota got worse late in the fourth quarter when quarterback Caleb Williams went down on a first-and-goal scramble with a right hamstring injury and was carted off. Head coach Ben Johnson said he was relieved it was not a knee, but warned a hamstring "could be pretty damaging as well," adding the team would know more after Monday's evaluation. Williams walked through the locker room on his own and was in good spirits. He was 15-of-26 for 138 yards and an interception before leaving. Backup Tyson Bagent, who started four games in 2023, stepped in and drove Chicago inside the red zone twice without scoring. If Williams cannot go, Bagent is the likely starter against a Philadelphia defense that got sacks from Jalen Carter, playing with a cast on his wrist, and Nolan Smith Jr. in Nashville. His practice participation this week will be the key signal.</p>
-      <a class="src" href="https://www.espn.com/nfl/story/_/id/49991729/bears-caleb-williams-leaves-cart-falling-scramble" target="_blank" rel="noopener">Read the full story &rarr;</a>
-      <span class="srcname">Source: ESPN</span>
-    </article>
-
-    <article class="story bears">
-      <div class="num">5</div>
-      <span class="tag">Odds &amp; Storyline &middot; Matchup</span>
-      <h4>Bears Are Home Underdogs at +3.5, and the Market Smells a QB Change</h4>
-      <p>Oddsmakers opened Chicago as a 3.5-point home underdog with a total of 43.5 and a +168 moneyline, which is striking for a home team against an opponent that needed a last-second touchdown to beat a Titans team that fell to 0-2. One analyst suggested that number only makes sense if Caleb Williams is expected to miss the game. The Bears have flipped wildly: a franchise-record 59 points in Week 1, then just three in a 9-3 loss to the Vikings, their lowest output under Johnson. Chicago ran for 134 yards after 291 the week before, committed eight penalties, fumbled at the 1-yard line, and had a 23-yard field goal blocked. Philadelphia will also remember last year's Black Friday loss in Chicago, when the Bears ran wild on the ground. Lines can move as injury news lands, so check again closer to kickoff.</p>
-      <a class="src" href="https://sports.yahoo.com/articles/bears-vs-eagles-odds-opening-235611532.html" target="_blank" rel="noopener">Read the full story &rarr;</a>
-      <span class="srcname">Source: Yahoo Sports (Windy City Gridiron)</span>
-    </article>
-
-  </div>
-</section>
-
-<footer>
-  <button class="confetti-btn" id="confettiBtn">🦅 FLY EAGLES FLY 🦅</button>
-  <div>Fan-made game page. Injury and betting information reflects reports as of Sunday, Sept 20, 2026 and may change during the week.</div>
-  <div class="checked">
-    Research drew on: PhiladelphiaEagles.com, Philadelphia Inquirer, NBC Sports Philadelphia, ESPN, Yahoo Sports, FOX Sports, NFL.com, ChicagoBears.com, BearsTalk, ClutchPoints, USA Game Time, and Bleeding Green Nation / Windy City Gridiron (search listings).
-  </div>
-</footer>
 
 <script>
-  // Kickoff: Monday Sept 28, 2026, 8:15 PM Eastern Daylight Time = 00:15 UTC on Sept 29
+  // Kickoff: Monday Sept 28, 2026, 8:15 PM EDT = 00:15 UTC on Sept 29
   var KICKOFF = new Date('2026-09-29T00:15:00Z');
-
-  function pad(n) { return String(n).padStart(2, '0'); }
+  var cd = document.getElementById('cd');
 
   function tick() {
-    var diff = KICKOFF - new Date();
-    if (diff <= 0) {
-      document.getElementById('countdown').innerHTML = '<div class="cd-box"><b>🏈</b><span>Game time!</span></div>';
-      return;
-    }
-    var s = Math.floor(diff / 1000);
-    document.getElementById('cdD').textContent = Math.floor(s / 86400);
-    document.getElementById('cdH').textContent = pad(Math.floor((s % 86400) / 3600));
-    document.getElementById('cdM').textContent = pad(Math.floor((s % 3600) / 60));
-    document.getElementById('cdS').textContent = pad(s % 60);
+    var s = Math.floor((KICKOFF - new Date()) / 1000);
+    if (s <= 0) { cd.textContent = 'game time'; return; }
+    var d = Math.floor(s / 86400), h = Math.floor((s % 86400) / 3600),
+        m = Math.floor((s % 3600) / 60), sec = s % 60;
+    cd.textContent = d + 'd ' + h + 'h ' + (m < 10 ? '0' : '') + m + 'm ' + (sec < 10 ? '0' : '') + sec + 's';
   }
   tick();
   setInterval(tick, 1000);
 
   try {
-    var local = KICKOFF.toLocaleString(undefined, { weekday: 'long', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
-    document.getElementById('localTime').textContent = 'In your time zone: ' + local;
+    document.getElementById('localTime').textContent = 'Your time: ' +
+      KICKOFF.toLocaleString(undefined, { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
   } catch (e) {}
 
-  document.getElementById('confettiBtn').addEventListener('click', function () {
-    var items = ['🦅', '🏈', '💚', '⭐', '🏆'];
-    for (var i = 0; i < 55; i++) {
-      var el = document.createElement('div');
-      el.className = 'bit';
-      el.textContent = items[Math.floor(Math.random() * items.length)];
-      el.style.left = Math.random() * 100 + 'vw';
-      el.style.animationDuration = (2 + Math.random() * 2.5) + 's';
-      document.body.appendChild(el);
-      (function (node) { setTimeout(function () { node.remove(); }, 4800); })(el);
-    }
-  });
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var ball = document.getElementById('ball');
+    if (ball) ball.parentNode.removeChild(ball);
+  }
 </script>
 
 </body>
