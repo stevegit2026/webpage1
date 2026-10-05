@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eagles at Bears: Week 3 Game Sheet</title>
-<meta name="description" content="Eagles at Bears, Monday Night Football, Sept 28, 2026. Five storylines, the line, injuries, and league standings.">
+<title>Eagles vs. Jaguars: Week 5 Game Sheet</title>
+<meta name="description" content="Eagles vs. Jaguars in London, Sunday Oct 11, 2026, 9:30 AM ET. Five storylines, the line, injuries, and league standings.">
 <meta name="theme-color" content="#05353b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,7 +86,7 @@
     color: var(--silver);
     margin-bottom: 14px;
   }
-  .hero h1 .bears { color: var(--orange); }
+  .hero h1 .rival { color: var(--orange); }
 
   .kick {
     display: grid;
@@ -153,6 +153,7 @@
   .board .who { font-weight: 600; }
   .board .who small { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--silver); margin-left: 8px; }
   .board .what { color: var(--silver); text-align: right; font-size: 0.95rem; }
+  .key { color: var(--silver); margin: 10px 0 0; }
 
   /* ---------- stories ---------- */
   .stories { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 22px; counter-reset: story; }
@@ -169,7 +170,7 @@
     flex-direction: column;
   }
   .story.feature { grid-column: span 12; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 8px 36px; }
-  .story.bears { --tone: var(--orange); }
+  .story.rival { --tone: var(--orange); }
   .story.hurt { --tone: var(--amber); }
   .story::before {
     content: counter(story);
@@ -246,23 +247,24 @@
 
 <div class="asof mono">
   <div class="wrap">
-    <span>Week 3 game sheet</span>
-    <span>Information as of <b>Sun, Sept 20, 2026, 10 PM ET</b>. Injuries and odds change during the week.</span>
+    <span>Week 5 game sheet</span>
+    <span>Information as of <b>Sun, Oct 4, 2026, 9 PM ET</b>. Injuries and odds change during the week.</span>
   </div>
 </div>
 
 <div class="wrap">
   <header class="hero">
-    <p class="eyebrow mono">Monday Night Football &middot; Philadelphia Eagles <b>(2-0)</b> on the road</p>
-    <h1><span class="at">Eagles play at the</span>Chicago<br><span class="bears">Bears</span></h1>
+    <p class="eyebrow mono">NFL London game &middot; Philadelphia Eagles <b>(2-2)</b> after a loss to the Rams</p>
+    <h1><span class="at">Eagles face the</span>Jacksonville<br><span class="rival">Jaguars</span></h1>
 
     <dl class="kick">
-      <div><dt class="mono">Day</dt><dd>Monday</dd></div>
-      <div><dt class="mono">Date</dt><dd>Sept 28, 2026</dd></div>
-      <div><dt class="mono">Kickoff</dt><dd class="time">8:15 PM ET<small>ESPN / ABC &middot; Soldier Field, Chicago</small></dd></div>
+      <div><dt class="mono">Day</dt><dd>Sunday</dd></div>
+      <div><dt class="mono">Date</dt><dd>Oct 11, 2026</dd></div>
+      <div><dt class="mono">Kickoff</dt><dd class="time">9:30 AM ET<small>NFL Network &middot; Tottenham Hotspur Stadium, London</small></dd></div>
     </dl>
     <p class="clock mono">
       <span>Kickoff in <b id="cd">--</b></span>
+      <span>London time: <b>2:30 PM</b></span>
       <span id="localTime"></span>
     </p>
   </header>
@@ -270,7 +272,7 @@
   <figure class="playbook" aria-labelledby="pb-title">
     <svg viewBox="0 0 1000 360" role="img" aria-describedby="pb-desc">
       <title id="pb-title">Chalkboard play diagram</title>
-      <desc id="pb-desc">Animated chalkboard drawing of an offense lined up against a defense. Route lines draw themselves and a football travels along a passing arc toward the Bears end zone. Illustration only.</desc>
+      <desc id="pb-desc">Animated chalkboard drawing of an offense lined up against a defense. Route lines draw themselves and a football travels along a passing arc toward the Jaguars end zone. Illustration only.</desc>
       <defs>
         <filter id="chalk" x="-2%" y="-2%" width="104%" height="104%">
           <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="4" result="n"/>
@@ -333,11 +335,11 @@
 
       <text class="svg-mono" x="408" y="16">LINE OF SCRIMMAGE</text>
       <text class="svg-mono" x="20" y="352">EAGLES (O) DRIVE THIS WAY &#8594;</text>
-      <text class="svg-disp" x="940" y="182" fill="#ff6b1f" fill-opacity="0.6" font-size="44" letter-spacing="10" text-anchor="middle" transform="rotate(90 940 180)" style="text-transform:uppercase">BEARS</text>
+      <text class="svg-disp" x="940" y="182" fill="#ff6b1f" fill-opacity="0.6" font-size="40" letter-spacing="8" text-anchor="middle" transform="rotate(90 940 180)" style="text-transform:uppercase">JAGUARS</text>
     </svg>
     <figcaption class="legend mono">
       <span><i>O</i> Eagles</span>
-      <span><i class="x">X</i> Bears</span>
+      <span><i class="x">X</i> Jaguars</span>
       <span>Illustration only, not an actual play call</span>
     </figcaption>
   </figure>
@@ -347,188 +349,206 @@
     <div class="sheet">
       <div>
         <dl class="line-list">
-          <div><dt class="mono">Spread</dt><dd>PHI &minus;3.5<small>Eagles road favorites (FanDuel)</small></dd></div>
-          <div><dt class="mono">Total</dt><dd>43.5<small>Opening over/under</small></dd></div>
-          <div><dt class="mono">Bears moneyline</dt><dd>+168<small>$100 wins $168</small></dd></div>
-          <div><dt class="mono">Last meeting</dt><dd>CHI 24, PHI 15<small>Black Friday, Nov 28, 2025</small></dd></div>
+          <div><dt class="mono">Spread</dt><dd>JAX &minus;3.5<small>Jaguars favored, opening line</small></dd></div>
+          <div><dt class="mono">Total</dt><dd>42.5<small>Opening over/under</small></dd></div>
+          <div><dt class="mono">Eagles moneyline</dt><dd>+150<small>$100 wins $150</small></dd></div>
+          <div><dt class="mono">Only London meeting</dt><dd>PHI 24, JAX 18<small>Wembley Stadium, 2018</small></dd></div>
         </dl>
       </div>
-      <ul class="board" aria-label="Injury status board">
-        <li><span class="dot amber"></span><span class="who">Saquon Barkley<small>PHI RB</small></span><span class="what">Stinger, MRI planned</span></li>
-        <li><span class="dot amber"></span><span class="who">Dallas Goedert<small>PHI TE</small></span><span class="what">Knee, left in first half</span></li>
-        <li><span class="dot red"></span><span class="who">Landon Dickerson<small>PHI OL</small></span><span class="what">Injured reserve, 3+ more games</span></li>
-        <li><span class="dot go"></span><span class="who">Jalen Carter<small>PHI DT</small></span><span class="what">Played with a cast on his wrist</span></li>
-        <li><span class="dot amber"></span><span class="who">Caleb Williams<small>CHI QB</small></span><span class="what">Right hamstring strain, tests Monday</span></li>
-        <li><span class="dot"></span><span class="who">Tyson Bagent<small>CHI QB</small></span><span class="what">Preparing to lead offense if needed</span></li>
-      </ul>
+      <div>
+        <ul class="board" aria-label="Injury status board">
+          <li><span class="dot amber"></span><span class="who">Saquon Barkley<small>PHI RB</small></span><span class="what">Hamstring, left in Q1</span></li>
+          <li><span class="dot red"></span><span class="who">DeVonta Smith<small>PHI WR</small></span><span class="what">Hamstring, 2-3 games per sources</span></li>
+          <li><span class="dot amber"></span><span class="who">Quinyon Mitchell<small>PHI CB</small></span><span class="what">Knee, left in Q3</span></li>
+          <li><span class="dot red"></span><span class="who">Jonathan Greenard<small>PHI EDGE</small></span><span class="what">Ankle, ruled out in Q3</span></li>
+          <li><span class="dot red"></span><span class="who">Zack Baun<small>PHI LB</small></span><span class="what">Concussion, missed Rams game</span></li>
+          <li><span class="dot"></span><span class="who">Lane Johnson<small>PHI RT</small></span><span class="what">Out vs. Rams, personal reasons</span></li>
+          <li><span class="dot amber"></span><span class="who">Jaguars secondary<small>JAX</small></span><span class="what">Ransaw knee, Murray concussion, Brown hamstring</span></li>
+        </ul>
+        <p class="key mono">Red: ruled out vs. Rams &middot; Amber: hurt, status open &middot; Gray: absent, not injury</p>
+      </div>
     </div>
   </section>
 
   <section class="sec" id="stories" aria-labelledby="stories-h">
-    <div class="sec-head"><h2 id="stories-h">Five Storylines</h2><p class="mono">Ranked by impact on Monday night</p></div>
+    <div class="sec-head"><h2 id="stories-h">Five Storylines</h2><p class="mono">Ranked by impact on the London game</p></div>
 
     <ol class="stories">
 
       <li class="story feature">
         <div class="body">
-          <span class="tag mono">Last game &middot; Week 2</span>
-          <h3>Nine seconds, 65 yards, one undrafted hero</h3>
-          <p>The Eagles are 2-0 after a finish that had no business working. Jalen Hurts threw two interceptions in Nashville, and the second, an underthrown deep ball to DeVonta Smith with the game tied 17-17, set up a Titans field goal and a 20-17 lead with 1:56 left. With no timeouts, Hurts went 6-of-8 for 61 yards on a nine-play, 65-yard drive. Smith made a 19-yard catch on third-and-6 to keep it alive, and Hurts hit Darius Cooper, an undrafted receiver with no catches in Week 1, in the back of the end zone for his first career touchdown with nine seconds left. Hurts finished 26-of-37 for 264 yards and two touchdowns, and Smith caught 10 passes for 117 yards. Outlets differ on who made the first interception (the Inquirer says Amani Hooker; others credit Marcus Harris), but agree on the outcome. The turf reportedly reached 157 degrees, and coach Nick Sirianni needed IV fluids afterward.</p>
-          <a class="src" href="https://www.inquirer.com/eagles/titans-win-nfl-week-2-jalen-hurts-darius-cooper-20260920.html" target="_blank" rel="noopener">Read at The Philadelphia Inquirer &rarr;</a>
+          <span class="tag mono">Last game &middot; Week 4</span>
+          <h3>Up 20-10, then 0-for-12: the Eagles hand the Rams a win</h3>
+          <p>The Eagles are 2-2 after a loss that looked safe at halftime. They led the Rams 20-10 and never scored again, finishing with 172 total yards and a 0-for-12 day on third down. Across their last two games they have converted just 2 of 21. The turning point came with 7:31 left, when Nick Sirianni passed on a chip-shot field goal that would have made it 23-10 and went for it on fourth-and-goal from the 2. Jalen Hurts&rsquo; pass to Darius Cooper fell incomplete, and Hurts pointed to a bad snap exchange on the play before. Sirianni took the blame. Los Angeles answered with a 98-yard touchdown drive, then a second long march, and Kyren Williams scored twice in the final four minutes. Inquirer columnist Marcus Hayes argues the call ignored how many starters were missing. PhillyVoice called the decision defensible, though it still graded the coaching a C.</p>
+          <a class="src" href="https://www.inquirer.com/eagles/eagles-nick-sirianni-fourth-down-rams-loss-20261004.html" target="_blank" rel="noopener">Read the column at The Philadelphia Inquirer &rarr;</a>
         </div>
         <figure class="viz">
-          <svg viewBox="0 0 420 170" role="img" aria-label="Bar chart of temperatures in Nashville: air 98 degrees, heat index 106, turf 157.">
-            <text class="svg-mono" x="0" y="12">HEAT CHECK &middot; NASHVILLE &middot; &deg;F</text>
-            <g class="svg-mono">
-              <text x="0" y="56">AIR</text><text x="0" y="98">HEAT INDEX</text><text x="0" y="140">TURF</text>
+          <svg viewBox="0 0 420 222" role="img" aria-label="Chart of the Eagles' lead against the Rams: tied 3-3 after the first quarter, up 10 at halftime, up 10 after three quarters, and down 4 at the final.">
+            <text class="svg-mono" x="0" y="12">EAGLES&rsquo; LEAD AT EACH CHECKPOINT</text>
+            <line x1="0" y1="108" x2="420" y2="108" stroke="#edf3f0" stroke-opacity="0.4"/>
+            <rect x="24" y="106.5" width="56" height="3" fill="#b7bfc2"/>
+            <rect x="124" y="58" width="56" height="50" fill="#edf3f0" fill-opacity="0.75"/>
+            <rect x="224" y="58" width="56" height="50" fill="#edf3f0" fill-opacity="0.75"/>
+            <rect x="324" y="108" width="56" height="20" fill="#ff5a4d"/>
+            <g font-family="'DM Mono', monospace" font-size="15" fill="#edf3f0" text-anchor="middle">
+              <text x="52" y="96">TIED</text><text x="152" y="50">+10</text><text x="252" y="50">+10</text><text x="352" y="148">&minus;4</text>
             </g>
-            <rect x="104" y="42" width="159" height="18" fill="#b7bfc2" fill-opacity="0.55"/>
-            <rect x="104" y="84" width="172" height="18" fill="#f4b83a"/>
-            <rect x="104" y="126" width="255" height="18" fill="#ff6b1f"/>
-            <g font-family="'DM Mono', monospace" font-size="13" fill="#edf3f0">
-              <text x="270" y="56">98</text><text x="283" y="98">106</text><text x="366" y="140">157</text>
+            <g font-family="'DM Mono', monospace" font-size="13" fill="#b7bfc2" text-anchor="middle">
+              <text x="52" y="172">3&ndash;3</text><text x="152" y="172">20&ndash;10</text><text x="252" y="172">20&ndash;10</text><text x="352" y="172">20&ndash;24</text>
             </g>
+            <g class="svg-mono" text-anchor="middle">
+              <text x="52" y="190">END Q1</text><text x="152" y="190">HALF</text><text x="252" y="190">END Q3</text><text x="352" y="190">FINAL</text>
+            </g>
+            <text class="svg-mono" x="0" y="218">4TH &amp; GOAL AT THE 2, 7:31 LEFT: INCOMPLETE</text>
           </svg>
-          <figcaption>Air was reported at 95 to 98&deg;F depending on the outlet. Turf reading was a reported peak.</figcaption>
+          <figcaption>Scores are Eagles first. No Eagles points after halftime.</figcaption>
         </figure>
-      </li>
-
-      <li class="story bears">
-        <span class="tag mono">Opponent &middot; Bears</span>
-        <h3>Bears QB Caleb Williams is hurt; Tyson Bagent is next</h3>
-        <figure class="viz">
-          <svg viewBox="0 0 300 150" role="img" aria-label="Bar chart of Bears points: 59 in Week 1, 3 in Week 2.">
-            <text class="svg-mono" x="0" y="12">BEARS POINTS SCORED</text>
-            <line x1="0" y1="128" x2="300" y2="128" stroke="#edf3f0" stroke-opacity="0.35"/>
-            <rect x="52" y="28" width="82" height="100" fill="#ff6b1f"/>
-            <rect x="178" y="123" width="82" height="5" fill="#ff6b1f"/>
-            <g font-family="'DM Mono', monospace" font-size="16" fill="#edf3f0" text-anchor="middle">
-              <text x="93" y="22">59</text><text x="219" y="117">3</text>
-            </g>
-            <g class="svg-mono" text-anchor="middle"><text x="93" y="145">WEEK 1</text><text x="219" y="145">WEEK 2</text></g>
-          </svg>
-        </figure>
-        <p>Chicago&rsquo;s Week 2 loss got worse late in the fourth quarter when quarterback Caleb Williams hurt his right hamstring on a scramble and was carted off. NBC Sports reports it is a strain that could be as slight as Grade 1, with testing set for Monday. Coach Ben Johnson was relieved it was not a knee but warned a hamstring can be damaging too. Backup Tyson Bagent, who started four games in 2023, went 5-of-9 for 54 yards in relief, led two late drives into the red zone without scoring, and is preparing to lead the offense, according to 247Sports. The market has noticed: FanDuel opened the Eagles as 3.5-point road favorites, with a 43.5 total, per Yahoo Sports. The Bears scored a franchise-record 59 points in Week 1, then managed three in a 9-3 loss to Minnesota.</p>
-        <a class="src" href="https://www.espn.com/nfl/story/_/id/49991729/bears-caleb-williams-leaves-cart-falling-scramble" target="_blank" rel="noopener">Read at ESPN &rarr;</a>
       </li>
 
       <li class="story hurt">
-        <span class="tag mono">Eagles injury</span>
-        <h3>Saquon Barkley&rsquo;s stinger: MRI first, answers later</h3>
+        <span class="tag mono">Eagles injury &middot; offense</span>
+        <h3>Barkley&rsquo;s hamstring, and a receiver room without Smith</h3>
         <figure class="viz">
-          <svg viewBox="0 0 420 118" role="img" aria-label="Bar chart of Eagles running back carries against Tennessee: Bigsby 13 for 33 yards, Shipley 7 for 24, Barkley 4 for 9.">
-            <text class="svg-mono" x="0" y="12">CARRIES VS. TITANS</text>
-            <g class="svg-mono"><text x="0" y="45">BIGSBY</text><text x="0" y="79">SHIPLEY</text><text x="0" y="113">BARKLEY</text></g>
-            <rect x="82" y="31" width="182" height="20" fill="#edf3f0" fill-opacity="0.75"/>
-            <rect x="82" y="65" width="98" height="20" fill="#edf3f0" fill-opacity="0.75"/>
-            <rect x="82" y="99" width="56" height="20" fill="#f4b83a"/>
-            <g font-family="'DM Mono', monospace" font-size="12" fill="#edf3f0">
-              <text x="272" y="46">13 for 33 yds</text><text x="188" y="80">7 for 24 yds</text><text x="146" y="114">4 for 9 yds</text>
+          <ul class="room" aria-label="Eagles skill-position players and their status">
+            <li><span class="dot amber"></span><span>Saquon Barkley, RB</span><span>Hamstring, out after Q1</span></li>
+            <li><span class="dot amber"></span><span>Tank Bigsby, RB</span><span>Hurt late, lower body</span></li>
+            <li><span class="dot red"></span><span>DeVonta Smith, WR</span><span>Hamstring, out vs. Rams</span></li>
+            <li><span class="dot red"></span><span>Dallas Goedert, TE</span><span>Knee, out vs. Rams</span></li>
+            <li><span class="dot red"></span><span>Hollywood Brown, WR</span><span>Ankle, out vs. Rams</span></li>
+            <li><span class="dot go"></span><span>Dontayvion Wicks, WR</span><span>Expected No. 1 receiver</span></li>
+          </ul>
+        </figure>
+        <p>Saquon Barkley grabbed his right hamstring after a six-yard run in the first quarter, visited the medical tent and was ruled out with about four minutes left in the half. ESPN reported no timeline, so his status for London is open. Tank Bigsby and Will Shipley carried the load as the team ran for 104 yards on 27 carries, but Bigsby also needed help leaving the field late. The passing game was already short-handed. DeVonta Smith, who leads the NFL in target share at 32.9% through three games, sat out with a right hamstring injury, and league sources told the Inquirer he could miss two to three games. Dallas Goedert and Hollywood Brown were also out, and with Lane Johnson out for personal reasons, rookie Markel Bell started at right tackle. Hurts finished 12-of-27 for 93 yards.</p>
+        <a class="src" href="https://www.espn.com/nfl/story/_/id/50101243/eagles-rb-saquon-barkley-leaves-game-hamstring-injury" target="_blank" rel="noopener">Read at ESPN &rarr;</a>
+      </li>
+
+      <li class="story hurt">
+        <span class="tag mono">Eagles injury &middot; defense</span>
+        <h3>Mitchell and Greenard leave, and the defense runs out of answers</h3>
+        <figure class="viz">
+          <svg viewBox="0 0 420 140" role="img" aria-label="Timeline across four quarters of when four Eagles left the Rams game: Barkley with a hamstring injury in the first quarter, Mitchell with a knee injury on the first play of the third quarter, Greenard with an ankle injury shortly after, and Bigsby late in the fourth quarter.">
+            <text class="svg-mono" x="0" y="10">WHEN THEY LEFT THE GAME</text>
+            <rect x="20" y="78" width="360" height="16" fill="#edf3f0" fill-opacity="0.08" stroke="#edf3f0" stroke-opacity="0.55" stroke-width="1.5"/>
+            <g stroke="#edf3f0" stroke-opacity="0.55" stroke-width="1.5"><line x1="110" y1="78" x2="110" y2="94"/><line x1="200" y1="78" x2="200" y2="94"/><line x1="290" y1="78" x2="290" y2="94"/></g>
+            <g stroke="#f4b83a" stroke-width="1.5">
+              <line x1="39" y1="34" x2="39" y2="81"/><line x1="200" y1="52" x2="200" y2="81"/><line x1="218" y1="70" x2="218" y2="81"/><line x1="362" y1="91" x2="362" y2="122"/>
+            </g>
+            <g fill="#f4b83a" stroke="#02252b" stroke-width="1.5">
+              <circle cx="39" cy="86" r="5"/><circle cx="200" cy="86" r="5"/><circle cx="218" cy="86" r="5"/><circle cx="362" cy="86" r="5"/>
+            </g>
+            <g class="svg-mono" style="fill:#edf3f0">
+              <text x="36" y="30">BARKLEY &middot; HAMSTRING</text>
+              <text x="197" y="48">MITCHELL &middot; KNEE</text>
+              <text x="215" y="66">GREENARD &middot; ANKLE</text>
+              <text x="365" y="134" text-anchor="end">BIGSBY &middot; LOWER BODY</text>
+            </g>
+            <g class="svg-mono" text-anchor="middle">
+              <text x="65" y="112">Q1</text><text x="155" y="112">Q2</text><text x="245" y="112">Q3</text><text x="320" y="112">Q4</text>
             </g>
           </svg>
+          <figcaption>Barkley and Mitchell are timed from reports. Greenard (&ldquo;soon after&rdquo;) and Bigsby (&ldquo;late&rdquo;) are approximate.</figcaption>
         </figure>
-        <p>Saquon Barkley&rsquo;s status is the biggest open question on the Eagles&rsquo; side. He suffered a stinger, a nerve injury in his left arm, on the game&rsquo;s first play after being tackled by Jeffery Simmons, and headed to the medical tent and then the locker room. CBS Sports saw him return after halftime with a neck roll under his shoulder pads, though Yahoo reports he was pulled again, and he finished with four carries for nine yards. Barkley told reporters he expects to be fine but will know more later in the week, and an MRI is planned. Tank Bigsby filled in with 13 carries for 33 yards and a touchdown, and Will Shipley added seven for 24. Whether Barkley practices this week will shape how the Eagles approach Monday night.</p>
-        <a class="src" href="https://sports.yahoo.com/articles/eagles-star-provides-encouraging-injury-221525899.html" target="_blank" rel="noopener">Read at Yahoo Sports &rarr;</a>
+        <p>The defense played well for three quarters, with two first-half interceptions of Matthew Stafford that led to 10 points, and then lost two of its most important players. Cornerback Quinyon Mitchell hurt his knee tackling Blake Corum on the first play of the third quarter and was listed as questionable to return, and Jonathan Jones took his place. Edge rusher Jonathan Greenard, who made his season debut against the Bears after a pectoral injury, went to the locker room with an ankle injury and was downgraded to out. The Eagles had already played without linebacker Zack Baun (concussion, his first missed game this season) and safety Marcus Epps (groin). Stafford finished 32-of-51 for 317 yards, the Rams gained 415 yards and converted 7 of 16 third downs, and Jeremiah Trotter Jr. had 15 tackles. Reports gave no timeline for Mitchell or Greenard.</p>
+        <a class="src" href="https://sports.yahoo.com/articles/eagles-cb-quinyon-mitchell-injured-185944259.html" target="_blank" rel="noopener">Read at Yahoo Sports &rarr;</a>
+      </li>
+
+      <li class="story rival">
+        <span class="tag mono">Opponent &middot; Jaguars</span>
+        <h3>Jacksonville is 3-1 and takes the ball away</h3>
+        <figure class="viz">
+          <svg viewBox="0 0 420 126" role="img" aria-label="Nine footballs, one for each consecutive Jaguars game with an interception, the longest active streak in the NFL.">
+            <defs>
+              <g id="fb">
+                <ellipse rx="15" ry="9" fill="#f4b83a" stroke="#02252b" stroke-width="1.5"/>
+                <line x1="-5" y1="0" x2="5" y2="0" stroke="#02252b" stroke-width="1.5"/>
+              </g>
+            </defs>
+            <text class="svg-mono" x="0" y="12">JAGUARS: GAMES IN A ROW WITH AN INTERCEPTION</text>
+            <use href="#fb" x="24" y="52"/><use href="#fb" x="70" y="52"/><use href="#fb" x="116" y="52"/><use href="#fb" x="162" y="52"/><use href="#fb" x="208" y="52"/>
+            <use href="#fb" x="254" y="52"/><use href="#fb" x="300" y="52"/><use href="#fb" x="346" y="52"/><use href="#fb" x="392" y="52"/>
+            <text class="svg-disp" x="0" y="116" font-size="52" fill="#ff6b1f">9</text>
+            <text class="svg-mono" x="44" y="94">LONGEST ACTIVE STREAK IN THE NFL</text>
+            <text class="svg-mono" x="44" y="113">JAX 3-1 &middot; 11 WINS IN LAST 12</text>
+          </svg>
+        </figure>
+        <p>The Jaguars arrive in London at 3-1 after a 22-17 win at Cincinnati, their second straight victory over an AFC contender and their 11th in 12 regular-season games. Trevor Lawrence was 18-of-23 for 227 yards and a touchdown with no interceptions, though he was sacked four times. Chris Rodriguez Jr. broke a 25-yard touchdown run in the fourth quarter, and the defense forced two Joe Burrow interceptions and held on when a fourth-and-10 pass came up a yard short. Jacksonville has intercepted a pass in nine straight games, the longest active streak in the NFL, and Hurts threw interceptions in two of Philadelphia&rsquo;s last three games. The Jaguars are not unhurt: safeties Caleb Ransaw (knee) and Eric Murray (concussion) left the Cincinnati game, and cornerback Montaric Brown missed it with a hamstring injury.</p>
+        <a class="src" href="https://www.jaguars.com/news/game-report-2026-week-4-jaguars-22-bengals-17" target="_blank" rel="noopener">Read at Jaguars.com &rarr;</a>
       </li>
 
       <li class="story">
-        <span class="tag mono">Eagles offensive line</span>
-        <h3>A patched-up line took a beating from Jeffery Simmons</h3>
+        <span class="tag mono">Matchup &middot; London</span>
+        <h3>A 9:30 a.m. kickoff in London, with the Eagles as underdogs</h3>
         <figure class="viz">
-          <svg viewBox="0 0 420 150" role="img" aria-label="Diagram: Landon Dickerson is on injured reserve, Cam Jurgens moved from center to left guard, and Drew Kendall became the starting center.">
-            <text class="svg-mono" x="0" y="12">THE SHUFFLE</text>
-            <g fill="none" stroke-width="2">
-              <rect x="1" y="28" width="118" height="64" stroke="#b7bfc2" stroke-opacity="0.6" stroke-dasharray="5 5"/>
-              <rect x="151" y="28" width="118" height="64" stroke="#edf3f0"/>
-              <rect x="301" y="28" width="118" height="64" stroke="#f4b83a"/>
-              <path d="M124 60 H146" stroke="#edf3f0" marker-end="url(#ah)"/>
-              <path d="M274 60 H296" stroke="#edf3f0" marker-end="url(#ah)"/>
+          <svg viewBox="0 0 420 128" role="img" aria-label="Split bar of a prediction market showing the Jaguars at 64 percent and the Eagles at 36 percent to win.">
+            <text class="svg-mono" x="0" y="12">WIN CHANCE &middot; PREDICTION MARKET, OCT 4</text>
+            <rect x="0" y="26" width="269" height="30" fill="#ff6b1f"/>
+            <rect x="269" y="26" width="151" height="30" fill="#edf3f0" fill-opacity="0.8"/>
+            <g font-family="'DM Mono', monospace" font-size="14" font-weight="500" fill="#02252b">
+              <text x="10" y="46">JAGUARS 64%</text><text x="279" y="46">EAGLES 36%</text>
             </g>
-            <g font-family="'Big Shoulders Display', 'Arial Narrow', sans-serif" font-weight="800" font-size="21" fill="#edf3f0" text-anchor="middle" style="text-transform:uppercase">
-              <text x="60" y="56" fill-opacity="0.55">Dickerson</text><text x="210" y="56">Jurgens</text><text x="360" y="56">Kendall</text>
-            </g>
-            <g class="svg-mono" text-anchor="middle">
-              <text x="60" y="76">LG &#183; OUT (IR)</text><text x="210" y="76">C &#8594; LG</text><text x="360" y="76">RESERVE &#8594; C</text>
-            </g>
-            <g font-family="'DM Mono', monospace" font-size="12" fill="#edf3f0">
-              <text x="0" y="116">SIMMONS: 7 PRESSURES, 3 HITS ON HURTS</text>
-              <text x="0" y="136" fill-opacity="0.75">HURTS SACKED 3X, HIT 6X &#183; 3 FLAGS</text>
-            </g>
+            <text class="svg-mono" x="0" y="82">OPENING LINE: JAX &minus;3.5 &middot; TOTAL 42.5</text>
+            <text class="svg-mono" x="0" y="101">MONEYLINE: JAX &minus;180 &middot; PHI +150</text>
+            <text class="svg-mono" x="0" y="120">9:30 AM ET = 2:30 PM IN LONDON</text>
           </svg>
         </figure>
-        <p>Philadelphia&rsquo;s offensive line is the quiet storyline of the week. Starting left guard Landon Dickerson went on injured reserve with a knee injury and will miss at least three more games, so Cam Jurgens moved from center to left guard and 2025 fifth-round pick Drew Kendall made his first meaningful start at center. Against Titans tackle Jeffery Simmons, the new group struggled: Simmons had seven pressures and three hits on Hurts, who was sacked three times and hit six times. The line also drew three penalties, and Eagles ballcarriers combined for just 78 yards on 27 carries. Jurgens compared the switch to relearning how to use your hands and feet, while Jordan Mailata pointed to continuity and film as reasons for optimism. The same starting five is expected to stay together while Dickerson recovers.</p>
-        <a class="src" href="https://www.inquirer.com/eagles/eagles-titans-week-2-offensive-line-cam-jurgens-drew-kendall-20260920.html" target="_blank" rel="noopener">Read at The Philadelphia Inquirer &rarr;</a>
-      </li>
-
-      <li class="story hurt">
-        <span class="tag mono">Eagles injury</span>
-        <h3>Dallas Goedert&rsquo;s knee thins the tight end room</h3>
-        <figure class="viz">
-          <ul class="room" aria-label="Eagles tight end room">
-            <li><span class="dot amber"></span><span>Dallas Goedert</span><span>Knee, left early</span></li>
-            <li><span class="dot go"></span><span>Johnny Mundt</span><span>Stepped in</span></li>
-            <li><span class="dot go"></span><span>E.J. Jenkins</span><span>Stepped in</span></li>
-            <li><span class="dot red"></span><span>Eli Stowers</span><span>Injured reserve</span></li>
-          </ul>
-        </figure>
-        <p>Tight end Dallas Goedert left the Titans game in the first half after taking a hard hit to his right leg on a block. He was evaluated in the medical tent, was listed as questionable to return, and did not come back. The Eagles have not shared details on how serious the knee injury is, so this week&rsquo;s practice reports matter. The timing stings: Goedert opened the season with four catches for 77 yards and two touchdowns against Washington, including the 43-yard game-winner. Against Tennessee, the Eagles turned to Johnny Mundt and E.J. Jenkins, and depth is a concern because second-round pick Eli Stowers is on injured reserve. Between Goedert and Barkley, two of Philadelphia&rsquo;s most productive offensive weapons head into a road game with question marks.</p>
-        <a class="src" href="https://www.nbcsportsphiladelphia.com/nfl/philadelphia-eagles/dallas-goedert-knee-injury-week-2-titans/752384/?amp=1" target="_blank" rel="noopener">Read at NBC Sports Philadelphia &rarr;</a>
+        <p>The Eagles travel to Tottenham Hotspur Stadium for a 9:30 a.m. ET kickoff, which is 2:30 p.m. in London, on NFL Network. Jacksonville is the designated home team and plays Houston at Wembley the following Sunday, so the Jaguars are on London&rsquo;s schedule for two straight weekends. Oddsmakers opened Jacksonville as a 3.5-point favorite with a total of 42.5, with the moneyline at Jaguars &minus;180 and Eagles +150, according to SportsBettingDime, and a prediction market shown by Covers gives the Jaguars a 64% chance. Those numbers can move once Saquon Barkley&rsquo;s and DeVonta Smith&rsquo;s statuses become clear. Philadelphia has beaten Jacksonville in London before, 24-18 at Wembley in 2018, and this is the Eagles&rsquo; third regular-season game abroad, after that one and the 2024 game in Brazil. One odds page still shows Jaguars &minus;3 with a 44.5 total but lists both teams at 2-1, so it predates this week.</p>
+        <a class="src" href="https://www.sportsbettingdime.com/news/nfl/opening-nfl-week-5-odds-byes-week-5-spread-total-moneyline-for-all-games/" target="_blank" rel="noopener">Read at SportsBettingDime &rarr;</a>
       </li>
 
     </ol>
   </section>
 
   <section class="sec" aria-labelledby="stand-h">
-    <div class="sec-head"><h2 id="stand-h">League Standings</h2><p class="mono">Through games completed Sunday night, Sept 20</p></div>
+    <div class="sec-head"><h2 id="stand-h">League Standings</h2><p class="mono">Through games completed Sunday, Oct 4</p></div>
 
     <div class="standings">
       <div class="conf">
         <h3>AFC</h3>
         <div class="divs">
           <table><caption>East</caption><tbody>
-            <tr><th scope="row">Buffalo Bills</th><td>2-0</td></tr><tr><th scope="row">New England Patriots</th><td>1-1</td></tr>
-            <tr><th scope="row">New York Jets</th><td>1-1</td></tr><tr><th scope="row">Miami Dolphins</th><td>0-2</td></tr></tbody></table>
+            <tr><th scope="row">Buffalo Bills</th><td>3-1</td></tr><tr><th scope="row">New England Patriots</th><td>2-2</td></tr>
+            <tr><th scope="row">New York Jets</th><td>1-3</td></tr><tr><th scope="row">Miami Dolphins</th><td>0-4</td></tr></tbody></table>
           <table><caption>North</caption><tbody>
-            <tr><th scope="row">Cincinnati Bengals</th><td>2-0</td></tr><tr><th scope="row">Baltimore Ravens</th><td>1-1</td></tr>
-            <tr><th scope="row">Pittsburgh Steelers</th><td>1-1</td></tr><tr><th scope="row">Cleveland Browns</th><td>1-1</td></tr></tbody></table>
+            <tr><th scope="row">Cleveland Browns</th><td>3-1</td></tr><tr><th scope="row">Baltimore Ravens</th><td>3-1</td></tr>
+            <tr><th scope="row">Pittsburgh Steelers</th><td>2-2</td></tr><tr><th scope="row">Cincinnati Bengals</th><td>2-2</td></tr></tbody></table>
           <table><caption>South</caption><tbody>
-            <tr><th scope="row">Jacksonville Jaguars</th><td>1-1</td></tr><tr><th scope="row">Indianapolis Colts</th><td>0-1</td></tr>
-            <tr><th scope="row">Tennessee Titans</th><td>0-2</td></tr><tr><th scope="row">Houston Texans</th><td>0-2</td></tr></tbody></table>
+            <tr class="opp"><th scope="row">Jacksonville Jaguars</th><td>3-1</td></tr><tr><th scope="row">Indianapolis Colts</th><td>2-2</td></tr>
+            <tr><th scope="row">Tennessee Titans</th><td>0-4</td></tr><tr><th scope="row">Houston Texans</th><td>0-4</td></tr></tbody></table>
           <table><caption>West</caption><tbody>
-            <tr><th scope="row">Las Vegas Raiders</th><td>2-0</td></tr><tr><th scope="row">Kansas City Chiefs</th><td>1-0</td></tr>
-            <tr><th scope="row">Denver Broncos</th><td>1-1</td></tr><tr><th scope="row">Los Angeles Chargers</th><td>0-2</td></tr></tbody></table>
+            <tr><th scope="row">Kansas City Chiefs</th><td>4-0</td></tr><tr><th scope="row">Las Vegas Raiders</th><td>3-1</td></tr>
+            <tr><th scope="row">Denver Broncos</th><td>2-2</td></tr><tr><th scope="row">Los Angeles Chargers</th><td>0-4</td></tr></tbody></table>
         </div>
       </div>
       <div class="conf">
         <h3>NFC</h3>
         <div class="divs">
           <table><caption>East</caption><tbody>
-            <tr class="me"><th scope="row">Philadelphia Eagles</th><td>2-0</td></tr><tr><th scope="row">New York Giants</th><td>1-0</td></tr>
-            <tr><th scope="row">Dallas Cowboys</th><td>1-1</td></tr><tr><th scope="row">Washington Commanders</th><td>0-2</td></tr></tbody></table>
+            <tr><th scope="row">New York Giants</th><td>3-1</td></tr><tr class="me"><th scope="row">Philadelphia Eagles</th><td>2-2</td></tr>
+            <tr><th scope="row">Dallas Cowboys</th><td>2-2</td></tr><tr><th scope="row">Washington Commanders</th><td>1-3</td></tr></tbody></table>
           <table><caption>North</caption><tbody>
-            <tr><th scope="row">Minnesota Vikings</th><td>2-0</td></tr><tr><th scope="row">Detroit Lions</th><td>1-1</td></tr>
-            <tr class="opp"><th scope="row">Chicago Bears</th><td>1-1</td></tr><tr><th scope="row">Green Bay Packers</th><td>1-1</td></tr></tbody></table>
+            <tr><th scope="row">Minnesota Vikings</th><td>4-0</td></tr><tr><th scope="row">Chicago Bears</th><td>3-1</td></tr>
+            <tr><th scope="row">Detroit Lions</th><td>2-1</td></tr><tr><th scope="row">Green Bay Packers</th><td>2-2</td></tr></tbody></table>
           <table><caption>South</caption><tbody>
-            <tr><th scope="row">Carolina Panthers</th><td>1-1</td></tr><tr><th scope="row">New Orleans Saints</th><td>1-1</td></tr>
-            <tr><th scope="row">Tampa Bay Buccaneers</th><td>0-2</td></tr><tr><th scope="row">Atlanta Falcons</th><td>0-2</td></tr></tbody></table>
+            <tr><th scope="row">Carolina Panthers</th><td>1-2</td></tr><tr><th scope="row">New Orleans Saints</th><td>1-2</td></tr>
+            <tr><th scope="row">Atlanta Falcons</th><td>1-2</td></tr><tr><th scope="row">Tampa Bay Buccaneers</th><td>0-4</td></tr></tbody></table>
           <table><caption>West</caption><tbody>
-            <tr><th scope="row">Seattle Seahawks</th><td>2-0</td></tr><tr><th scope="row">San Francisco 49ers</th><td>2-0</td></tr>
-            <tr><th scope="row">Arizona Cardinals</th><td>1-1</td></tr><tr><th scope="row">Los Angeles Rams</th><td>0-1</td></tr></tbody></table>
+            <tr><th scope="row">San Francisco 49ers</th><td>4-0</td></tr><tr><th scope="row">Seattle Seahawks</th><td>3-1</td></tr>
+            <tr><th scope="row">Los Angeles Rams</th><td>2-2</td></tr><tr><th scope="row">Arizona Cardinals</th><td>1-3</td></tr></tbody></table>
         </div>
       </div>
     </div>
-    <p class="fine">Records reflect games completed as of Sunday night. The Chiefs&rsquo; Sunday-night game against the Colts and Monday&rsquo;s games are not yet counted, so some teams show one fewer game played. Sources: FOX Sports, NFL.com, and Yahoo Sports agree on these records; ESPN&rsquo;s AFC West table differed and was not used.</p>
+    <p class="fine">Records reflect games completed as of Sunday evening, Oct 4. Teams showing fewer than four games may have had a bye or have a game still to be counted. ESPN, FOX Sports, NFL.com, and Yahoo Sports agree on these records.</p>
   </section>
 
   <footer>
     <p>Fan-made page, not affiliated with the NFL or any team. Team names are used to identify the teams playing.</p>
-    <p>Reporting drew on The Philadelphia Inquirer, ESPN, Yahoo Sports, NBC Sports, NBC Sports Philadelphia, CBS Sports, FOX Sports, NFL.com, PhiladelphiaEagles.com, ChicagoBears.com, the Associated Press, the Chicago Sun-Times, 247Sports, BearsTalk, ClutchPoints, and Inside The Iggles.</p>
+    <p>Reporting drew on The Philadelphia Inquirer, ESPN, Yahoo Sports, NBC Sports, CBS Philadelphia, the Associated Press (via KSAT), PhillyVoice, PhiladelphiaEagles.com, Jaguars.com, Heavy, SportsBettingDime, Covers, FOX Sports, NFL.com, and Football Nation USA.</p>
   </footer>
 </div>
 
 <script>
-  // Kickoff: Monday Sept 28, 2026, 8:15 PM EDT = 00:15 UTC on Sept 29
-  var KICKOFF = new Date('2026-09-29T00:15:00Z');
+  // Kickoff: Sunday Oct 11, 2026, 9:30 AM EDT = 13:30 UTC (2:30 PM in London, BST)
+  var KICKOFF = new Date('2026-10-11T13:30:00Z');
   var cd = document.getElementById('cd');
 
   function tick() {
