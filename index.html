@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eagles vs. Cowboys: Week 7 Game Sheet</title>
-<meta name="description" content="Eagles vs. Cowboys, Monday Oct 26, 2026, 8:15 PM ET at Lincoln Financial Field. Five storylines, the line, injuries, and league standings.">
+<title>Eagles at Commanders: Week 8 Game Sheet</title>
+<meta name="description" content="Eagles at Commanders, Sunday Nov 1, 2026, 8:20 PM ET at Northwest Stadium. Five storylines, the line, injuries, and league standings.">
 <meta name="theme-color" content="#05353b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,8 +86,8 @@
     color: var(--silver);
     margin-bottom: 14px;
   }
-  .hero h1 .city { color: #869397; }
-  .hero h1 .rival { color: #003594; -webkit-text-stroke: 0.03em #ffffff; paint-order: stroke fill; }
+  .hero h1 .city { color: #ffb612; }
+  .hero h1 .rival { color: #5a1414; -webkit-text-stroke: 0.03em #ffb612; paint-order: stroke fill; }
 
   .kick {
     display: grid;
@@ -107,29 +107,9 @@
   .clock { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 14px 0 0; color: var(--silver); }
   .clock b { color: var(--chalk); font-weight: 500; font-variant-numeric: tabular-nums; }
 
-  /* ---------- playbook diagram ---------- */
-  .playbook { margin: 34px 0 0; }
-  .playbook svg { display: block; width: 100%; height: auto; }
+  /* ---------- shared svg text ---------- */
   .svg-mono { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; fill: var(--silver); }
   .svg-disp { font-family: var(--display); font-weight: 900; }
-  .route { --o: 0.62; fill: none; stroke: var(--chalk); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: var(--o); animation: draw 9s ease-in-out infinite; }
-  .route.hero-route { --o: 1; stroke: var(--amber); stroke-width: 3.2; }
-  .r2 { animation-delay: 0.25s; } .r3 { animation-delay: 0.5s; } .r4 { animation-delay: 0.75s; } .r5 { animation-delay: 1s; }
-  .arc { fill: none; stroke: var(--amber); stroke-width: 2; stroke-dasharray: 3 7; opacity: 0; animation: arcfade 9s ease-in-out infinite; }
-  @keyframes draw {
-    0%   { stroke-dashoffset: 1; opacity: var(--o); }
-    26%  { stroke-dashoffset: 0; opacity: var(--o); }
-    86%  { stroke-dashoffset: 0; opacity: var(--o); }
-    95%, 100% { stroke-dashoffset: 0; opacity: 0; }
-  }
-  @keyframes arcfade {
-    0%, 28% { opacity: 0; }
-    34%, 84% { opacity: 0.6; }
-    94%, 100% { opacity: 0; }
-  }
-  .legend { display: flex; flex-wrap: wrap; gap: 6px 20px; color: var(--silver); margin: 10px 0 0; }
-  .legend i { font-style: normal; color: var(--chalk); }
-  .legend .x { color: var(--orange); }
 
   /* ---------- section heads ---------- */
   .sec { padding: 58px 0 0; }
@@ -232,8 +212,6 @@
     .board .what { grid-column: 2; text-align: left; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .route { animation: none; stroke-dashoffset: 0; }
-    .arc { animation: none; opacity: 0.5; }
     .src { transition: none; }
   }
 </style>
@@ -244,20 +222,20 @@
 
 <div class="asof mono">
   <div class="wrap">
-    <span>Week 7 game sheet</span>
-    <span>Information as of <b>Sun, Oct 18, 2026, 10:35 PM ET</b>. Odds and injuries will change before Monday night.</span>
+    <span>Week 8 game sheet</span>
+    <span>Information as of <b>Fri, Oct 30, 2026, 9:20 PM ET</b>. Sunday&rsquo;s inactives and late odds moves will change the picture.</span>
   </div>
 </div>
 
 <div class="wrap">
   <header class="hero">
-    <p class="eyebrow mono">NFL Week 7 &middot; Philadelphia Eagles <b>(2-4)</b> at home after four straight losses</p>
-    <h1><span class="at">Eagles host the</span><span class="city">Dallas</span><br><span class="rival">Cowboys</span></h1>
+    <p class="eyebrow mono">NFL Week 8 &middot; Philadelphia Eagles <b>(2-5)</b> on the road after five straight losses</p>
+    <h1><span class="at">Eagles visit the</span><span class="city">Washington</span><br><span class="rival">Commanders</span></h1>
 
     <dl class="kick">
-      <div><dt class="mono">Day</dt><dd>Monday</dd></div>
-      <div><dt class="mono">Date</dt><dd>Oct 26, 2026</dd></div>
-      <div><dt class="mono">Kickoff</dt><dd class="time">8:15 PM ET<small>ESPN &amp; ABC &middot; Lincoln Financial Field, Philadelphia</small></dd></div>
+      <div><dt class="mono">Day</dt><dd>Sunday</dd></div>
+      <div><dt class="mono">Date</dt><dd>Nov 1, 2026</dd></div>
+      <div><dt class="mono">Kickoff</dt><dd class="time">8:20 PM ET<small>NBC &amp; Peacock &middot; Northwest Stadium, Landover, Maryland</small></dd></div>
     </dl>
     <p class="clock mono">
       <span>Kickoff in <b id="cd">--</b></span>
@@ -270,250 +248,262 @@
     <div class="sheet">
       <div>
         <dl class="line-list">
-          <div><dt class="mono">Spread</dt><dd>DAL &minus;5.5<small>DraftKings opener, Oct 18 &middot; see story 4</small></dd></div>
-          <div><dt class="mono">Total</dt><dd>44.5<small>DraftKings &middot; FanDuel opened 47.5</small></dd></div>
-          <div><dt class="mono">Eagles moneyline</dt><dd>+200<small>$100 wins $200 &middot; DraftKings</small></dd></div>
-          <div><dt class="mono">Lookahead line</dt><dd>DAL &minus;1.5<small>FanDuel opener, before the Hurts news</small></dd></div>
+          <div><dt class="mono">Spread</dt><dd>WSH &minus;5.5 to &minus;6<small>Five books, Oct 29 &middot; see story 4</small></dd></div>
+          <div><dt class="mono">Total</dt><dd>40 to 40.5<small>Caesars and BetMGM 40 &middot; others 40.5</small></dd></div>
+          <div><dt class="mono">Eagles moneyline</dt><dd>+190 to +220<small>$100 wins $190 to $220 &middot; DraftKings to BetMGM</small></dd></div>
+          <div><dt class="mono">Opening line</dt><dd>WSH &minus;4<small>BetMGM opener, Oct 26 &middot; moneyline &minus;190</small></dd></div>
         </dl>
       </div>
       <div>
         <ul class="board" aria-label="Injury status board">
-          <li><span class="dot red"></span><span class="who">Jalen Hurts<small>PHI QB</small></span><span class="what">Calf blood clot, injured reserve</span></li>
-          <li><span class="dot red"></span><span class="who">Saquon Barkley<small>PHI RB</small></span><span class="what">Hamstring, missed 2nd straight game</span></li>
-          <li><span class="dot red"></span><span class="who">Will Shipley<small>PHI RB</small></span><span class="what">Injured reserve</span></li>
-          <li><span class="dot red"></span><span class="who">Tank Bigsby<small>PHI RB</small></span><span class="what">Out indefinitely</span></li>
-          <li><span class="dot red"></span><span class="who">Landon Dickerson<small>PHI G</small></span><span class="what">Injured reserve, practiced last week</span></li>
-          <li><span class="dot amber"></span><span class="who">Nolan Smith<small>PHI EDGE</small></span><span class="what">Concussion, left in 2nd quarter</span></li>
-          <li><span class="dot amber"></span><span class="who">Jordan Davis<small>PHI DT</small></span><span class="what">Ankle or right leg, left in 4th</span></li>
-          <li><span class="dot amber"></span><span class="who">Dontayvion Wicks<small>PHI WR</small></span><span class="what">Right ankle, hurt in 4th quarter</span></li>
-          <li><span class="dot amber"></span><span class="who">Carson Steele<small>PHI RB</small></span><span class="what">Shoulder, ruled out in 3rd</span></li>
-          <li><span class="dot amber"></span><span class="who">Cooper DeJean<small>PHI DB</small></span><span class="what">Left late, injury not given</span></li>
-          <li><span class="dot go"></span><span class="who">DeVonta Smith<small>PHI WR</small></span><span class="what">Back from hamstring, 7 catches</span></li>
-          <li><span class="dot amber"></span><span class="who">Dak Prescott<small>DAL QB</small></span><span class="what">Hit to left ribs Sunday, stayed in</span></li>
-          <li><span class="dot amber"></span><span class="who">KaVontae Turpin<small>DAL KR/WR</small></span><span class="what">Ribs, ruled out Sunday</span></li>
-          <li><span class="dot amber"></span><span class="who">Dee Winters<small>DAL LB</small></span><span class="what">Ankle, questionable to return Sunday</span></li>
-          <li><span class="dot red"></span><span class="who">DeMarvion Overshown<small>DAL LB</small></span><span class="what">Hamstring, out at Green Bay</span></li>
+          <li><span class="dot red"></span><span class="who">Jalen Hurts<small>PHI QB</small></span><span class="what">Blood clots in lungs, injured reserve</span></li>
+          <li><span class="dot red"></span><span class="who">DeVonta Smith<small>PHI WR</small></span><span class="what">Hamstring, out</span></li>
+          <li><span class="dot red"></span><span class="who">Dontayvion Wicks<small>PHI WR</small></span><span class="what">Ankle, out</span></li>
+          <li><span class="dot red"></span><span class="who">Britain Covey<small>PHI WR/PR</small></span><span class="what">Knee, out</span></li>
+          <li><span class="dot red"></span><span class="who">Jihaad Campbell<small>PHI LB</small></span><span class="what">Hamstring and quad, out</span></li>
+          <li><span class="dot red"></span><span class="who">Jonathan Jones<small>PHI CB</small></span><span class="what">Hamstring, out</span></li>
+          <li><span class="dot red"></span><span class="who">Dameon Pierce<small>PHI RB</small></span><span class="what">Injured reserve</span></li>
+          <li><span class="dot go"></span><span class="who">Saquon Barkley<small>PHI RB</small></span><span class="what">Hamstring and back, limited Friday, no designation</span></li>
+          <li><span class="dot go"></span><span class="who">Nolan Smith<small>PHI EDGE</small></span><span class="what">Cleared concussion protocol</span></li>
+          <li><span class="dot go"></span><span class="who">Jayden Daniels<small>WSH QB</small></span><span class="what">Left elbow, full practice all week</span></li>
+          <li><span class="dot red"></span><span class="who">Javon Kinlaw<small>WSH DT</small></span><span class="what">Knee, out</span></li>
+          <li><span class="dot amber"></span><span class="who">Daron Payne<small>WSH DT</small></span><span class="what">Foot, questionable</span></li>
+          <li><span class="dot amber"></span><span class="who">Jer&rsquo;Zhan Newton<small>WSH DT</small></span><span class="what">Pectoral, questionable</span></li>
+          <li><span class="dot amber"></span><span class="who">Treylon Burks<small>WSH WR</small></span><span class="what">Foot, questionable</span></li>
+          <li><span class="dot red"></span><span class="who">Terry McLaurin<small>WSH WR</small></span><span class="what">Torn patellar tendon, injured reserve</span></li>
         </ul>
-        <p class="key mono">Status coming out of Week 6, no Week 7 practice report yet &middot; Red: out or on IR &middot; Amber: hurt Sunday, status unknown &middot; Green: playing</p>
+        <p class="key mono">Final Friday practice reports for both teams &middot; Red: out or on IR &middot; Amber: questionable &middot; Green: expected to play</p>
       </div>
     </div>
   </section>
 
   <section class="sec" id="stories" aria-labelledby="stories-h">
-    <div class="sec-head"><h2 id="stories-h">Five Storylines</h2><p class="mono">Ranked by impact on Monday night</p></div>
+    <div class="sec-head"><h2 id="stories-h">Five Storylines</h2><p class="mono">Ranked by impact on Sunday night</p></div>
 
     <ol class="stories">
 
       <li class="story feature hurt">
         <div class="body">
           <span class="tag mono">Quarterback &middot; This week</span>
-          <h3>Hurts goes on injured reserve, and Tanner McKee keeps the job</h3>
-          <p>The Eagles placed Jalen Hurts on injured reserve Saturday with a superficial blood clot in his calf, after consulting numerous doctors, according to NFL.com. The move costs him at least four games: Carolina, Dallas, Washington and the Giants. With the Week 10 bye, his earliest return is Nov. 22 against Pittsburgh, and NFL.com says he is expected to be out at least a month. That leaves Tanner McKee. In his first start of the season he went 26-of-45 for 215 yards and a touchdown, with no interceptions, a 77.5 rating and three sacks. The Inquirer counted 8 completions in 18 attempts for 73 yards against the blitz. &ldquo;My team needs me to be better,&rdquo; McKee said. Behind him are rookie Cole Payton and Joe Milton III, signed Friday off the Dallas practice squad, so Milton could face the team that just let him go. Nick Sirianni said &ldquo;everything&rsquo;s on the table&rdquo; and that the Eagles &ldquo;have to do different things&rdquo; to score, though he did not name a play-calling or personnel change.</p>
-          <a class="src" href="https://www.nfl.com/news/eagles-place-qb-jalen-hurts-on-injured-reserve-due-to-superficial-blood-clot-in-calf" target="_blank" rel="noopener">Read at NFL.com &rarr;</a>
+          <h3>Hurts is out for the season, and Tanner McKee makes start No. 3</h3>
+          <p>Jalen Hurts will miss the rest of the season. What the Eagles first called a superficial blood clot in his left calf turned out, after more testing on Oct. 19, to be a deep vein thrombosis and bilateral pulmonary emboli, according to a joint statement from the team and his agent. He is on blood thinners, is stable with no significant functional limitations, and the team expects a full recovery. NFL Network&rsquo;s Ian Rapoport reported the treatment will take at least three months, per 6abc. League sources told CBS News Philadelphia he is out for the year, while AP says only that he is out &ldquo;likely&rdquo; for the remainder. That leaves Tanner McKee, who has completed 61.3 percent of his passes for 426 yards, two touchdowns and an interception in two starts, per AP. Against Dallas he went 23-of-35 for 211 yards with one touchdown and one interception and led the Eagles&rsquo; first third-quarter touchdown drive of the season. Sunday is start No. 3, against a Washington defense that blitzes 43.9 percent of the time, second-most in the NFL, per PhiladelphiaEagles.com.</p>
+          <a class="src" href="https://www.cbsnews.com/philadelphia/news/jalen-hurts-blood-clots-news-eagles/" target="_blank" rel="noopener">Read at CBS News Philadelphia &rarr;</a>
         </div>
         <figure class="viz">
-          <svg viewBox="0 0 420 260" role="img" aria-label="Timeline of Jalen Hurts' calf injury: cleated Oct 4 against the Rams, a London ultrasound found a clot Oct 10, a follow-up showed the clot had moved Oct 14, the Eagles signed Joe Milton Oct 16, Hurts went on injured reserve Oct 17, McKee started and lost Oct 18, Hurts is out for the Cowboys game Oct 26, and his earliest return is Nov 22 against the Steelers.">
+          <svg viewBox="0 0 420 202" role="img" aria-label="Timeline of Jalen Hurts' blood clot and the Eagles quarterback situation: placed on injured reserve Oct 17 with a clot in his calf, McKee's first start a 25-14 loss to Carolina Oct 18, tests found a deep vein thrombosis and lung clots Oct 19, McKee's second start a 38-21 loss to Dallas Oct 26, McKee's third start at Washington Nov 1, and three months of treatment ending no earlier than about Jan 19.">
             <text class="svg-mono" x="0" y="12">THE CLOT, DAY BY DAY</text>
-            <line x1="94" y1="34" x2="94" y2="236" stroke="#edf3f0" stroke-opacity="0.45" stroke-width="1.5"/>
+            <line x1="94" y1="34" x2="94" y2="178" stroke="#edf3f0" stroke-opacity="0.45" stroke-width="1.5"/>
             <g fill="#edf3f0" stroke="#02252b" stroke-width="1.5">
-              <circle cx="94" cy="34" r="5"/><circle cx="94" cy="62" r="5" fill="#f4b83a"/><circle cx="94" cy="90" r="5" fill="#f4b83a"/>
-              <circle cx="94" cy="118" r="5"/><circle cx="94" cy="146" r="6.5" fill="#ff5a4d"/><circle cx="94" cy="174" r="5"/>
-              <circle cx="94" cy="202" r="5"/><circle cx="94" cy="236" r="6.5" fill="#5fd39a"/>
+              <circle cx="94" cy="34" r="5" fill="#f4b83a"/><circle cx="94" cy="62" r="5"/><circle cx="94" cy="90" r="6.5" fill="#ff5a4d"/>
+              <circle cx="94" cy="118" r="5"/><circle cx="94" cy="146" r="5"/><circle cx="94" cy="178" r="6.5" fill="#5fd39a"/>
             </g>
             <g class="svg-mono" style="fill:#edf3f0">
-              <text x="2" y="38">OCT 4</text><text x="2" y="66">OCT 10</text><text x="2" y="94">OCT 14</text>
-              <text x="2" y="122">OCT 16</text><text x="2" y="150">OCT 17</text><text x="2" y="178">OCT 18</text>
-              <text x="2" y="206">OCT 26</text><text x="2" y="240">NOV 22</text>
+              <text x="2" y="38">OCT 17</text><text x="2" y="66">OCT 18</text><text x="2" y="94">OCT 19</text>
+              <text x="2" y="122">OCT 26</text><text x="2" y="150">NOV 1</text><text x="2" y="182">JAN 19+</text>
             </g>
             <g class="svg-mono">
-              <text x="112" y="38">CLEATED IN CALF VS. RAMS</text>
-              <text x="112" y="66" style="fill:#f4b83a">LONDON ULTRASOUND FINDS CLOT</text>
-              <text x="112" y="94" style="fill:#f4b83a">FOLLOW-UP: CLOT HAS MOVED</text>
-              <text x="112" y="122">EAGLES SIGN JOE MILTON III</text>
-              <text x="112" y="150" style="fill:#ff5a4d">PLACED ON INJURED RESERVE</text>
-              <text x="112" y="178">McKEE STARTS, LOSES 25-14</text>
-              <text x="112" y="206">COWBOYS GAME: HURTS OUT</text>
-              <text x="112" y="240" style="fill:#5fd39a">EARLIEST RETURN, VS. STEELERS</text>
+              <text x="112" y="38" style="fill:#f4b83a">PLACED ON IR, CLOT IN CALF</text>
+              <text x="112" y="66">McKEE START 1: 25-14 LOSS</text>
+              <text x="112" y="94" style="fill:#ff5a4d">DVT + LUNG CLOTS FOUND</text>
+              <text x="112" y="122">McKEE START 2: 38-21 LOSS</text>
+              <text x="112" y="150">McKEE START 3, AT WSH</text>
+              <text x="112" y="182" style="fill:#5fd39a">3-MONTH TREATMENT ENDS</text>
             </g>
           </svg>
-          <figcaption>Dates from NFL.com, the Eagles and ESPN&rsquo;s schedule. The cleating is Hurts&rsquo; account.</figcaption>
+          <figcaption>Dates per the Eagles&rsquo; statement as reported by CBS News Philadelphia and 6abc. Jan. 19 is Oct. 19 plus three months, an estimate.</figcaption>
         </figure>
       </li>
 
       <li class="story hurt">
         <span class="tag mono">Eagles injuries</span>
-        <h3>Five more Eagles leave the Carolina game hurt</h3>
+        <h3>Barkley is cleared, but both top receivers are out</h3>
         <figure class="viz">
-          <svg viewBox="0 0 420 262" role="img" aria-label="Eagles roster losses after Week 6. Out or on IR: Hurts, Barkley, Shipley, Bigsby, Dickerson. Retired: Lane Johnson. Hurt during Sunday's game: Nolan Smith, Jordan Davis, Dontayvion Wicks, Carson Steele, Cooper DeJean. Back: DeVonta Smith.">
-            <text class="svg-mono" x="0" y="12">EAGLES&rsquo; LOSSES AFTER WEEK 6</text>
+          <svg viewBox="0 0 420 226" role="img" aria-label="Eagles availability for Sunday. Out or on IR: Hurts, Pierce, DeVonta Smith, Wicks, Covey, Campbell, Jones. Retired: Lane Johnson. Expected to play: Saquon Barkley, limited Friday with no designation; Nolan Smith, cleared concussion protocol.">
+            <text class="svg-mono" x="0" y="12">EAGLES&rsquo; AVAILABILITY, FRIDAY</text>
             <g stroke="#02252b" stroke-width="1">
               <circle cx="7" cy="34" r="6" fill="#ff5a4d"/><circle cx="7" cy="54" r="6" fill="#ff5a4d"/><circle cx="7" cy="74" r="6" fill="#ff5a4d"/>
-              <circle cx="7" cy="94" r="6" fill="#ff5a4d"/><circle cx="7" cy="114" r="6" fill="#ff5a4d"/><circle cx="7" cy="134" r="6" fill="#b7bfc2"/>
-              <circle cx="7" cy="154" r="6" fill="#f4b83a"/><circle cx="7" cy="174" r="6" fill="#f4b83a"/><circle cx="7" cy="194" r="6" fill="#f4b83a"/>
-              <circle cx="7" cy="214" r="6" fill="#f4b83a"/><circle cx="7" cy="234" r="6" fill="#f4b83a"/><circle cx="7" cy="254" r="6" fill="#5fd39a"/>
+              <circle cx="7" cy="94" r="6" fill="#ff5a4d"/><circle cx="7" cy="114" r="6" fill="#ff5a4d"/><circle cx="7" cy="134" r="6" fill="#ff5a4d"/>
+              <circle cx="7" cy="154" r="6" fill="#ff5a4d"/><circle cx="7" cy="174" r="6" fill="#b7bfc2"/><circle cx="7" cy="194" r="6" fill="#5fd39a"/>
+              <circle cx="7" cy="214" r="6" fill="#5fd39a"/>
             </g>
             <g class="svg-mono" style="fill:#edf3f0">
-              <text x="22" y="38">HURTS</text><text x="22" y="58">BARKLEY</text><text x="22" y="78">SHIPLEY</text>
-              <text x="22" y="98">BIGSBY</text><text x="22" y="118">DICKERSON</text><text x="22" y="138">L. JOHNSON</text>
-              <text x="22" y="158">N. SMITH</text><text x="22" y="178">J. DAVIS</text><text x="22" y="198">WICKS</text>
-              <text x="22" y="218">STEELE</text><text x="22" y="238">DEJEAN</text><text x="22" y="258">D. SMITH</text>
+              <text x="22" y="38">HURTS</text><text x="22" y="58">PIERCE</text><text x="22" y="78">D. SMITH</text>
+              <text x="22" y="98">WICKS</text><text x="22" y="118">COVEY</text><text x="22" y="138">CAMPBELL</text>
+              <text x="22" y="158">JONES</text><text x="22" y="178">L. JOHNSON</text><text x="22" y="198">BARKLEY</text>
+              <text x="22" y="218">N. SMITH</text>
             </g>
             <g class="svg-mono">
-              <text x="150" y="38">QB &middot; CALF CLOT &middot; IR</text><text x="150" y="58">RB &middot; HAMSTRING</text>
-              <text x="150" y="78">RB &middot; IR</text><text x="150" y="98">RB &middot; OUT</text>
-              <text x="150" y="118">G &middot; IR</text><text x="150" y="138">RT &middot; RETIRED OCT 6</text>
-              <text x="150" y="158">EDGE &middot; CONCUSSION</text><text x="150" y="178">DT &middot; ANKLE OR LEG</text>
-              <text x="150" y="198">WR &middot; RIGHT ANKLE</text><text x="150" y="218">RB &middot; SHOULDER</text>
-              <text x="150" y="238">DB &middot; NOT GIVEN</text><text x="150" y="258">WR &middot; BACK, 1 TD</text>
+              <text x="150" y="38">QB &middot; LUNG CLOTS &middot; IR</text><text x="150" y="58">RB &middot; IR</text>
+              <text x="150" y="78">WR &middot; HAMSTRING &middot; OUT</text><text x="150" y="98">WR &middot; ANKLE &middot; OUT</text>
+              <text x="150" y="118">WR/PR &middot; KNEE &middot; OUT</text><text x="150" y="138">LB &middot; HAM/QUAD &middot; OUT</text>
+              <text x="150" y="158">CB &middot; HAMSTRING &middot; OUT</text><text x="150" y="178">RT &middot; RETIRED OCT 6</text>
+              <text x="150" y="198">RB &middot; LIMITED, NO TAG</text><text x="150" y="218">EDGE &middot; CLEARED</text>
             </g>
           </svg>
-          <figcaption>Red: out or on IR &middot; Gray: retired &middot; Amber: hurt Sunday &middot; Green: returned.</figcaption>
+          <figcaption>Red: out or on IR &middot; Gray: retired &middot; Green: expected to play. Per the Eagles&rsquo; Friday report.</figcaption>
         </figure>
-        <p>Hurts was not the only loss. Edge rusher Nolan Smith left in the second quarter with a concussion, shortly after his third sack of the season, per Inside The Birds. Defensive tackle Jordan Davis was ruled out late in the fourth quarter. Sources differ on that injury: the team&rsquo;s recap and the AP say ankle, while the Inquirer says he grabbed his right leg. Receiver Dontayvion Wicks hurt his right ankle on a catch-and-run, running back Carson Steele was ruled out with a shoulder injury, and the team&rsquo;s live recap says Cooper DeJean left late with an injury it did not specify. Saquon Barkley (hamstring) missed his second straight game and has not practiced, according to NBC Sports Philadelphia. With Will Shipley and Tank Bigsby also out, only Dameon Pierce and Jaydon Blue were left. The line is thin too: Lane Johnson retired Oct. 6, Landon Dickerson remains on injured reserve, and center Drew Kendall dressed through a knee injury but did not play. The bright spot was DeVonta Smith, back from a hamstring injury with seven catches, 75 yards and a touchdown.</p>
-        <a class="src" href="https://www.philadelphiaeagles.com/news/panthers-vs-eagles-game-recap-2026-nfl-week-6-crucial-catch-tanner-mckee-bryce-young" target="_blank" rel="noopener">Read at PhiladelphiaEagles.com &rarr;</a>
+        <p>Saquon Barkley is expected to play. He sat out Wednesday and Thursday with hamstring and back injuries, practiced on a limited basis Friday, and ESPN reports he carries no injury designation. Earlier coverage was gloomier: delawareonline said Thursday his chances were &ldquo;diminished,&rdquo; and PhiladelphiaEagles.com called him uncertain on Thursday afternoon. Accounts of his Monday also differ. ESPN and AP have him at 62 yards on seven carries, while NFL.com has 71 yards on nine touches. Around him the Eagles are thin. DeVonta Smith (hamstring), Dontayvion Wicks (ankle), return man Britain Covey (knee), linebacker Jihaad Campbell and cornerback Jonathan Jones are all out, and running back Dameon Pierce went on injured reserve, leaving Jaydon Blue and practice-squad call-up Elijah Mitchell as the backups. The good news is up front and on the edge: Nolan Smith cleared the concussion protocol, so every edge rusher is available, and guard Landon Dickerson and center Drew Kendall are back after the line held together last week. The team lists no one as questionable.</p>
+        <a class="src" href="https://www.philadelphiaeagles.com/news/eagles-at-commanders-injury-report-2026-nfl-week-8-sunday-night-football-saquon-barkley-devonta-smith" target="_blank" rel="noopener">Read at PhiladelphiaEagles.com &rarr;</a>
       </li>
 
       <li class="story rival">
-        <span class="tag mono">Opponent &middot; Cowboys</span>
-        <h3>Dallas digs a 17-0 hole at Lambeau before the trip east</h3>
+        <span class="tag mono">Opponent &middot; Commanders</span>
+        <h3>Washington is rested after the bye, and missing McLaurin</h3>
         <figure class="viz">
-          <svg viewBox="0 0 420 132" role="img" aria-label="Cowboys at Packers, first half: Green Bay led 17-0 at halftime, Dak Prescott threw two interceptions, and the Packers converted 9 of 10 third downs.">
-            <text class="svg-mono" x="0" y="12">COWBOYS AT PACKERS &middot; FIRST HALF</text>
+          <svg viewBox="0 0 420 132" role="img" aria-label="Commanders entering Week 8: a 1-4-1 record, 390 days since Jayden Daniels last won a start, and 32nd in the league in third-down conversion rate.">
+            <text class="svg-mono" x="0" y="12">COMMANDERS ENTERING WEEK 8</text>
             <g fill="#ff6b1f" fill-opacity="0.13" stroke="#ff6b1f" stroke-opacity="0.6">
               <rect x="0.5" y="26.5" width="130" height="96"/><rect x="144.5" y="26.5" width="130" height="96"/><rect x="288.5" y="26.5" width="131" height="96"/>
             </g>
             <g class="svg-disp" fill="#edf3f0" font-size="44" text-anchor="middle">
-              <text x="65" y="76">17-0</text><text x="209" y="76">2</text><text x="354" y="76">9/10</text>
+              <text x="65" y="76">1-4-1</text><text x="209" y="76">390</text><text x="354" y="76">32ND</text>
             </g>
             <g class="svg-mono" text-anchor="middle" style="font-size:9.5px;letter-spacing:0.08em">
-              <text x="65" y="96">HALFTIME</text><text x="209" y="96">PRESCOTT INTs</text><text x="354" y="96">GB THIRD DOWNS</text>
+              <text x="65" y="96">RECORD</text><text x="209" y="96">DAYS</text><text x="354" y="96">THIRD-DOWN RATE</text>
             </g>
             <g class="svg-mono" text-anchor="middle" style="fill:#ff6b1f;font-size:9.5px;letter-spacing:0.08em">
-              <text x="65" y="112">GREEN BAY LEADS</text><text x="209" y="112">BOTH IN GB TERRITORY</text><text x="354" y="112">CONVERTED</text>
+              <text x="65" y="112">OFF A BYE WEEK</text><text x="209" y="112">SINCE DANIELS WON</text><text x="354" y="112">OF 32 TEAMS</text>
             </g>
           </svg>
-          <figcaption>First-half numbers per NBC Sports&rsquo; Pro Football Talk. Green Bay led 20-7 late in the 3rd at publication, per ESPN.</figcaption>
+          <figcaption>390 days per the Inquirer; third-down rank per Commanders.com&rsquo;s Oct. 30 &ldquo;3 keys&rdquo; piece.</figcaption>
         </figure>
-        <p>The Cowboys (2-3) were still playing at Green Bay when this page was published, trailing 20-7 late in the third quarter. The first half went badly. The Packers led 17-0 at halftime and converted 9 of 10 third downs, per Pro Football Talk. Dak Prescott threw two interceptions in Green Bay territory. The first came right after a hit from Zaire Franklin that sent him to the sideline holding his left ribs, and Heavy reports he refused medical attention and stayed in. Returner KaVontae Turpin was ruled out with a rib injury from the opening kickoff, and linebacker Dee Winters hurt his ankle after a first-half interception, which looks like the defense&rsquo;s first of the season. Through five games, The Athletic&rsquo;s Jon Machota had the unit under first-year coordinator Christian Parker last in the league in yards per play and opposing passer rating. Dallas hired veteran Mike Pettine as a senior defensive assistant on Oct. 12, and Jerry Jones said Parker would call this game from the booth.</p>
-        <a class="src" href="https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/sunday-night-football-jordan-love-td-gives-packers-17-0-halftime-lead" target="_blank" rel="noopener">Read at Pro Football Talk &rarr;</a>
+        <p>The Commanders (1-4-1) arrive rested after a Week 7 bye, but not whole. Terry McLaurin is on injured reserve with a torn patellar tendon in his left knee, per CBS Sports, and leading rusher Jacory Croskey-Merritt is also on IR. PhillyVoice adds that left tackle Laremy Tunsil is out with a torn triceps. Austin Ekeler is expected to take a bigger share of the carries. Defensive tackle Javon Kinlaw is out, and Daron Payne (foot) and Jer&rsquo;Zhan Newton (pectoral, a possible season debut) are questionable. Jayden Daniels, who was a full participant with a left elbow listing, went 29-of-40 for 300 yards and two touchdowns in a 23-17 loss at San Francisco while facing a 39.3 percent pressure rate, per the Inquirer. He has not won a start in 390 days. Dan Quinn is on CBS Sports&rsquo; hot-seat list and called it &ldquo;two angry teams willing to fight to the last snap.&rdquo; AP notes the loser sits alone in last place in the NFC East. Philadelphia won the Week 1 meeting 24-22.</p>
+        <a class="src" href="https://www.commanders.com/news/game-status-commanders-eagles-week-8" target="_blank" rel="noopener">Read at Commanders.com &rarr;</a>
       </li>
 
       <li class="story">
         <span class="tag mono">The line &middot; Odds</span>
-        <h3>Four sources, four lines: the market is still catching up</h3>
+        <h3>Washington is a 4- to 6-point favorite, depending on the book</h3>
         <figure class="viz">
-          <svg viewBox="0 0 420 196" role="img" aria-label="Point spread by source, in points: VegasInsider opener, Eagles favored by 3; VegasInsider consensus from Oct 13, Eagles by 1.5; FanDuel lookahead opener, Cowboys by 1.5; DraftKings on Oct 18, after the Hurts news, Cowboys by 5.5.">
+          <svg viewBox="0 0 420 214" role="img" aria-label="Point spread by source, in points, all with the Commanders favored: BetMGM opener Oct 26, 4; FanDuel Oct 29, 5.5; DraftKings per Sports Illustrated, 5.5; DraftKings per PhillyVoice, 6; Caesars Oct 29, 6.">
             <text class="svg-mono" x="0" y="12">THE SPREAD, BY SOURCE &middot; IN POINTS</text>
-            <line x1="290" y1="26" x2="290" y2="164" stroke="#edf3f0" stroke-opacity="0.45" stroke-width="1.5"/>
+            <line x1="190" y1="26" x2="190" y2="184" stroke="#edf3f0" stroke-opacity="0.45" stroke-width="1.5"/>
             <g class="svg-mono" style="fill:#edf3f0">
-              <text x="0" y="48">VEGASINSIDER OPEN</text><text x="0" y="80">VI CONSENSUS, OCT 13</text>
-              <text x="0" y="112">FANDUEL LOOKAHEAD</text><text x="0" y="144">DRAFTKINGS, OCT 18</text>
+              <text x="0" y="48">BETMGM, OCT 26</text><text x="0" y="80">FANDUEL, OCT 29</text>
+              <text x="0" y="112">DRAFTKINGS &middot; SI</text><text x="0" y="144">DRAFTKINGS &middot; PV</text>
+              <text x="0" y="176">CAESARS, OCT 29</text>
             </g>
-            <rect x="236" y="36" width="54" height="16" fill="#edf3f0" fill-opacity="0.35"/>
-            <rect x="263" y="68" width="27" height="16" fill="#edf3f0" fill-opacity="0.35"/>
-            <rect x="290" y="100" width="27" height="16" fill="#ff6b1f" fill-opacity="0.45"/>
-            <rect x="290" y="132" width="99" height="16" fill="#ff6b1f"/>
+            <rect x="190" y="36" width="88" height="16" fill="#edf3f0" fill-opacity="0.35"/>
+            <rect x="190" y="68" width="121" height="16" fill="#ff6b1f" fill-opacity="0.45"/>
+            <rect x="190" y="100" width="121" height="16" fill="#ff6b1f" fill-opacity="0.45"/>
+            <rect x="190" y="132" width="132" height="16" fill="#ff6b1f"/>
+            <rect x="190" y="164" width="132" height="16" fill="#ff6b1f"/>
             <g font-family="'DM Mono', monospace" font-size="12" fill="#edf3f0">
-              <text x="231" y="49" text-anchor="end">3</text><text x="258" y="81" text-anchor="end">1.5</text>
-              <text x="322" y="113">1.5</text><text x="394" y="145">5.5</text>
+              <text x="284" y="49">4</text><text x="317" y="81">5.5</text><text x="317" y="113">5.5</text>
+              <text x="328" y="145">6</text><text x="328" y="177">6</text>
             </g>
             <g class="svg-mono" style="font-size:9.5px;letter-spacing:0.08em">
-              <text x="284" y="180" text-anchor="end">&#9664; PHI FAVORED</text><text x="296" y="180">DAL FAVORED &#9654;</text>
+              <text x="184" y="204" text-anchor="end">&#9664; PHI FAVORED</text><text x="196" y="204">WSH FAVORED &#9654;</text>
             </g>
           </svg>
-          <figcaption>Only the DraftKings line was posted after Hurts went on IR. VegasInsider&rsquo;s last spread move is dated Oct. 13.</figcaption>
+          <figcaption>SI = Sports Illustrated, PV = PhillyVoice. The two outlets list different DraftKings numbers.</figcaption>
         </figure>
-        <p>The betting markets do not agree yet. DraftKings posted Dallas as a 5.5-point favorite Sunday evening, with a 44.5 total and the Eagles at +200 on the moneyline, according to SportsBettingDime. That is the only number posted after the Eagles moved Hurts to injured reserve. Other pages lag behind. VegasInsider&rsquo;s consensus still shows Philadelphia favored by 1.5 with a 47.5 total, but its last spread move is dated Oct. 13, before the clot news, and its opener had the Eagles by 3. FanDuel Research lists only its lookahead opener, Dallas by 1.5 with a 47.5 total, and says current odds are not available. Covers had not posted a spread as of 9 p.m. Sunday, though its table gave the Cowboys a 70 percent chance to win. On Oct. 16, a day before the IR move, Kalshi and Polymarket priced the game as a coin flip, according to DeFi Rate. The DraftKings line is the freshest, and it could move again after the Green Bay result and this week&rsquo;s first injury reports.</p>
-        <a class="src" href="https://sportsbettingdime.com/news/nfl/opening-nfl-week-7-odds-point-spread-moneyline-total-for-all-14-games" target="_blank" rel="noopener">Read at SportsBettingDime &rarr;</a>
+        <p>Books agree on the favorite, not the number. BetMGM opened Washington at minus-4 on Oct. 26, and Commanders Wire and the Arizona Republic were still printing that line on Oct. 28 and 29. PhillyVoice&rsquo;s Oct. 29 table has the Commanders at minus-5.5 at FanDuel, BetRivers and BetMGM and minus-6 at DraftKings and Caesars, with totals of 40 to 40.5 and Eagles moneylines from +190 to +220. Sports Illustrated shows DraftKings at minus-5.5 with the Eagles at +180, so those two outlets disagree on DraftKings&rsquo; number. AP lists Washington by 6. The Eagles are 1-6 against the spread this season and the Commanders 3-3, per AP. Models lean the same way: Dimers projects Washington 23-17 and Sports Betting Dime 23.3-20.9, and the Arizona Republic picks the Commanders 27-17. NBC considered flexing the game out of prime time, per PhillyVoice, and did not. Expect the numbers to move after Sunday&rsquo;s inactives are posted about 90 minutes before kickoff.</p>
+        <a class="src" href="https://phillyvoice.com/eagles-commanders-week-8-betting-odds-money-lines-jalen-carter-jayden-daniels" target="_blank" rel="noopener">Read at PhillyVoice &rarr;</a>
       </li>
 
       <li class="story">
-        <span class="tag mono">Last game &middot; Week 6</span>
-        <h3>Four straight losses, and an offense at its lowest since 1999</h3>
+        <span class="tag mono">Last game &middot; Week 7</span>
+        <h3>Led 21-20, then lost 38-21 for a fifth straight defeat</h3>
         <figure class="viz">
-          <svg viewBox="0 0 420 176" role="img" aria-label="Chart of the Eagles' deficit against the Panthers at six checkpoints: down 3 after the first quarter, down 3 at halftime, down 6 after three quarters, down 12 after Hubbard's touchdown, down 5 after McKee's touchdown pass to DeVonta Smith, and down 11 at the final.">
+          <svg viewBox="0 0 420 192" role="img" aria-label="Chart of the Eagles' margin against the Cowboys at five checkpoints: down 3 after the first quarter, down 6 at halftime, up 1 after Makai Lemon's touchdown, down 7 after three quarters, and down 17 at the final.">
             <text class="svg-mono" x="0" y="12">EAGLES&rsquo; MARGIN AT EACH CHECKPOINT</text>
-            <line x1="0" y1="34" x2="420" y2="34" stroke="#edf3f0" stroke-opacity="0.4"/>
-            <rect x="15" y="34" width="44" height="15" fill="#ff5a4d"/>
-            <rect x="82" y="34" width="44" height="15" fill="#ff5a4d"/>
-            <rect x="149" y="34" width="44" height="30" fill="#ff5a4d"/>
-            <rect x="216" y="34" width="44" height="60" fill="#ff5a4d"/>
-            <rect x="283" y="34" width="44" height="25" fill="#ff5a4d"/>
-            <rect x="350" y="34" width="44" height="55" fill="#ff5a4d"/>
+            <line x1="0" y1="44" x2="420" y2="44" stroke="#edf3f0" stroke-opacity="0.4"/>
+            <rect x="20" y="44" width="44" height="12" fill="#ff5a4d"/>
+            <rect x="96" y="44" width="44" height="24" fill="#ff5a4d"/>
+            <rect x="172" y="40" width="44" height="4" fill="#5fd39a"/>
+            <rect x="248" y="44" width="44" height="28" fill="#ff5a4d"/>
+            <rect x="324" y="44" width="44" height="68" fill="#ff5a4d"/>
             <g font-family="'DM Mono', monospace" font-size="14" fill="#edf3f0" text-anchor="middle">
-              <text x="37" y="65">&minus;3</text><text x="104" y="65">&minus;3</text><text x="171" y="80">&minus;6</text>
-              <text x="238" y="110">&minus;12</text><text x="305" y="75">&minus;5</text><text x="372" y="105">&minus;11</text>
+              <text x="42" y="74">&minus;3</text><text x="118" y="86">&minus;6</text><text x="194" y="32">+1</text>
+              <text x="270" y="90">&minus;7</text><text x="346" y="130">&minus;17</text>
             </g>
             <g font-family="'DM Mono', monospace" font-size="12" fill="#b7bfc2" text-anchor="middle">
-              <text x="37" y="132">0&ndash;3</text><text x="104" y="132">7&ndash;10</text><text x="171" y="132">7&ndash;13</text>
-              <text x="238" y="132">7&ndash;19</text><text x="305" y="132">14&ndash;19</text><text x="372" y="132">14&ndash;25</text>
+              <text x="42" y="152">7&ndash;10</text><text x="118" y="152">14&ndash;20</text><text x="194" y="152">21&ndash;20</text>
+              <text x="270" y="152">21&ndash;28</text><text x="346" y="152">21&ndash;38</text>
             </g>
             <g class="svg-mono" text-anchor="middle" style="font-size:9.5px;letter-spacing:0.08em">
-              <text x="37" y="148">END Q1</text><text x="104" y="148">HALF</text><text x="171" y="148">END Q3</text>
-              <text x="238" y="148">CAR TD</text><text x="305" y="148">PHI TD</text><text x="372" y="148">FINAL</text>
+              <text x="42" y="168">END Q1</text><text x="118" y="168">HALF</text><text x="194" y="168">LEMON TD</text>
+              <text x="270" y="168">END Q3</text><text x="346" y="168">FINAL</text>
             </g>
-            <text class="svg-mono" x="0" y="170" style="font-size:9.5px">DOWN 5, 9:32 LEFT: BAD SNAP, BLOCKED PUNT, TD</text>
+            <text class="svg-mono" x="0" y="188" style="font-size:9.5px">DALLAS OUTSCORED PHILLY 18-0 AFTER THE LEAD</text>
           </svg>
-          <figcaption>Scores are Eagles first. Scoring sequence per PhiladelphiaEagles.com and ESPN.</figcaption>
+          <figcaption>Scores are Eagles first. Quarter scores per ESPN and the game recaps.</figcaption>
         </figure>
-        <p>Carolina beat the Eagles 25-14 at Lincoln Financial Field, extending the skid to four games for the first time since 2020 and the first time under Nick Sirianni. Philadelphia punted on its first five possessions and finished with 222 yards. Trailing 19-14 with 9:32 left, the Eagles took over at their 48, but a bad snap cost 12 yards, a third-down pass was deflected, and Braden Mann&rsquo;s punt was blocked. Bryce Young then hit Tommy Tremble for the clinching touchdown. Chuba Hubbard ran for 120 yards. The Inquirer found that the Eagles&rsquo; 874 yards over the four losses are their fewest in a four-game span since 1999, and NBC Sports Philadelphia notes they have gone scoreless in the third quarter four games running. Flags were everywhere: 24 for 233 yards, including a Panthers franchise-record 149. Sources disagree on Young&rsquo;s passing: the AP and the team&rsquo;s own story say 281 yards, while the team&rsquo;s stat leaders list 381. ESPN&rsquo;s box score settles it at 281. Sirianni was blunt: &ldquo;You&rsquo;ve got to score points, and we&rsquo;re not doing that right now.&rdquo;</p>
-        <a class="src" href="https://www.inquirer.com/eagles/panthers-instant-analysis-loss-tanner-mckee-losing-streak-20261018.html" target="_blank" rel="noopener">Read at The Philadelphia Inquirer &rarr;</a>
+        <p>Dallas beat the Eagles 38-21 on Monday Night Football, Philadelphia&rsquo;s fifth straight loss and its first five-game skid since 2016, per NBC Sports Philadelphia. The Eagles led 21-20 after Makai Lemon&rsquo;s touchdown, then were outscored 18-0. The defense allowed 416 yards, 204 on the ground, including a career-high 155 for Javonte Williams, and finished without a sack, quarterback hit or tackle for loss. Vic Fangio said, &ldquo;I didn&rsquo;t do a good enough job coaching.&rdquo; Nick Sirianni said he saw no effort problem, though nj.com noted clips of Jalen Carter and Jordan Davis circulating online. The Athletic&rsquo;s simulator gives the Eagles a 4 percent chance at the playoffs, per the Inquirer. The trade deadline is Tuesday, Nov. 10 at 4 p.m., two days after the Giants visit, and the Inquirer&rsquo;s tracker says it is looking like the Eagles will be sellers. One wording conflict: the AP version carried by the Boston Globe calls this the longest skid since 2016 &ldquo;when they dropped four in a row,&rdquo; while NBC Sports Philadelphia and ESPN count five straight.</p>
+        <a class="src" href="https://www.nbcsportsphiladelphia.com/nfl/philadelphia-eagles/nick-sirianni-effort-not-issue-cowboys-loss-monday-night-football/762411" target="_blank" rel="noopener">Read at NBC Sports Philadelphia &rarr;</a>
       </li>
 
     </ol>
   </section>
 
   <section class="sec" aria-labelledby="stand-h">
-    <div class="sec-head"><h2 id="stand-h">League Standings</h2><p class="mono">Through Sunday night, Week 6</p></div>
+    <div class="sec-head"><h2 id="stand-h">League Standings</h2><p class="mono">Through Thursday night, Week 8</p></div>
 
     <div class="standings">
       <div class="conf">
         <h3>AFC</h3>
         <div class="divs">
           <table><caption>East</caption><tbody>
-            <tr><th scope="row">Buffalo Bills</th><td>5-1</td></tr><tr><th scope="row">New England Patriots</th><td>4-2</td></tr>
-            <tr><th scope="row">New York Jets</th><td>2-4</td></tr><tr><th scope="row">Miami Dolphins</th><td>0-5</td></tr></tbody></table>
+            <tr><th scope="row">Buffalo Bills</th><td>5-1</td></tr>
+            <tr><th scope="row">New England Patriots</th><td>4-3</td></tr>
+            <tr><th scope="row">New York Jets</th><td>2-5</td></tr>
+            <tr><th scope="row">Miami Dolphins</th><td>1-5</td></tr></tbody></table>
           <table><caption>North</caption><tbody>
-            <tr><th scope="row">Cleveland Browns</th><td>4-2</td></tr><tr><th scope="row">Pittsburgh Steelers</th><td>4-2</td></tr>
-            <tr><th scope="row">Baltimore Ravens</th><td>4-2</td></tr><tr><th scope="row">Cincinnati Bengals</th><td>3-2</td></tr></tbody></table>
+            <tr><th scope="row">Cleveland Browns</th><td>5-2</td></tr>
+            <tr><th scope="row">Pittsburgh Steelers</th><td>5-2</td></tr>
+            <tr><th scope="row">Cincinnati Bengals</th><td>4-2</td></tr>
+            <tr><th scope="row">Baltimore Ravens</th><td>4-3</td></tr></tbody></table>
           <table><caption>South</caption><tbody>
-            <tr><th scope="row">Jacksonville Jaguars</th><td>4-2</td></tr><tr><th scope="row">Indianapolis Colts</th><td>2-4</td></tr>
-            <tr><th scope="row">Houston Texans</th><td>2-4</td></tr><tr><th scope="row">Tennessee Titans</th><td>1-5</td></tr></tbody></table>
+            <tr><th scope="row">Jacksonville Jaguars</th><td>4-2</td></tr>
+            <tr><th scope="row">Indianapolis Colts</th><td>2-5</td></tr>
+            <tr><th scope="row">Houston Texans</th><td>2-5</td></tr>
+            <tr><th scope="row">Tennessee Titans</th><td>1-6</td></tr></tbody></table>
           <table><caption>West</caption><tbody>
-            <tr><th scope="row">Kansas City Chiefs</th><td>5-0</td></tr><tr><th scope="row">Denver Broncos</th><td>4-2</td></tr>
-            <tr><th scope="row">Las Vegas Raiders</th><td>3-3</td></tr><tr><th scope="row">Los Angeles Chargers</th><td>0-6</td></tr></tbody></table>
+            <tr><th scope="row">Kansas City Chiefs</th><td>5-1</td></tr>
+            <tr><th scope="row">Denver Broncos</th><td>5-2</td></tr>
+            <tr><th scope="row">Las Vegas Raiders</th><td>3-4</td></tr>
+            <tr><th scope="row">Los Angeles Chargers</th><td>0-6</td></tr></tbody></table>
         </div>
       </div>
       <div class="conf">
         <h3>NFC</h3>
         <div class="divs">
           <table><caption>East</caption><tbody>
-            <tr><th scope="row">New York Giants</th><td>3-2-1</td></tr><tr class="opp"><th scope="row">Dallas Cowboys</th><td>2-3</td></tr>
-            <tr class="me"><th scope="row">Philadelphia Eagles</th><td>2-4</td></tr><tr><th scope="row">Washington Commanders</th><td>1-3-1</td></tr></tbody></table>
+            <tr><th scope="row">New York Giants</th><td>4-2-1</td></tr>
+            <tr><th scope="row">Dallas Cowboys</th><td>3-4</td></tr>
+            <tr class="me"><th scope="row">Philadelphia Eagles</th><td>2-5</td></tr>
+            <tr class="opp"><th scope="row">Washington Commanders</th><td>1-4-1</td></tr></tbody></table>
           <table><caption>North</caption><tbody>
-            <tr><th scope="row">Minnesota Vikings</th><td>5-0</td></tr><tr><th scope="row">Chicago Bears</th><td>4-2</td></tr>
-            <tr><th scope="row">Green Bay Packers</th><td>3-2</td></tr><tr><th scope="row">Detroit Lions</th><td>3-2</td></tr></tbody></table>
+            <tr><th scope="row">Minnesota Vikings</th><td>6-0</td></tr>
+            <tr><th scope="row">Chicago Bears</th><td>5-2</td></tr>
+            <tr><th scope="row">Detroit Lions</th><td>4-2</td></tr>
+            <tr><th scope="row">Green Bay Packers</th><td>5-3</td></tr></tbody></table>
           <table><caption>South</caption><tbody>
-            <tr><th scope="row">Carolina Panthers</th><td>3-2</td></tr><tr><th scope="row">Atlanta Falcons</th><td>2-4</td></tr>
-            <tr><th scope="row">New Orleans Saints</th><td>2-4</td></tr><tr><th scope="row">Tampa Bay Buccaneers</th><td>1-5</td></tr></tbody></table>
+            <tr><th scope="row">Atlanta Falcons</th><td>3-4</td></tr>
+            <tr><th scope="row">Carolina Panthers</th><td>3-4</td></tr>
+            <tr><th scope="row">New Orleans Saints</th><td>2-5</td></tr>
+            <tr><th scope="row">Tampa Bay Buccaneers</th><td>2-5</td></tr></tbody></table>
           <table><caption>West</caption><tbody>
-            <tr><th scope="row">San Francisco 49ers</th><td>5-0</td></tr><tr><th scope="row">Seattle Seahawks</th><td>3-3</td></tr>
-            <tr><th scope="row">Arizona Cardinals</th><td>2-4</td></tr><tr><th scope="row">Los Angeles Rams</th><td>2-4</td></tr></tbody></table>
+            <tr><th scope="row">San Francisco 49ers</th><td>6-1</td></tr>
+            <tr><th scope="row">Seattle Seahawks</th><td>4-3</td></tr>
+            <tr><th scope="row">Los Angeles Rams</th><td>3-4</td></tr>
+            <tr><th scope="row">Arizona Cardinals</th><td>2-5</td></tr></tbody></table>
         </div>
       </div>
     </div>
-    <p class="fine">Records reflect games completed by Sunday night, Oct 18. Cowboys at Packers was in the third quarter at publication (Green Bay led 20-7), and Commanders at 49ers is Monday night, so those four teams still show their records after Week 5. The Bengals, Lions, Dolphins and Vikings had byes. ESPN, CBS Sports and FOX Sports agree on every record.</p>
+    <p class="fine">Records reflect games completed through Thursday night, Oct 29 (Packers 27, Panthers 19). All other Week 8 games are still to be played, so those teams show their records through Week 7. ESPN, CBS Sports and FOX Sports agree on every record.</p>
   </section>
 
   <footer>
     <p>Fan-made page, not affiliated with the NFL or any team. Team names are used to identify the teams playing.</p>
-    <p>Reporting drew on The Philadelphia Inquirer, NBC Sports Philadelphia, PhiladelphiaEagles.com, Inside The Birds, Philly Sports Reports, NFL.com (including The Athletic), Yahoo Sports and CBS Sports (AP), ClutchPoints, NBC Sports&rsquo; Pro Football Talk, Heavy, DallasCowboys.com, Bolavip, Football Nation, SportsBettingDime, VegasInsider, FanDuel Research, Covers, DeFi Rate, ESPN, and FOX Sports.</p>
+    <p>Reporting drew on The Philadelphia Inquirer, PhillyVoice, PhiladelphiaEagles.com, Commanders.com, NBC Sports Philadelphia, delawareonline, Commanders Wire (USA Today), the Arizona Republic, Sports Illustrated, CBS Sports (AP and Rotowire), CBS News Philadelphia, 6abc, NFL.com, ESPN, FOX Sports, nj.com, Metro Philadelphia, the Boston Globe (AP), DallasCowboys.com and USA Today. Kickoff is 8:20 PM Eastern per the NFL, both teams and NBC; one early schedule roundup (the Inquirer, May) listed 8:15. Clocks go back at 2 a.m. that morning, so kickoff is Eastern Standard Time.</p>
   </footer>
 </div>
 
 <script>
-  // Kickoff: Monday Oct 26, 2026, 8:15 PM EDT = Tuesday Oct 27, 00:15 UTC
-  var KICKOFF = new Date('2026-10-27T00:15:00Z');
+  // Kickoff: Sunday Nov 1, 2026, 8:20 PM EST (clocks fell back that morning) = Monday Nov 2, 01:20 UTC
+  var KICKOFF = new Date('2026-11-02T01:20:00Z');
   var cd = document.getElementById('cd');
 
   function tick() {
